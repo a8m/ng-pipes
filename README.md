@@ -1,4 +1,4 @@
-# ng-pipes
+# ng-pipes [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![License][license-image]][license-url]
 > [a8m/angular-filter](https://github.com/a8m/angular-filter) for Angular2
 
 This module works with Angular 2.x.
@@ -19,3 +19,12 @@ I working on that, but I will appreciate any help.
 - [ ] Add all [boolean pipes](https://github.com/a8m/angular-filter/tree/master/src/_filter/boolean)
 - [ ] Finish documentation. including "Get Started" section
 
+
+
+
+[npm-image]: https://img.shields.io/npm/v/ng-pipes.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/ng-pipes
+[travis-image]: https://img.shields.io/travis/a8m/ng-pipes.svg?style=flat-square
+[travis-url]: https://travis-ci.org/a8m/ng-pipes
+[license-image]: http://img.shields.io/npm/l/ng-pipes.svg?style=flat-square
+[license-url]: LICENSE
