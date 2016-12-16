@@ -1,4 +1,4 @@
-# ng-pipes [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![License][license-image]][license-url]
+# ng-pipes &nbsp; [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![License][license-image]][license-url]
 > [a8m/angular-filter](https://github.com/a8m/angular-filter) for Angular2
 
 This module works with Angular 2.x.
