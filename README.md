@@ -1,14 +1,21 @@
-# NG-PIPES
-> a8m/angular-filter for Angular2
+# ng-pipes
+> [a8m/angular-filter](https://github.com/a8m/angular-filter) for Angular2
 
-#### Project Status:
+This module works with Angular 2.x.
+
+For the AngularJS 1.x version of this module, please see [angular-filter](https://github.com/a8m/angular-filter).
 
 
-todo:
-- add tests to encodeUri and encodeUriComponent
-- rename concat to merge
-- add another name to contains to some
-- built-in pipes: order-by, currency, filter, ...
-- add "remove" filter (need equal() too)
-- orderby added
-- add filter like angular1
+Installation
+------------
+
+```sh
+npm install --save ng-pipes
+```
+
+#### Project status:
+Before publishing a stable version, there are several tasks to finish.
+I working on that, but I will appreciate any help with that.
+- [ ] Add all [boolean pipes](https://github.com/a8m/angular-filter/tree/master/src/_filter/boolean)
+- [ ] Finish documentation. including "Get Started" section
+
