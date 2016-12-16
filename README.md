@@ -14,7 +14,7 @@ npm install --save ng-pipes
 ```
 
 #### Project status:
-Before publishing a stable version, there are several tasks to finish.
+Before publishing a stable version, there are several tasks to finish.  
 I working on that, but I will appreciate any help with that.
 - [ ] Add all [boolean pipes](https://github.com/a8m/angular-filter/tree/master/src/_filter/boolean)
 - [ ] Finish documentation. including "Get Started" section
