@@ -35,31 +35,32 @@ export class AppModule { }
 ```
 
 Inject it to your class(could be Component, Service, etc..), or use it inside the view(template).  
-`app.component.ts`
-```ts
-import { Component } from '@angular/core';
-import { RepeatPipe } from 'ng-pipes';
+- `app.component.ts`:  
+  ```ts
+  import { Component } from '@angular/core';
+  import { RepeatPipe } from 'ng-pipes';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  providers: [RepeatPipe],
-})
-export class AppComponent {
-  constructor(private repeater: RepeatPipe) {
-    this.repeater = repeater;
+  @Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
+    providers: [RepeatPipe],
+  })
+  export class AppComponent {
+    constructor(private repeater: RepeatPipe) {
+      this.repeater = repeater;
+    }
+    title = "hello world"
+    manyTitles = this.repeater.transform(this.title, 10, " ");
   }
-  title = "hello world"
-  manyTitles = this.repeater.transform(this.title, 10, " ");
-}
-```
-`app.component.html`
-```html
-<h1>
-  {{ title | reverse }}
-</h1>
-```
+  ```
+
+- `app.component.html`:  
+  ```html
+  <h1>
+    {{ title | reverse }}
+  </h1>
+  ```
 
 #### Project status:
 Before publishing a stable version, there are several tasks to finish.  
