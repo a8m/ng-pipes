@@ -5,7 +5,7 @@ import { isArray, toArray, isObject } from '../utils/utils';
   name: 'toArray'
 })
 export class ToArrayPipe implements PipeTransform {
-  transform(collection: any, addKey: boolean=false): any {
+  transform(collection: any, addKey: boolean = false): any {
 
     if (!isObject(collection)) {
       return collection;

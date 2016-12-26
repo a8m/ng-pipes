@@ -5,7 +5,7 @@ import { toArray, isArray, equals } from '../utils/utils';
   name: 'remove'
 })
 export class RemovePipe implements PipeTransform {
-  transform(collection: any,  ...args: any[]): any {
+  transform(collection: any, ...args: any[]): any {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }

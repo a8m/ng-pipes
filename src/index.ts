@@ -18,4 +18,4 @@ export * from './collection';
     CollectionPipesModule,
   ]
 })
-export class NgPipesModule {}
+export class NgPipesModule { }

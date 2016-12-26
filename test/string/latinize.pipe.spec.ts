@@ -1,10 +1,10 @@
 import { LatinizePipe } from '../../src/index';
 
 describe('LatinizePipe', () => {
-	let pipe: LatinizePipe;
-	beforeEach(() => {
-		pipe = new LatinizePipe();
-	});
+  let pipe: LatinizePipe;
+  beforeEach(() => {
+    pipe = new LatinizePipe();
+  });
 
   it('should get a string and replace accents/diacritics with the ASCII equivalent', () => {
     expect(pipe.transform('a ç')).toEqual('a c');

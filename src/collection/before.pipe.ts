@@ -5,13 +5,13 @@ import { toArray, isArray } from '../utils/utils';
   name: 'before'
 })
 export class BeforePipe implements PipeTransform {
-  transform(collection: any, count: number=1): Array<any> {
+  transform(collection: any, count: number = 1): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
     if (!isArray(collection)) {
       return collection;
     }
-    return collection.slice(0, count-1);
+    return collection.slice(0, count - 1);
   }
 }

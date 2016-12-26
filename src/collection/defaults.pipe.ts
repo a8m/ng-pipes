@@ -12,7 +12,7 @@ export class DefaultsPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, defaults: {[key: string]: any}): Array<any> {
+  transform(collection: any, defaults: { [key: string]: any }): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
@@ -22,7 +22,7 @@ export class DefaultsPipe implements PipeTransform {
 
     let getters = deepKeys(defaults).map((key: string) => this.$parse(key));
 
-    collection.forEach((elm: {[key: string]: any}) => {
+    collection.forEach((elm: { [key: string]: any }) => {
       getters.forEach((getter: any, i: number) => {
         if (isUndefined(getter(elm))) {
           getter.assign(elm, getter(defaults));

@@ -14,7 +14,7 @@ export class SearchFieldPipe implements PipeTransform {
 
   transform(collection: any, ...args: any[]): any {
 
-    if(!isArray(collection) || !args.length) {
+    if (!isArray(collection) || !args.length) {
       return collection;
     }
 

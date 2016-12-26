@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, objectContains, isUndefined} from '../utils/utils';
+import { toArray, isArray, objectContains, isUndefined } from '../utils/utils';
 
 @Pipe({
   name: 'removeWith'
@@ -10,7 +10,7 @@ export class RemoveWithPipe implements PipeTransform {
       collection = toArray(collection);
     }
 
-    if(!isArray(collection) || isUndefined(object)) {
+    if (!isArray(collection) || isUndefined(object)) {
       return collection;
     }
 

@@ -1,10 +1,10 @@
 import { TrimPipe } from '../../src/index';
 
 describe('TrimPipe', () => {
-	let pipe: TrimPipe;
-	beforeEach(() => {
-		pipe = new TrimPipe();
-	});
+  let pipe: TrimPipe;
+  beforeEach(() => {
+    pipe = new TrimPipe();
+  });
 
   it('should strip whitespace from the end of a string', () => {
     expect(pipe.transform('a    ')).toEqual('a');

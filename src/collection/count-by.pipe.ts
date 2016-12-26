@@ -12,8 +12,8 @@ export class CountByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, predicate: any): {[key: string]: number} {
-    let result: {[key: string]: number} = {}
+  transform(collection: any, predicate: any): { [key: string]: number } {
+    let result: { [key: string]: number } = {}
       , getter = this.$parse(predicate)
       ;
     if (!isArray(collection)) {

@@ -6,12 +6,12 @@ import { toArray, isArray, isString, isUndefined, hasApproxPattern, isObject } f
 })
 export class FuzzyPipe implements PipeTransform {
 
-  transform(collection: any, search: string, csensitive: boolean=false): Array<any> {
+  transform(collection: any, search: string, csensitive: boolean = false): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
-    if(!isArray(collection) || isUndefined(search)) {
+    if (!isArray(collection) || isUndefined(search)) {
       return collection;
     }
 
@@ -20,7 +20,7 @@ export class FuzzyPipe implements PipeTransform {
     }
 
     return collection.filter((elm: any) => {
-      if(isString(elm)) {
+      if (isString(elm)) {
         if (!csensitive) {
           elm = elm.toLowerCase();
         }
@@ -30,7 +30,7 @@ export class FuzzyPipe implements PipeTransform {
     });
   }
 
-  private hasApproximateKey(object: {[key: string]: any}, search: string, csensitive: boolean=false): boolean {
+  private hasApproximateKey(object: { [key: string]: any }, search: string, csensitive: boolean = false): boolean {
     return Object.keys(object).some((elm: string) => {
       let prop = object[elm];
       if (!isString(prop)) {

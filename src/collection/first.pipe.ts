@@ -21,7 +21,7 @@ export class FirstPipe implements PipeTransform {
       , getter = !isNumber(args[0]) ? args[0] : !isNumber(args[1]) ? args[1] : undefined;
 
     return args.length
-      ? getFirstMatches(collection, n,(getter) ? this.$parse(getter) : getter)
+      ? getFirstMatches(collection, n, (getter) ? this.$parse(getter) : getter)
       : collection[0];
   }
 }

@@ -19,7 +19,7 @@ export class ChunkByPipe implements PipeTransform {
       return !isUndefined(fillVal) && el.length < n
         ? el.concat(fill(n - el.length, fillVal))
         : el;
-      })
+    })
       .slice(0, Math.ceil(array.length / n));
   }
 }

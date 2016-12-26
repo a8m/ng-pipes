@@ -7,7 +7,7 @@ import { isArray, isString } from '../utils/utils';
 export class ReversePipe implements PipeTransform {
   transform(input: any): any {
 
-    if(isString(input)) {
+    if (isString(input)) {
       return input.split('').reverse().join('');
     }
 

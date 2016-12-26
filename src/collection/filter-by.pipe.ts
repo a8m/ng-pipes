@@ -12,7 +12,7 @@ export class FilterByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, properties: string[], search?: any, strict: boolean=false): Array<any> {
+  transform(collection: any, properties: string[], search?: any, strict: boolean = false): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
@@ -21,7 +21,7 @@ export class FilterByPipe implements PipeTransform {
       ? String(search).toLowerCase()
       : undefined;
 
-    if(!isArray(collection) || isUndefined(search)) {
+    if (!isArray(collection) || isUndefined(search)) {
       return collection;
     }
 
@@ -37,29 +37,29 @@ export class FilterByPipe implements PipeTransform {
         * object: { first: 'foo', last:'bar' }
        * filterBy: ['first + last'] => search by full name(i.e 'foo bar')
        */
-       let comparator: any;
-      if(!~prop.indexOf('+')) {
-        comparator = this.$parse(prop)(elm)
-      } else {
-        let propList = prop.replace(/\s+/g, '').split('+');
-        comparator = propList
-          .map((p: string) => this.$parse(p)(elm))
-          .join(' ');
-      }
+        let comparator: any;
+        if (!~prop.indexOf('+')) {
+          comparator = this.$parse(prop)(elm)
+        } else {
+          let propList = prop.replace(/\s+/g, '').split('+');
+          comparator = propList
+            .map((p: string) => this.$parse(p)(elm))
+            .join(' ');
+        }
 
-      // TODO: boolean?
-      if (!isString(comparator) && !isNumber(comparator)) {
-        return false;
-      }
+        // TODO: boolean?
+        if (!isString(comparator) && !isNumber(comparator)) {
+          return false;
+        }
 
-      comparator = String(comparator).toLowerCase();
+        comparator = String(comparator).toLowerCase();
 
-      // indentical or contains
-      return strict
-        ? comparator === search
-        : comparator.indexOf(search) != -1;
+        // indentical or contains
+        return strict
+          ? comparator === search
+          : comparator.indexOf(search) != -1;
+      });
     });
-  });
 
   }
 }

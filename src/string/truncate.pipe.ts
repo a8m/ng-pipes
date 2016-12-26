@@ -5,7 +5,7 @@ import { isUndefined } from '../utils/utils';
   name: 'truncate'
 })
 export class TruncatePipe implements PipeTransform {
-  transform(input: string, length?: any, suffix: string='', preserve: boolean=false): string {
+  transform(input: string, length?: any, suffix: string = '', preserve: boolean = false): string {
     if (isUndefined(length) || length >= input.length) {
       return input;
     }

@@ -1,12 +1,12 @@
 import { ChunkByPipe } from '../../src/index';
 
 describe('ChunkByPipe', () => {
-	let pipe: ChunkByPipe;
-	beforeEach(() => {
-		pipe = new ChunkByPipe();
-	});
+  let pipe: ChunkByPipe;
+  beforeEach(() => {
+    pipe = new ChunkByPipe();
+  });
 
-	it('should collect data into fixed-length chunks or blocks', () => {
+  it('should collect data into fixed-length chunks or blocks', () => {
     expect(pipe.transform([1, 2, 3, 4], 2)).toEqual([[1, 2], [3, 4]]);
   });
   it('should collect data into fixed-length chunks or blocks', () => {

@@ -14,7 +14,7 @@ export class UniqPipe implements PipeTransform {
 
   transform(collection: any, predicate?: any): any {
 
-    if(!isArray(collection)) {
+    if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
@@ -27,7 +27,7 @@ export class UniqPipe implements PipeTransform {
       ;
     return collection.filter((e: any) => {
       let v = getter(e);
-      if(!isUndefined(v) && uniqueItems.some((ue: any) => ue === v)) {
+      if (!isUndefined(v) && uniqueItems.some((ue: any) => ue === v)) {
         return false;
       }
       uniqueItems.push(v);

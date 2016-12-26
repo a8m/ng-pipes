@@ -1,12 +1,12 @@
 import { MapPipe } from '../../src/index';
 
 describe('MapPipe', () => {
-	let pipe: MapPipe;
-	beforeEach(() => {
-		pipe = new MapPipe();
-	});
+  let pipe: MapPipe;
+  beforeEach(() => {
+    pipe = new MapPipe();
+  });
 
-	it('should returns a new collection of the results of each expression execution', function() {
+  it('should returns a new collection of the results of each expression execution', function() {
 
     var array = [
       { id: 1, name: 'foo' },
@@ -18,8 +18,8 @@ describe('MapPipe', () => {
   });
 
 
- it('should return the last n element that match the expression', function() {
-  expect(pipe.transform([1, 2, 3, 4, 5, 6], (e: number) => e * 2))
-		.toEqual([2, 4, 6, 8, 10, 12]);
- });
+  it('should return the last n element that match the expression', function() {
+    expect(pipe.transform([1, 2, 3, 4, 5, 6], (e: number) => e * 2))
+      .toEqual([2, 4, 6, 8, 10, 12]);
+  });
 });

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'wrap'
 })
 export class WrapPipe implements PipeTransform {
-  transform(input: string, wrap: any='', ends: any=''): string {
+  transform(input: string, wrap: any = '', ends: any = ''): string {
     return '' + wrap + input + (ends || wrap);
   }
 }

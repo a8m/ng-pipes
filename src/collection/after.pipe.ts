@@ -5,7 +5,7 @@ import { toArray, isArray } from '../utils/utils';
   name: 'after'
 })
 export class AfterPipe implements PipeTransform {
-  transform(collection: any, count: number=0): Array<any> {
+  transform(collection: any, count: number = 0): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }

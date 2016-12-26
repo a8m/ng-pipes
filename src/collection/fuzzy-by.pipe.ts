@@ -12,12 +12,12 @@ export class FuzzyByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, property: string, search?: any, csensitive: boolean=false): Array<any> {
+  transform(collection: any, property: string, search?: any, csensitive: boolean = false): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
-    if(!isArray(collection) || isUndefined(search)) {
+    if (!isArray(collection) || isUndefined(search)) {
       return collection;
     }
 
@@ -25,7 +25,7 @@ export class FuzzyByPipe implements PipeTransform {
 
     return collection.filter((elm: string) => {
       let prop = getter(elm);
-      if(!isString(prop)) {
+      if (!isString(prop)) {
         return false;
       }
 

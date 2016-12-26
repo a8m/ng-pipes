@@ -1,31 +1,31 @@
 import { SearchFieldPipe } from '../../src/index';
 
 describe('SearchFieldPipe', () => {
-	let pipe: SearchFieldPipe;
-	beforeEach(() => {
-		pipe = new SearchFieldPipe();
-	});
+  let pipe: SearchFieldPipe;
+  beforeEach(() => {
+    pipe = new SearchFieldPipe();
+  });
 
-	it('should get array as a collection, and several keys for searchFiled and' +
+  it('should get array as a collection, and several keys for searchFiled and' +
     'return new array with the new "searchField" property', function() {
 
-    var input = [
-      { first_name: 'Sharon', last_name: 'Melendez' },
-      { first_name: 'Edmundo', last_name: 'Hepler' },
-      { first_name: 'Marsha', last_name: 'Letourneau' }
-    ];
+      var input = [
+        { first_name: 'Sharon', last_name: 'Melendez' },
+        { first_name: 'Edmundo', last_name: 'Hepler' },
+        { first_name: 'Marsha', last_name: 'Letourneau' }
+      ];
 
-    var output = [
-      { first_name: 'Sharon', last_name: 'Melendez', searchField: 'Sharon Melendez' },
-      { first_name: 'Edmundo', last_name: 'Hepler', searchField: 'Edmundo Hepler' },
-      { first_name: 'Marsha', last_name: 'Letourneau', searchField: 'Marsha Letourneau' }
-    ];
+      var output = [
+        { first_name: 'Sharon', last_name: 'Melendez', searchField: 'Sharon Melendez' },
+        { first_name: 'Edmundo', last_name: 'Hepler', searchField: 'Edmundo Hepler' },
+        { first_name: 'Marsha', last_name: 'Letourneau', searchField: 'Marsha Letourneau' }
+      ];
 
-    expect(pipe.transform(input, 'first_name', 'last_name')).toEqual(output);
+      expect(pipe.transform(input, 'first_name', 'last_name')).toEqual(output);
 
-    expect(pipe.transform([{a: 'a', b: 'b'}], 'a', 'b')).toEqual([{a: 'a', b: 'b', searchField: 'a b'}]);
+      expect(pipe.transform([{ a: 'a', b: 'b' }], 'a', 'b')).toEqual([{ a: 'a', b: 'b', searchField: 'a b' }]);
 
-  });
+    });
 
   it('should support nested properties to', function() {
 
@@ -52,10 +52,10 @@ describe('SearchFieldPipe', () => {
 
   it('should change the original/source collection', function() {
 
-    var mutable = [{a: 'a', b: 'b'}];
+    var mutable = [{ a: 'a', b: 'b' }];
     pipe.transform(mutable, 'a', 'b');
 
-    expect(mutable).toEqual([{a: 'a', b: 'b', searchField: 'a b'}]);
+    expect(mutable).toEqual([{ a: 'a', b: 'b', searchField: 'a b' }]);
 
   });
 });

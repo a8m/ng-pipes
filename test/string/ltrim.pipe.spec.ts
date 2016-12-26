@@ -1,10 +1,10 @@
 import { LeftTrimPipe } from '../../src/index';
 
 describe('LeftTrimPipe', () => {
-	let pipe: LeftTrimPipe;
-	beforeEach(() => {
-		pipe = new LeftTrimPipe();
-	});
+  let pipe: LeftTrimPipe;
+  beforeEach(() => {
+    pipe = new LeftTrimPipe();
+  });
 
   it('should strip whitespace from the beginning of a string', () => {
     expect(pipe.transform('   a')).toEqual('a');

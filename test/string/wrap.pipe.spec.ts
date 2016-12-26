@@ -2,12 +2,12 @@ import { WrapPipe } from '../../src/index';
 
 
 describe('WrapPipe', () => {
-	let pipe: WrapPipe;
-	beforeEach(() => {
-		pipe = new WrapPipe();
-	});
+  let pipe: WrapPipe;
+  beforeEach(() => {
+    pipe = new WrapPipe();
+  });
 
-	it('should wrap a string with given wrapper', () => {
+  it('should wrap a string with given wrapper', () => {
     expect(pipe.transform('a', 'b')).toEqual('bab');
     expect(pipe.transform('a', 1)).toEqual('1a1');
     expect(pipe.transform('a', '.')).toEqual('.a.');

@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'slugify'
 })
 export class SlugifyPipe implements PipeTransform {
-  transform(input: string, sub: any='-') : string {
+  transform(input: string, sub: any = '-'): string {
     return input.toLowerCase().replace(/\s+/g, sub);
   }
 }

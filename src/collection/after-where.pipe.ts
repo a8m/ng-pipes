@@ -5,7 +5,7 @@ import { toArray, isArray, objectContains } from '../utils/utils';
   name: 'afterWhere'
 })
 export class AfterWherePipe implements PipeTransform {
-  transform(collection: any, object: {[key: string]: any}): Array<any> {
+  transform(collection: any, object: { [key: string]: any }): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
@@ -13,7 +13,7 @@ export class AfterWherePipe implements PipeTransform {
       return collection;
     }
 
-    let index = collection.map((e: {[key: string]: any}) => objectContains(object, e)).indexOf(true);
+    let index = collection.map((e: { [key: string]: any }) => objectContains(object, e)).indexOf(true);
 
     return collection.slice(index == -1 ? 0 : index);
   }

@@ -17,7 +17,7 @@ export class PickPipe implements PipeTransform {
       collection = toArray(collection);
     }
 
-    if(!isArray(collection)) {
+    if (!isArray(collection)) {
       return collection;
     }
 

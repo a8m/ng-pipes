@@ -4,7 +4,7 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'stripTags'
 })
 export class StripTagsPipe implements PipeTransform {
-   transform(input: string): string {
-     return input.replace(/<\S[^><]*>/g, '');
+  transform(input: string): string {
+    return input.replace(/<\S[^><]*>/g, '');
   }
 }

@@ -5,7 +5,7 @@ import { isNumber, isString } from '../utils/utils';
   name: 'percent'
 })
 export class PercentPipe implements PipeTransform {
-  transform(input: any, divided: number=100, round: boolean=false): any {
+  transform(input: any, divided: number = 100, round: boolean = false): any {
     let divider: any = input;
     if (isString(input)) {
       divider = Number(input);
