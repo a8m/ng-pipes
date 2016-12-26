@@ -1,6 +1,6 @@
 {
   "name": "ng-pipes",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a8m/angular-filter for Angular 2",
   "files": [ "src", "index.d.ts", "tsconfig.json" ],
   "main": "src/index.js",
