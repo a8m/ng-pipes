@@ -10,6 +10,8 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": false,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
     "types": [ "core-js", "jasmine"]
   },
   "exclude": [
