@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isString, isUndefined } from '../utils/utils';
 
 @Pipe({
   name: 'latinize'

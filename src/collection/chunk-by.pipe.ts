@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, isUndefined } from '../utils/utils';
+import { isUndefined } from '../utils/utils';
 
 @Pipe({
   name: 'chunkBy'

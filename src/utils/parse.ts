@@ -57,7 +57,6 @@ export function Parse() {
         return cache[cacheKey];
       }
       var pathKeys = exp.split('.');
-      var keysLen = pathKeys.length;
       fn = cache[cacheKey] = createGetterFn(pathKeys);
       fn.assign = function(scope: { [key: string]: any }, value: any) {
         return setterFn(scope, pathKeys, value);

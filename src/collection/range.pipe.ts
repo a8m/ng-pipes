@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, isFunction } from '../utils/utils';
+import { isFunction } from '../utils/utils';
 
 @Pipe({
   name: 'range'

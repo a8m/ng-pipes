@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, toArray, isUndefined } from '../utils/utils';
 import { Parse } from '../utils/parse';
 
 @Pipe({

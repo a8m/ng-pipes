@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isNumber, isArray } from '../utils/utils';
+import { isArray } from '../utils/utils';
 
 @Pipe({
   name: 'sum'

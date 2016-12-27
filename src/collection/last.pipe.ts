@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, getFirstMatches, isNumber, isUndefined } from '../utils/utils';
+import { toArray, isArray, getFirstMatches, isNumber } from '../utils/utils';
 import { Parse } from '../utils/parse';
 
 @Pipe({

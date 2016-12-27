@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, isString } from '../utils/utils';
+import { isArray } from '../utils/utils';
 import { Parse } from '../utils/parse';
 
 @Pipe({

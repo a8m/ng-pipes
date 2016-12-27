@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, toArray, isObject } from '../utils/utils';
+import { toArray, isObject } from '../utils/utils';
 
 @Pipe({
   name: 'toArray'
