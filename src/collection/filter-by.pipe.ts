@@ -3,7 +3,7 @@ import { toArray, isArray, isString, isNumber, isUndefined } from '../utils/util
 import { Parse } from '../utils/parse';
 
 @Pipe({
-  name: 'filter-by'
+  name: 'filterBy'
 })
 export class FilterByPipe implements PipeTransform {
   private $parse: Function;
