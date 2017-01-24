@@ -16,6 +16,7 @@
   },
   "exclude": [
     "node_modules",
+    "dist",
     "index.d.ts",
     "src/*.d.ts",
     "src/*/*.d.ts",

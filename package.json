@@ -7,13 +7,16 @@
     "index.d.ts",
     "tsconfig.json"
   ],
-  "main": "src/index.js",
+  "main": "dist/ng-pipes.umd.js",
   "scripts": {
     "prepublish": "node_modules/.bin/gulp clean && npm run ngc",
-    "tsc": "node_modules/.bin/tsc -p . --noUnusedParameters --noUnusedLocals",
+    "tsc": "node_modules/.bin/tsc -p .",
     "karma": "node_modules/.bin/karma start karma.conf.js",
     "test": "npm run ngc && npm run karma",
-    "ngc": "node_modules/.bin/ngc -p tsconfig.json"
+    "ngc": "node_modules/.bin/ngc -p tsconfig.json",
+    "build": "npm run tsc && npm run rollup",
+    "rollup": "./node_modules/.bin/rollup -c -o dist/ng-pipes.umd.js",
+    "postrollup": "./node_modules/.bin/uglifyjs ./dist/ng-pipes.umd.js > ./dist/ng-pipes.umd.min.js"
   },
   "author": "Ariel Mashraki",
   "repository": {
@@ -52,9 +55,12 @@
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.8.0",
     "reflect-metadata": "^0.1.3",
+    "rollup": "^0.41.4",
+    "rollup-plugin-typescript": "^0.8.1",
     "rxjs": "5.0.0-rc.4",
     "symbol-observable": "^0.2.4",
     "typescript": "^2.1.4",
+    "uglify-js": "^2.7.5",
     "webpack": "^1.13.3",
     "zone.js": "^0.7.2"
   },
