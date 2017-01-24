@@ -1,127 +1,60 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("ng.core"));
-	else if(typeof define === 'function' && define.amd)
-		define(["ng.core"], factory);
-	else {
-		var a = typeof exports === 'object' ? factory(require("ng.core")) : factory(root["ng.core"]);
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__) {
-return /******/ (function(modules) { // webpackBootstrap
-/******/ 	// The module cache
-/******/ 	var installedModules = {};
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('@angular/core')) :
+	typeof define === 'function' && define.amd ? define(['exports', '@angular/core'], factory) :
+	(factory((global.ng = global.ng || {}, global.ng.pipes = global.ng.pipes || {}),global.ng.core));
+}(this, (function (exports,_angular_core) { 'use strict';
 
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
+function __decorate(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+}
 
-/******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
-/******/ 			return installedModules[moduleId].exports;
+function __metadata(k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+}
 
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = installedModules[moduleId] = {
-/******/ 			i: moduleId,
-/******/ 			l: false,
-/******/ 			exports: {}
-/******/ 		};
-
-/******/ 		// Execute the module function
-/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
-/******/ 		// Flag the module as loaded
-/******/ 		module.l = true;
-
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-
-
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = modules;
-
-/******/ 	// expose the module cache
-/******/ 	__webpack_require__.c = installedModules;
-
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-
-/******/ 	// define getter function for harmony exports
-/******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		if(!__webpack_require__.o(exports, name)) {
-/******/ 			Object.defineProperty(exports, name, {
-/******/ 				configurable: false,
-/******/ 				enumerable: true,
-/******/ 				get: getter
-/******/ 			});
-/******/ 		}
-/******/ 	};
-
-/******/ 	// getDefaultExport function for compatibility with non-harmony modules
-/******/ 	__webpack_require__.n = function(module) {
-/******/ 		var getter = module && module.__esModule ?
-/******/ 			function getDefault() { return module['default']; } :
-/******/ 			function getModuleExports() { return module; };
-/******/ 		__webpack_require__.d(getter, 'a', getter);
-/******/ 		return getter;
-/******/ 	};
-
-/******/ 	// Object.prototype.hasOwnProperty.call
-/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
-/******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
-
-/******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 69);
-/******/ })
-/************************************************************************/
-/******/ ([
-/* 0 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
+exports.AbsPipe = (function () {
+    function AbsPipe() {
+    }
+    AbsPipe.prototype.transform = function (input) {
+        return Math.abs(Number(input));
+    };
+    return AbsPipe;
+}());
+exports.AbsPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'abs'
+    })
+], exports.AbsPipe);
 
 function isUndefined(value) {
     return typeof value === 'undefined';
 }
-exports.isUndefined = isUndefined;
 function isNull(value) {
     return value === null;
 }
-exports.isNull = isNull;
 function isNumber(value) {
     return typeof value === 'number';
 }
-exports.isNumber = isNumber;
 function isString(value) {
     return typeof value === 'string';
 }
-exports.isString = isString;
 function isObject(value) {
     return typeof value === 'object';
 }
-exports.isObject = isObject;
 function isArray(value) {
     return Array.isArray(value);
 }
-exports.isArray = isArray;
 function isFunction(value) {
     return typeof value === 'function';
 }
-exports.isFunction = isFunction;
 function toArray(object) {
     return isArray(object) ? object : Object.keys(object).map(function (key) {
         return object[key];
     });
 }
-exports.toArray = toArray;
 function equals(a, b) {
     if (a === b) {
         return true;
@@ -144,13 +77,11 @@ function equals(a, b) {
     }
     return true;
 }
-exports.equals = equals;
 function objectContains(partial, object) {
     return Object.keys(partial).every(function (key) {
         return key in object && object[key] == partial[key];
     });
 }
-exports.objectContains = objectContains;
 function deepKeys(obj, stack, parent, intermediate) {
     if (stack === void 0) { stack = []; }
     if (parent === void 0) { parent = null; }
@@ -175,7 +106,6 @@ function deepKeys(obj, stack, parent, intermediate) {
     });
     return stack;
 }
-exports.deepKeys = deepKeys;
 /**
  * @description
  * return the first n element of an array,
@@ -193,7 +123,6 @@ function getFirstMatches(array, n, getter) {
         return rest;
     });
 }
-exports.getFirstMatches = getFirstMatches;
 /**
  * @description
  * search for approximate pattern in string
@@ -220,20 +149,89 @@ function hasApproxPattern(word, pattern) {
     }
     return true;
 }
-exports.hasApproxPattern = hasApproxPattern;
 function convertToDecimal(num, decimal) {
     return Math.round(num * Math.pow(10, decimal)) / (Math.pow(10, decimal));
 }
-exports.convertToDecimal = convertToDecimal;
-//# sourceMappingURL=utils.js.map
 
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.ByteFmtPipe = (function () {
+    function ByteFmtPipe() {
+        var _this = this;
+        this.compared = [{ str: 'B', val: 1024 }];
+        ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'].forEach(function (el, i) {
+            _this.compared.push({ str: el, val: _this.compared[i].val * 1024 });
+        });
+    }
+    ByteFmtPipe.prototype.transform = function (bytes, decimal) {
+        if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
+            isNumber(bytes) && isFinite(bytes)) {
+            var i = 0;
+            while (i < this.compared.length - 1 && bytes >= this.compared[i].val)
+                i++;
+            bytes /= i > 0 ? this.compared[i - 1].val : 1;
+            return convertToDecimal(bytes, decimal) + ' ' + this.compared[i].str;
+        }
+        return 'NaN';
+    };
+    return ByteFmtPipe;
+}());
+exports.ByteFmtPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'byteFmt'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.ByteFmtPipe);
 
-"use strict";
+exports.KBFmtPipe = (function () {
+    function KBFmtPipe() {
+        var _this = this;
+        this.compared = [{ str: 'KB', val: 1024 }];
+        ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'].forEach(function (el, i) {
+            _this.compared.push({ str: el, val: _this.compared[i].val * 1024 });
+        });
+    }
+    KBFmtPipe.prototype.transform = function (bytes, decimal) {
+        if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
+            isNumber(bytes) && isFinite(bytes)) {
+            var i = 0;
+            while (i < this.compared.length - 1 && bytes >= this.compared[i].val)
+                i++;
+            bytes /= i > 0 ? this.compared[i - 1].val : 1;
+            return convertToDecimal(bytes, decimal) + ' ' + this.compared[i].str;
+        }
+        return 'NaN';
+    };
+    return KBFmtPipe;
+}());
+exports.KBFmtPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'kbFmt'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.KBFmtPipe);
 
-var utils_1 = __webpack_require__(1);
+exports.DegreesPipe = (function () {
+    function DegreesPipe() {
+    }
+    DegreesPipe.prototype.transform = function (radians, decimal) {
+        // if decimal is not an integer greater than -1, we cannot do. quit with error "NaN"
+        // if degrees is not a real number, we cannot do also. quit with error "NaN"
+        if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
+            isNumber(radians) && isFinite(radians)) {
+            var degrees = (radians * 180) / Math.PI;
+            return Math.round(degrees * Math.pow(10, decimal)) / (Math.pow(10, decimal));
+        }
+        else {
+            return NaN;
+        }
+    };
+    return DegreesPipe;
+}());
+exports.DegreesPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'degrees'
+    })
+], exports.DegreesPipe);
+
 function createGetterFn(pathKeys) {
     var fn = null;
     for (var i = pathKeys.length - 1; i >= 0; i--) {
@@ -263,7 +261,7 @@ function setterFn(scope, path, value) {
     var s = scope;
     var i = 0;
     for (; i < path.length - 1; i++) {
-        if (utils_1.isUndefined(s[path[i]]) && i < path.length - 1) {
+        if (isUndefined(s[path[i]]) && i < path.length - 1) {
             s[path[i]] = {};
         }
         s = s[path[i]];
@@ -280,7 +278,7 @@ function Parse() {
     var cache = {};
     return function (exp) {
         var fn = function () { };
-        if (utils_1.isString(exp)) {
+        if (isString(exp)) {
             var cacheKey = exp.trim();
             if (cacheKey in cache) {
                 return cache[cacheKey];
@@ -291,7 +289,7 @@ function Parse() {
                 return setterFn(scope, pathKeys, value);
             };
         }
-        else if (utils_1.isFunction(exp)) {
+        else if (isFunction(exp)) {
             fn = function (scope, local) {
                 return exp(scope, local);
             };
@@ -299,2030 +297,13 @@ function Parse() {
         return fn;
     };
 }
-exports.Parse = Parse;
-//# sourceMappingURL=parse.js.map
 
-/***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var is_null_pipe_1 = __webpack_require__(7);
-__export(__webpack_require__(7));
-var BooleanPipesModule = (function () {
-    function BooleanPipesModule() {
-    }
-    return BooleanPipesModule;
-}());
-BooleanPipesModule = __decorate([
-    core_1.NgModule({
-        declarations: [
-            is_null_pipe_1.IsNullPipe,
-        ],
-        exports: [
-            is_null_pipe_1.IsNullPipe,
-        ]
-    })
-], BooleanPipesModule);
-exports.BooleanPipesModule = BooleanPipesModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var after_where_pipe_1 = __webpack_require__(8);
-var before_where_pipe_1 = __webpack_require__(10);
-var after_pipe_1 = __webpack_require__(9);
-var before_pipe_1 = __webpack_require__(11);
-var chunk_by_pipe_1 = __webpack_require__(12);
-var concat_pipe_1 = __webpack_require__(13);
-var contains_pipe_1 = __webpack_require__(14);
-var count_by_pipe_1 = __webpack_require__(15);
-var defaults_pipe_1 = __webpack_require__(16);
-var every_pipe_1 = __webpack_require__(17);
-var filter_by_pipe_1 = __webpack_require__(18);
-var first_pipe_1 = __webpack_require__(19);
-var flatten_pipe_1 = __webpack_require__(20);
-var fuzzy_by_pipe_1 = __webpack_require__(21);
-var fuzzy_pipe_1 = __webpack_require__(22);
-var group_by_pipe_1 = __webpack_require__(23);
-var is_empty_pipe_1 = __webpack_require__(24);
-var join_pipe_1 = __webpack_require__(25);
-var last_pipe_1 = __webpack_require__(26);
-var map_pipe_1 = __webpack_require__(27);
-var omit_pipe_1 = __webpack_require__(28);
-var pick_pipe_1 = __webpack_require__(30);
-var range_pipe_1 = __webpack_require__(31);
-var remove_with_pipe_1 = __webpack_require__(32);
-var remove_pipe_1 = __webpack_require__(33);
-var reverse_pipe_1 = __webpack_require__(34);
-var search_field_pipe_1 = __webpack_require__(35);
-var to_array_pipe_1 = __webpack_require__(36);
-var uniq_pipe_1 = __webpack_require__(37);
-var where_pipe_1 = __webpack_require__(38);
-var xor_pipe_1 = __webpack_require__(39);
-var order_by_pipe_1 = __webpack_require__(29);
-__export(__webpack_require__(8));
-__export(__webpack_require__(10));
-__export(__webpack_require__(9));
-__export(__webpack_require__(11));
-__export(__webpack_require__(12));
-__export(__webpack_require__(13));
-__export(__webpack_require__(14));
-__export(__webpack_require__(15));
-__export(__webpack_require__(16));
-__export(__webpack_require__(17));
-__export(__webpack_require__(18));
-__export(__webpack_require__(19));
-__export(__webpack_require__(20));
-__export(__webpack_require__(21));
-__export(__webpack_require__(22));
-__export(__webpack_require__(23));
-__export(__webpack_require__(24));
-__export(__webpack_require__(25));
-__export(__webpack_require__(26));
-__export(__webpack_require__(27));
-__export(__webpack_require__(28));
-__export(__webpack_require__(30));
-__export(__webpack_require__(31));
-__export(__webpack_require__(32));
-__export(__webpack_require__(33));
-__export(__webpack_require__(34));
-__export(__webpack_require__(35));
-__export(__webpack_require__(36));
-__export(__webpack_require__(37));
-__export(__webpack_require__(38));
-__export(__webpack_require__(39));
-__export(__webpack_require__(29));
-var CollectionPipesModule = (function () {
-    function CollectionPipesModule() {
-    }
-    return CollectionPipesModule;
-}());
-CollectionPipesModule = __decorate([
-    core_1.NgModule({
-        declarations: [
-            after_where_pipe_1.AfterWherePipe,
-            before_where_pipe_1.BeforeWherePipe,
-            after_pipe_1.AfterPipe,
-            before_pipe_1.BeforePipe,
-            chunk_by_pipe_1.ChunkByPipe,
-            concat_pipe_1.ConcatPipe,
-            contains_pipe_1.ContainsPipe,
-            count_by_pipe_1.CountByPipe,
-            defaults_pipe_1.DefaultsPipe,
-            every_pipe_1.EveryPipe,
-            filter_by_pipe_1.FilterByPipe,
-            first_pipe_1.FirstPipe,
-            flatten_pipe_1.FlattenPipe,
-            fuzzy_by_pipe_1.FuzzyByPipe,
-            fuzzy_pipe_1.FuzzyPipe,
-            group_by_pipe_1.GroupByPipe,
-            is_empty_pipe_1.IsEmptyPipe,
-            join_pipe_1.JoinPipe,
-            last_pipe_1.LastPipe,
-            map_pipe_1.MapPipe,
-            omit_pipe_1.OmitPipe,
-            pick_pipe_1.PickPipe,
-            range_pipe_1.RangePipe,
-            remove_with_pipe_1.RemoveWithPipe,
-            reverse_pipe_1.ReversePipe,
-            search_field_pipe_1.SearchFieldPipe,
-            remove_pipe_1.RemovePipe,
-            to_array_pipe_1.ToArrayPipe,
-            uniq_pipe_1.UniqPipe,
-            where_pipe_1.WherePipe,
-            xor_pipe_1.XORPipe,
-            order_by_pipe_1.OrderByPipe,
-        ],
-        exports: [
-            after_where_pipe_1.AfterWherePipe,
-            before_where_pipe_1.BeforeWherePipe,
-            after_pipe_1.AfterPipe,
-            before_pipe_1.BeforePipe,
-            chunk_by_pipe_1.ChunkByPipe,
-            concat_pipe_1.ConcatPipe,
-            contains_pipe_1.ContainsPipe,
-            count_by_pipe_1.CountByPipe,
-            defaults_pipe_1.DefaultsPipe,
-            every_pipe_1.EveryPipe,
-            filter_by_pipe_1.FilterByPipe,
-            first_pipe_1.FirstPipe,
-            flatten_pipe_1.FlattenPipe,
-            fuzzy_by_pipe_1.FuzzyByPipe,
-            fuzzy_pipe_1.FuzzyPipe,
-            group_by_pipe_1.GroupByPipe,
-            is_empty_pipe_1.IsEmptyPipe,
-            join_pipe_1.JoinPipe,
-            last_pipe_1.LastPipe,
-            map_pipe_1.MapPipe,
-            omit_pipe_1.OmitPipe,
-            pick_pipe_1.PickPipe,
-            range_pipe_1.RangePipe,
-            remove_with_pipe_1.RemoveWithPipe,
-            reverse_pipe_1.ReversePipe,
-            search_field_pipe_1.SearchFieldPipe,
-            remove_pipe_1.RemovePipe,
-            to_array_pipe_1.ToArrayPipe,
-            uniq_pipe_1.UniqPipe,
-            where_pipe_1.WherePipe,
-            xor_pipe_1.XORPipe,
-            order_by_pipe_1.OrderByPipe,
-        ]
-    })
-], CollectionPipesModule);
-exports.CollectionPipesModule = CollectionPipesModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var abs_pipe_1 = __webpack_require__(40);
-var byte_fmt_pipe_1 = __webpack_require__(41);
-var kb_fmt_pipe_1 = __webpack_require__(43);
-var degrees_pipe_1 = __webpack_require__(42);
-var max_pipe_1 = __webpack_require__(44);
-var min_pipe_1 = __webpack_require__(45);
-var percent_pipe_1 = __webpack_require__(46);
-var radians_pipe_1 = __webpack_require__(47);
-var radix_pipe_1 = __webpack_require__(48);
-var short_fmt_pipe_1 = __webpack_require__(49);
-var sum_pipe_1 = __webpack_require__(50);
-__export(__webpack_require__(40));
-__export(__webpack_require__(41));
-__export(__webpack_require__(43));
-__export(__webpack_require__(42));
-__export(__webpack_require__(44));
-__export(__webpack_require__(45));
-__export(__webpack_require__(46));
-__export(__webpack_require__(47));
-__export(__webpack_require__(48));
-__export(__webpack_require__(49));
-__export(__webpack_require__(50));
-var MathPipesModule = (function () {
-    function MathPipesModule() {
-    }
-    return MathPipesModule;
-}());
-MathPipesModule = __decorate([
-    core_1.NgModule({
-        declarations: [
-            abs_pipe_1.AbsPipe,
-            byte_fmt_pipe_1.ByteFmtPipe,
-            kb_fmt_pipe_1.KBFmtPipe,
-            degrees_pipe_1.DegreesPipe,
-            max_pipe_1.MaxPipe,
-            min_pipe_1.MinPipe,
-            percent_pipe_1.PercentPipe,
-            radians_pipe_1.RadiansPipe,
-            radix_pipe_1.RadixPipe,
-            short_fmt_pipe_1.ShortFmtPipe,
-            sum_pipe_1.SumPipe,
-        ],
-        exports: [
-            abs_pipe_1.AbsPipe,
-            byte_fmt_pipe_1.ByteFmtPipe,
-            kb_fmt_pipe_1.KBFmtPipe,
-            degrees_pipe_1.DegreesPipe,
-            max_pipe_1.MaxPipe,
-            min_pipe_1.MinPipe,
-            percent_pipe_1.PercentPipe,
-            radians_pipe_1.RadiansPipe,
-            radix_pipe_1.RadixPipe,
-            short_fmt_pipe_1.ShortFmtPipe,
-            sum_pipe_1.SumPipe,
-        ]
-    })
-], MathPipesModule);
-exports.MathPipesModule = MathPipesModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var ends_with_pipe_1 = __webpack_require__(51);
-var starts_with_pipe_1 = __webpack_require__(58);
-var latinize_pipe_1 = __webpack_require__(52);
-var ltrim_pipe_1 = __webpack_require__(53);
-var rtrim_pipe_1 = __webpack_require__(56);
-var trim_pipe_1 = __webpack_require__(63);
-var match_pipe_1 = __webpack_require__(54);
-var repeat_pipe_1 = __webpack_require__(55);
-var slugify_pipe_1 = __webpack_require__(57);
-var stringular_pipe_1 = __webpack_require__(59);
-var strip_tags_pipe_1 = __webpack_require__(60);
-var test_pipe_1 = __webpack_require__(61);
-var truncate_pipe_1 = __webpack_require__(64);
-var ucfirst_pipe_1 = __webpack_require__(65);
-var titleize_pipe_1 = __webpack_require__(62);
-var uri_component_encode_pipe_1 = __webpack_require__(66);
-var uri_encode_pipe_1 = __webpack_require__(67);
-var wrap_pipe_1 = __webpack_require__(68);
-__export(__webpack_require__(51));
-__export(__webpack_require__(58));
-__export(__webpack_require__(52));
-__export(__webpack_require__(53));
-__export(__webpack_require__(56));
-__export(__webpack_require__(63));
-__export(__webpack_require__(54));
-__export(__webpack_require__(61));
-__export(__webpack_require__(55));
-__export(__webpack_require__(57));
-__export(__webpack_require__(59));
-__export(__webpack_require__(60));
-__export(__webpack_require__(64));
-__export(__webpack_require__(65));
-__export(__webpack_require__(62));
-__export(__webpack_require__(66));
-__export(__webpack_require__(67));
-__export(__webpack_require__(68));
-var StringPipesModule = (function () {
-    function StringPipesModule() {
-    }
-    return StringPipesModule;
-}());
-StringPipesModule = __decorate([
-    core_1.NgModule({
-        declarations: [
-            ends_with_pipe_1.EndsWithPipe,
-            starts_with_pipe_1.StartsWithPipe,
-            latinize_pipe_1.LatinizePipe,
-            ltrim_pipe_1.LeftTrimPipe,
-            trim_pipe_1.TrimPipe,
-            rtrim_pipe_1.RightTrimPipe,
-            match_pipe_1.MatchPipe,
-            test_pipe_1.TestPipe,
-            repeat_pipe_1.RepeatPipe,
-            slugify_pipe_1.SlugifyPipe,
-            stringular_pipe_1.StringularPipe,
-            strip_tags_pipe_1.StripTagsPipe,
-            truncate_pipe_1.TruncatePipe,
-            ucfirst_pipe_1.UcfirstPipe,
-            titleize_pipe_1.TitleizePipe,
-            uri_encode_pipe_1.UriEncodePipe,
-            uri_component_encode_pipe_1.UriComponentEncodePipe,
-            wrap_pipe_1.WrapPipe,
-        ],
-        exports: [
-            ends_with_pipe_1.EndsWithPipe,
-            latinize_pipe_1.LatinizePipe,
-            starts_with_pipe_1.StartsWithPipe,
-            ltrim_pipe_1.LeftTrimPipe,
-            rtrim_pipe_1.RightTrimPipe,
-            trim_pipe_1.TrimPipe,
-            match_pipe_1.MatchPipe,
-            test_pipe_1.TestPipe,
-            repeat_pipe_1.RepeatPipe,
-            slugify_pipe_1.SlugifyPipe,
-            stringular_pipe_1.StringularPipe,
-            strip_tags_pipe_1.StripTagsPipe,
-            truncate_pipe_1.TruncatePipe,
-            ucfirst_pipe_1.UcfirstPipe,
-            titleize_pipe_1.TitleizePipe,
-            uri_encode_pipe_1.UriEncodePipe,
-            uri_component_encode_pipe_1.UriComponentEncodePipe,
-            wrap_pipe_1.WrapPipe,
-        ]
-    })
-], StringPipesModule);
-exports.StringPipesModule = StringPipesModule;
-//# sourceMappingURL=index.js.map
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var IsNullPipe = (function () {
-    function IsNullPipe() {
-    }
-    IsNullPipe.prototype.transform = function (input) {
-        return utils_1.isNull(input);
-    };
-    return IsNullPipe;
-}());
-IsNullPipe = __decorate([
-    core_1.Pipe({
-        name: 'isNull'
-    })
-], IsNullPipe);
-exports.IsNullPipe = IsNullPipe;
-//# sourceMappingURL=is-null.pipe.js.map
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var AfterWherePipe = (function () {
-    function AfterWherePipe() {
-    }
-    AfterWherePipe.prototype.transform = function (collection, object) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        var index = collection.map(function (e) { return utils_1.objectContains(object, e); }).indexOf(true);
-        return collection.slice(index == -1 ? 0 : index);
-    };
-    return AfterWherePipe;
-}());
-AfterWherePipe = __decorate([
-    core_1.Pipe({
-        name: 'afterWhere'
-    })
-], AfterWherePipe);
-exports.AfterWherePipe = AfterWherePipe;
-//# sourceMappingURL=after-where.pipe.js.map
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var AfterPipe = (function () {
-    function AfterPipe() {
-    }
-    AfterPipe.prototype.transform = function (collection, count) {
-        if (count === void 0) { count = 0; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return collection.slice(count);
-    };
-    return AfterPipe;
-}());
-AfterPipe = __decorate([
-    core_1.Pipe({
-        name: 'after'
-    })
-], AfterPipe);
-exports.AfterPipe = AfterPipe;
-//# sourceMappingURL=after.pipe.js.map
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var BeforeWherePipe = (function () {
-    function BeforeWherePipe() {
-    }
-    BeforeWherePipe.prototype.transform = function (collection, object) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        var index = collection.map(function (e) { return utils_1.objectContains(object, e); }).indexOf(true);
-        return collection.slice(0, index == -1 ? collection.length : index + 1);
-    };
-    return BeforeWherePipe;
-}());
-BeforeWherePipe = __decorate([
-    core_1.Pipe({
-        name: 'beforeWhere'
-    })
-], BeforeWherePipe);
-exports.BeforeWherePipe = BeforeWherePipe;
-//# sourceMappingURL=before-where.pipe.js.map
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var BeforePipe = (function () {
-    function BeforePipe() {
-    }
-    BeforePipe.prototype.transform = function (collection, count) {
-        if (count === void 0) { count = 1; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return collection.slice(0, count - 1);
-    };
-    return BeforePipe;
-}());
-BeforePipe = __decorate([
-    core_1.Pipe({
-        name: 'before'
-    })
-], BeforePipe);
-exports.BeforePipe = BeforePipe;
-//# sourceMappingURL=before.pipe.js.map
-
-/***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ChunkByPipe = (function () {
-    function ChunkByPipe() {
-    }
-    ChunkByPipe.prototype.transform = function (array, n, fillVal) {
-        function fill(n, val) {
-            var ret = [];
-            while (n--)
-                ret[n] = val;
-            return ret;
-        }
-        return array.map(function (el, i, self) {
-            i = i * n;
-            el = self.slice(i, i + n);
-            return !utils_1.isUndefined(fillVal) && el.length < n
-                ? el.concat(fill(n - el.length, fillVal))
-                : el;
-        })
-            .slice(0, Math.ceil(array.length / n));
-    };
-    return ChunkByPipe;
-}());
-ChunkByPipe = __decorate([
-    core_1.Pipe({
-        name: 'chunkBy'
-    })
-], ChunkByPipe);
-exports.ChunkByPipe = ChunkByPipe;
-//# sourceMappingURL=chunk-by.pipe.js.map
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ConcatPipe = (function () {
-    function ConcatPipe() {
-    }
-    ConcatPipe.prototype.transform = function (collection, joined) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(joined)) {
-            joined = utils_1.toArray(joined);
-        }
-        return collection.concat(joined);
-    };
-    return ConcatPipe;
-}());
-ConcatPipe = __decorate([
-    core_1.Pipe({
-        name: 'concat'
-    })
-], ConcatPipe);
-exports.ConcatPipe = ConcatPipe;
-//# sourceMappingURL=concat.pipe.js.map
-
-/***/ }),
-/* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var ContainsPipe = (function () {
-    function ContainsPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    ContainsPipe.prototype.transform = function (collection, predicate) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        return collection.some(function (e) { return utils_1.isFunction(predicate) || (utils_1.isString(predicate) && utils_1.isObject(e))
-            ? _this.$parse(predicate)(e)
-            : e === predicate; });
-    };
-    return ContainsPipe;
-}());
-ContainsPipe = __decorate([
-    core_1.Pipe({
-        name: 'contains'
-    }),
-    __metadata("design:paramtypes", [])
-], ContainsPipe);
-exports.ContainsPipe = ContainsPipe;
-//# sourceMappingURL=contains.pipe.js.map
-
-/***/ }),
-/* 15 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var CountByPipe = (function () {
-    function CountByPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    CountByPipe.prototype.transform = function (collection, predicate) {
-        var result = {}, getter = this.$parse(predicate);
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        collection.forEach(function (elm) {
-            var prop = getter(elm);
-            if (!(prop in result))
-                result[prop] = 0;
-            result[prop]++;
-        });
-        return result;
-    };
-    return CountByPipe;
-}());
-CountByPipe = __decorate([
-    core_1.Pipe({
-        name: 'countBy'
-    }),
-    __metadata("design:paramtypes", [])
-], CountByPipe);
-exports.CountByPipe = CountByPipe;
-//# sourceMappingURL=count-by.pipe.js.map
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var DefaultsPipe = (function () {
-    function DefaultsPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    DefaultsPipe.prototype.transform = function (collection, defaults) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        var getters = utils_1.deepKeys(defaults).map(function (key) { return _this.$parse(key); });
-        collection.forEach(function (elm) {
-            getters.forEach(function (getter) {
-                if (utils_1.isUndefined(getter(elm))) {
-                    getter.assign(elm, getter(defaults));
-                }
-            });
-        });
-        return collection;
-    };
-    return DefaultsPipe;
-}());
-DefaultsPipe = __decorate([
-    core_1.Pipe({
-        name: 'defaults'
-    }),
-    __metadata("design:paramtypes", [])
-], DefaultsPipe);
-exports.DefaultsPipe = DefaultsPipe;
-//# sourceMappingURL=defaults.pipe.js.map
-
-/***/ }),
-/* 17 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var EveryPipe = (function () {
-    function EveryPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    EveryPipe.prototype.transform = function (collection, predicate) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        return collection.every(function (e) { return utils_1.isFunction(predicate) || (utils_1.isString(predicate) && utils_1.isObject(e))
-            ? _this.$parse(predicate)(e)
-            : e === predicate; });
-    };
-    return EveryPipe;
-}());
-EveryPipe = __decorate([
-    core_1.Pipe({
-        name: 'every'
-    }),
-    __metadata("design:paramtypes", [])
-], EveryPipe);
-exports.EveryPipe = EveryPipe;
-//# sourceMappingURL=every.pipe.js.map
-
-/***/ }),
-/* 18 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var FilterByPipe = (function () {
-    function FilterByPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    FilterByPipe.prototype.transform = function (collection, properties, search, strict) {
-        var _this = this;
-        if (strict === void 0) { strict = false; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        search = utils_1.isString(search) || utils_1.isNumber(search)
-            ? String(search).toLowerCase()
-            : undefined;
-        if (!utils_1.isArray(collection) || utils_1.isUndefined(search)) {
-            return collection;
-        }
-        if (utils_1.isString(search) || utils_1.isNumber(search)) {
-            search = String(search).toLowerCase();
-        }
-        return collection.filter(function (elm) {
-            return properties.some(function (prop) {
-                /**
-                * check if there are concatenate properties
-                * example:
-                * object: { first: 'foo', last:'bar' }
-               * filterBy: ['first + last'] => search by full name(i.e 'foo bar')
-               */
-                var comparator;
-                if (!~prop.indexOf('+')) {
-                    comparator = _this.$parse(prop)(elm);
-                }
-                else {
-                    var propList = prop.replace(/\s+/g, '').split('+');
-                    comparator = propList
-                        .map(function (p) { return _this.$parse(p)(elm); })
-                        .join(' ');
-                }
-                // TODO: boolean?
-                if (!utils_1.isString(comparator) && !utils_1.isNumber(comparator)) {
-                    return false;
-                }
-                comparator = String(comparator).toLowerCase();
-                // indentical or contains
-                return strict
-                    ? comparator === search
-                    : comparator.indexOf(search) != -1;
-            });
-        });
-    };
-    return FilterByPipe;
-}());
-FilterByPipe = __decorate([
-    core_1.Pipe({
-        name: 'filterBy'
-    }),
-    __metadata("design:paramtypes", [])
-], FilterByPipe);
-exports.FilterByPipe = FilterByPipe;
-//# sourceMappingURL=filter-by.pipe.js.map
-
-/***/ }),
-/* 19 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var FirstPipe = (function () {
-    function FirstPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    FirstPipe.prototype.transform = function (collection) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        var n = utils_1.isNumber(args[0]) ? args[0] : 1, getter = !utils_1.isNumber(args[0]) ? args[0] : !utils_1.isNumber(args[1]) ? args[1] : undefined;
-        return args.length
-            ? utils_1.getFirstMatches(collection, n, getter ? this.$parse(getter) : getter)
-            : collection[0];
-    };
-    return FirstPipe;
-}());
-FirstPipe = __decorate([
-    core_1.Pipe({
-        name: 'first'
-    }),
-    __metadata("design:paramtypes", [])
-], FirstPipe);
-exports.FirstPipe = FirstPipe;
-//# sourceMappingURL=first.pipe.js.map
-
-/***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var FlattenPipe = (function () {
-    function FlattenPipe() {
-    }
-    FlattenPipe.prototype.transform = function (collection, shallow) {
-        if (shallow === void 0) { shallow = false; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return shallow
-            ? [].concat.apply([], collection)
-            : this.flatten(collection);
-    };
-    FlattenPipe.prototype.flatten = function (array) {
-        var _this = this;
-        return array.reduce(function (arr, elm) { return elm instanceof Array ?
-            arr.concat(_this.flatten(elm)) : arr.concat(elm); }, []);
-    };
-    return FlattenPipe;
-}());
-FlattenPipe = __decorate([
-    core_1.Pipe({
-        name: 'flatten'
-    })
-], FlattenPipe);
-exports.FlattenPipe = FlattenPipe;
-//# sourceMappingURL=flatten.pipe.js.map
-
-/***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var FuzzyByPipe = (function () {
-    function FuzzyByPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    FuzzyByPipe.prototype.transform = function (collection, property, search, csensitive) {
-        if (csensitive === void 0) { csensitive = false; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection) || utils_1.isUndefined(search)) {
-            return collection;
-        }
-        var getter = this.$parse(property);
-        return collection.filter(function (elm) {
-            var prop = getter(elm);
-            if (!utils_1.isString(prop)) {
-                return false;
-            }
-            if (!csensitive) {
-                prop = prop.toLowerCase();
-                search = search.toLowerCase();
-            }
-            return utils_1.hasApproxPattern(prop, search) !== false;
-        });
-    };
-    return FuzzyByPipe;
-}());
-FuzzyByPipe = __decorate([
-    core_1.Pipe({
-        name: 'fuzzyBy'
-    }),
-    __metadata("design:paramtypes", [])
-], FuzzyByPipe);
-exports.FuzzyByPipe = FuzzyByPipe;
-//# sourceMappingURL=fuzzy-by.pipe.js.map
-
-/***/ }),
-/* 22 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var FuzzyPipe = (function () {
-    function FuzzyPipe() {
-    }
-    FuzzyPipe.prototype.transform = function (collection, search, csensitive) {
-        var _this = this;
-        if (csensitive === void 0) { csensitive = false; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection) || utils_1.isUndefined(search)) {
-            return collection;
-        }
-        if (!csensitive) {
-            search = search.toLowerCase();
-        }
-        return collection.filter(function (elm) {
-            if (utils_1.isString(elm)) {
-                if (!csensitive) {
-                    elm = elm.toLowerCase();
-                }
-                return utils_1.hasApproxPattern(elm, search);
-            }
-            return utils_1.isObject(elm) ? _this.hasApproximateKey(elm, search, csensitive) : false;
-        });
-    };
-    FuzzyPipe.prototype.hasApproximateKey = function (object, search, csensitive) {
-        if (csensitive === void 0) { csensitive = false; }
-        return Object.keys(object).some(function (elm) {
-            var prop = object[elm];
-            if (!utils_1.isString(prop)) {
-                return false;
-            }
-            if (!csensitive) {
-                prop = prop.toLowerCase();
-            }
-            return utils_1.hasApproxPattern(prop, search);
-        });
-    };
-    return FuzzyPipe;
-}());
-FuzzyPipe = __decorate([
-    core_1.Pipe({
-        name: 'fuzzy'
-    })
-], FuzzyPipe);
-exports.FuzzyPipe = FuzzyPipe;
-//# sourceMappingURL=fuzzy.pipe.js.map
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var GroupByPipe = (function () {
-    function GroupByPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    GroupByPipe.prototype.transform = function (collection, prop) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        var result = {}, getter = this.$parse(prop);
-        collection.forEach(function (elm) {
-            var prop = getter(elm);
-            if (utils_1.isUndefined(result[prop])) {
-                result[prop] = [];
-            }
-            result[prop].push(elm);
-        });
-        return result;
-    };
-    return GroupByPipe;
-}());
-GroupByPipe = __decorate([
-    core_1.Pipe({
-        name: 'groupBy'
-    }),
-    __metadata("design:paramtypes", [])
-], GroupByPipe);
-exports.GroupByPipe = GroupByPipe;
-//# sourceMappingURL=group-by.pipe.js.map
-
-/***/ }),
-/* 24 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var IsEmptyPipe = (function () {
-    function IsEmptyPipe() {
-    }
-    IsEmptyPipe.prototype.transform = function (collection) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        return utils_1.isArray(collection) ? collection.length : 0;
-    };
-    return IsEmptyPipe;
-}());
-IsEmptyPipe = __decorate([
-    core_1.Pipe({
-        name: 'isEmpty'
-    })
-], IsEmptyPipe);
-exports.IsEmptyPipe = IsEmptyPipe;
-//# sourceMappingURL=is-empty.pipe.js.map
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var JoinPipe = (function () {
-    function JoinPipe() {
-    }
-    JoinPipe.prototype.transform = function (collection, delimiter) {
-        if (delimiter === void 0) { delimiter = ' '; }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        return collection.join(String(delimiter));
-    };
-    return JoinPipe;
-}());
-JoinPipe = __decorate([
-    core_1.Pipe({
-        name: 'join'
-    })
-], JoinPipe);
-exports.JoinPipe = JoinPipe;
-//# sourceMappingURL=join.pipe.js.map
-
-/***/ }),
-/* 26 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var LastPipe = (function () {
-    function LastPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    LastPipe.prototype.transform = function (collection) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        collection = collection.slice().reverse();
-        var n = utils_1.isNumber(args[0]) ? args[0] : 1, getter = !utils_1.isNumber(args[0]) ? args[0] : !utils_1.isNumber(args[1]) ? args[1] : undefined;
-        return args.length
-            ? utils_1.getFirstMatches(collection, n, getter ? this.$parse(getter) : getter).reverse()
-            : collection[0];
-    };
-    return LastPipe;
-}());
-LastPipe = __decorate([
-    core_1.Pipe({
-        name: 'last'
-    }),
-    __metadata("design:paramtypes", [])
-], LastPipe);
-exports.LastPipe = LastPipe;
-//# sourceMappingURL=last.pipe.js.map
-
-/***/ }),
-/* 27 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var MapPipe = (function () {
-    function MapPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    MapPipe.prototype.transform = function (collection, predicate) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return collection.map(function (e) { return _this.$parse(predicate)(e); });
-    };
-    return MapPipe;
-}());
-MapPipe = __decorate([
-    core_1.Pipe({
-        name: 'map'
-    }),
-    __metadata("design:paramtypes", [])
-], MapPipe);
-exports.MapPipe = MapPipe;
-//# sourceMappingURL=map.pipe.js.map
-
-/***/ }),
-/* 28 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var OmitPipe = (function () {
-    function OmitPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    OmitPipe.prototype.transform = function (collection, predicate) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return collection.filter(function (e) { return !_this.$parse(predicate)(e); });
-    };
-    return OmitPipe;
-}());
-OmitPipe = __decorate([
-    core_1.Pipe({
-        name: 'omit'
-    }),
-    __metadata("design:paramtypes", [])
-], OmitPipe);
-exports.OmitPipe = OmitPipe;
-//# sourceMappingURL=omit.pipe.js.map
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var parse_1 = __webpack_require__(2);
-var OrderByPipe = (function () {
-    function OrderByPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    OrderByPipe.prototype.transform = function (array) {
-        var _this = this;
-        var attrs = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            attrs[_i - 1] = arguments[_i];
-        }
-        // generate an array of predicate-objects contains
-        // property getter, and descending indicator
-        var predicates = attrs.map(function (pred) {
-            var descending = pred.charAt(0) === '-' ? -1 : 1;
-            pred = pred.replace(/^-/, '');
-            return {
-                getter: function (o) { return _this.$parse(pred)(o); },
-                descend: descending
-            };
-        });
-        // schwartzian transform idiom implementation. aka: "decorate-sort-undecorate"
-        return array.map(function (item) {
-            return {
-                src: item,
-                compareValues: predicates.map(function (predicate) { return predicate.getter(item); })
-            };
-        })
-            .sort(function (o1, o2) {
-            var i = -1, result = 0;
-            while (++i < predicates.length) {
-                if (o1.compareValues[i] < o2.compareValues[i])
-                    result = -1;
-                if (o1.compareValues[i] > o2.compareValues[i])
-                    result = 1;
-                if (result *= predicates[i].descend)
-                    break;
-            }
-            return result;
-        })
-            .map(function (item) { return item.src; });
-    };
-    return OrderByPipe;
-}());
-OrderByPipe = __decorate([
-    core_1.Pipe({
-        name: 'orderBy'
-    }),
-    __metadata("design:paramtypes", [])
-], OrderByPipe);
-exports.OrderByPipe = OrderByPipe;
-//# sourceMappingURL=order-by.pipe.js.map
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var PickPipe = (function () {
-    function PickPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    PickPipe.prototype.transform = function (collection, predicate) {
-        var _this = this;
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection)) {
-            return collection;
-        }
-        return collection.filter(function (e) { return _this.$parse(predicate)(e); });
-    };
-    return PickPipe;
-}());
-PickPipe = __decorate([
-    core_1.Pipe({
-        name: 'pick'
-    }),
-    __metadata("design:paramtypes", [])
-], PickPipe);
-exports.PickPipe = PickPipe;
-//# sourceMappingURL=pick.pipe.js.map
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var RangePipe = (function () {
-    function RangePipe() {
-    }
-    RangePipe.prototype.transform = function (input, total, start, increment, cb) {
-        if (total === void 0) { total = 0; }
-        if (start === void 0) { start = 0; }
-        if (increment === void 0) { increment = 1; }
-        for (var i = 0; i < total; i++) {
-            var j = start + i * increment;
-            input.push(utils_1.isFunction(cb) ? cb(j) : j);
-        }
-        return input;
-    };
-    return RangePipe;
-}());
-RangePipe = __decorate([
-    core_1.Pipe({
-        name: 'range'
-    })
-], RangePipe);
-exports.RangePipe = RangePipe;
-//# sourceMappingURL=range.pipe.js.map
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var RemoveWithPipe = (function () {
-    function RemoveWithPipe() {
-    }
-    RemoveWithPipe.prototype.transform = function (collection, object) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection) || utils_1.isUndefined(object)) {
-            return collection;
-        }
-        return collection.filter(function (e) { return !utils_1.objectContains(object, e); });
-    };
-    return RemoveWithPipe;
-}());
-RemoveWithPipe = __decorate([
-    core_1.Pipe({
-        name: 'removeWith'
-    })
-], RemoveWithPipe);
-exports.RemoveWithPipe = RemoveWithPipe;
-//# sourceMappingURL=remove-with.pipe.js.map
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var RemovePipe = (function () {
-    function RemovePipe() {
-    }
-    RemovePipe.prototype.transform = function (collection) {
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        return collection.filter(function (e) {
-            return !args.some(function (c) { return utils_1.equals(c, e); });
-        });
-    };
-    return RemovePipe;
-}());
-RemovePipe = __decorate([
-    core_1.Pipe({
-        name: 'remove'
-    })
-], RemovePipe);
-exports.RemovePipe = RemovePipe;
-//# sourceMappingURL=remove.pipe.js.map
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ReversePipe = (function () {
-    function ReversePipe() {
-    }
-    ReversePipe.prototype.transform = function (input) {
-        if (utils_1.isString(input)) {
-            return input.split('').reverse().join('');
-        }
-        return utils_1.isArray(input) ? input.slice().reverse() : input;
-    };
-    return ReversePipe;
-}());
-ReversePipe = __decorate([
-    core_1.Pipe({
-        name: 'reverse'
-    })
-], ReversePipe);
-exports.ReversePipe = ReversePipe;
-//# sourceMappingURL=reverse.pipe.js.map
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var SearchFieldPipe = (function () {
-    function SearchFieldPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    SearchFieldPipe.prototype.transform = function (collection) {
-        var _this = this;
-        var args = [];
-        for (var _i = 1; _i < arguments.length; _i++) {
-            args[_i - 1] = arguments[_i];
-        }
-        if (!utils_1.isArray(collection) || !args.length) {
-            return collection;
-        }
-        return collection.map(function (member) {
-            var field = args.map(function (field) { return _this.$parse(field)(member); }).join(' ');
-            member.searchField = field;
-            return member;
-        });
-    };
-    return SearchFieldPipe;
-}());
-SearchFieldPipe = __decorate([
-    core_1.Pipe({
-        name: 'searchField'
-    }),
-    __metadata("design:paramtypes", [])
-], SearchFieldPipe);
-exports.SearchFieldPipe = SearchFieldPipe;
-//# sourceMappingURL=search-field.pipe.js.map
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ToArrayPipe = (function () {
-    function ToArrayPipe() {
-    }
-    ToArrayPipe.prototype.transform = function (collection, addKey) {
-        if (addKey === void 0) { addKey = false; }
-        if (!utils_1.isObject(collection)) {
-            return collection;
-        }
-        return addKey
-            ? Object.keys(collection).map(function (key) {
-                // TODO: object.assign polyfill
-                var o = collection[key];
-                o.$key = key;
-                return o;
-            })
-            : utils_1.toArray(collection);
-    };
-    return ToArrayPipe;
-}());
-ToArrayPipe = __decorate([
-    core_1.Pipe({
-        name: 'toArray'
-    })
-], ToArrayPipe);
-exports.ToArrayPipe = ToArrayPipe;
-//# sourceMappingURL=to-array.pipe.js.map
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var UniqPipe = (function () {
-    function UniqPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    UniqPipe.prototype.transform = function (collection, predicate) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (utils_1.isUndefined(predicate)) {
-            return collection.filter(function (e, i, self) { return self.indexOf(e) == i; });
-        }
-        var getter = this.$parse(predicate), uniqueItems = [];
-        return collection.filter(function (e) {
-            var v = getter(e);
-            if (!utils_1.isUndefined(v) && uniqueItems.some(function (ue) { return ue === v; })) {
-                return false;
-            }
-            uniqueItems.push(v);
-            return true;
-        });
-    };
-    return UniqPipe;
-}());
-UniqPipe = __decorate([
-    core_1.Pipe({
-        name: 'uniq'
-    }),
-    __metadata("design:paramtypes", [])
-], UniqPipe);
-exports.UniqPipe = UniqPipe;
-//# sourceMappingURL=uniq.pipe.js.map
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var WherePipe = (function () {
-    function WherePipe() {
-    }
-    WherePipe.prototype.transform = function (collection, object) {
-        if (!utils_1.isArray(collection)) {
-            collection = utils_1.toArray(collection);
-        }
-        if (!utils_1.isArray(collection) || utils_1.isUndefined(object)) {
-            return collection;
-        }
-        return collection.filter(function (e) { return utils_1.objectContains(object, e); });
-    };
-    return WherePipe;
-}());
-WherePipe = __decorate([
-    core_1.Pipe({
-        name: 'where'
-    })
-], WherePipe);
-exports.WherePipe = WherePipe;
-//# sourceMappingURL=where.pipe.js.map
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var XORPipe = (function () {
-    function XORPipe() {
-        this.$parse = parse_1.Parse();
-    }
-    XORPipe.prototype.transform = function (col1, col2, predicate) {
-        var _this = this;
-        col1 = !utils_1.isArray(col1) ? utils_1.toArray(col1) : col1;
-        col2 = !utils_1.isArray(col2) ? utils_1.toArray(col2) : col2;
-        if (!utils_1.isArray(col1) || !utils_1.isArray(col2)) {
-            return col1;
-        }
-        return col1.concat(col2)
-            .filter(function (elm) {
-            return !(_this.some(elm, col1, predicate) && _this.some(elm, col2, predicate));
-        });
-    };
-    // TODO: add equlity check using "equals()" instead of ===
-    XORPipe.prototype.some = function (el, col, predicate) {
-        var getter = this.$parse(predicate);
-        return col.some(function (dElm) {
-            if (utils_1.isUndefined(predicate)) {
-                return dElm === el;
-            }
-            return getter(dElm) === getter(el);
-        });
-    };
-    return XORPipe;
-}());
-XORPipe = __decorate([
-    core_1.Pipe({
-        name: 'xor'
-    }),
-    __metadata("design:paramtypes", [])
-], XORPipe);
-exports.XORPipe = XORPipe;
-//# sourceMappingURL=xor.pipe.js.map
-
-/***/ }),
-/* 40 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var AbsPipe = (function () {
-    function AbsPipe() {
-    }
-    AbsPipe.prototype.transform = function (input) {
-        return Math.abs(Number(input));
-    };
-    return AbsPipe;
-}());
-AbsPipe = __decorate([
-    core_1.Pipe({
-        name: 'abs'
-    })
-], AbsPipe);
-exports.AbsPipe = AbsPipe;
-//# sourceMappingURL=abs.pipe.js.map
-
-/***/ }),
-/* 41 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ByteFmtPipe = (function () {
-    function ByteFmtPipe() {
-        var _this = this;
-        this.compared = [{ str: 'B', val: 1024 }];
-        ['KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'].forEach(function (el, i) {
-            _this.compared.push({ str: el, val: _this.compared[i].val * 1024 });
-        });
-    }
-    ByteFmtPipe.prototype.transform = function (bytes, decimal) {
-        if (utils_1.isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
-            utils_1.isNumber(bytes) && isFinite(bytes)) {
-            var i = 0;
-            while (i < this.compared.length - 1 && bytes >= this.compared[i].val)
-                i++;
-            bytes /= i > 0 ? this.compared[i - 1].val : 1;
-            return utils_1.convertToDecimal(bytes, decimal) + ' ' + this.compared[i].str;
-        }
-        return 'NaN';
-    };
-    return ByteFmtPipe;
-}());
-ByteFmtPipe = __decorate([
-    core_1.Pipe({
-        name: 'byteFmt'
-    }),
-    __metadata("design:paramtypes", [])
-], ByteFmtPipe);
-exports.ByteFmtPipe = ByteFmtPipe;
-//# sourceMappingURL=byte-fmt.pipe.js.map
-
-/***/ }),
-/* 42 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var DegreesPipe = (function () {
-    function DegreesPipe() {
-    }
-    DegreesPipe.prototype.transform = function (radians, decimal) {
-        // if decimal is not an integer greater than -1, we cannot do. quit with error "NaN"
-        // if degrees is not a real number, we cannot do also. quit with error "NaN"
-        if (utils_1.isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
-            utils_1.isNumber(radians) && isFinite(radians)) {
-            var degrees = (radians * 180) / Math.PI;
-            return Math.round(degrees * Math.pow(10, decimal)) / (Math.pow(10, decimal));
-        }
-        else {
-            return NaN;
-        }
-    };
-    return DegreesPipe;
-}());
-DegreesPipe = __decorate([
-    core_1.Pipe({
-        name: 'degrees'
-    })
-], DegreesPipe);
-exports.DegreesPipe = DegreesPipe;
-//# sourceMappingURL=degrees.pipe.js.map
-
-/***/ }),
-/* 43 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var KBFmtPipe = (function () {
-    function KBFmtPipe() {
-        var _this = this;
-        this.compared = [{ str: 'KB', val: 1024 }];
-        ['MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'].forEach(function (el, i) {
-            _this.compared.push({ str: el, val: _this.compared[i].val * 1024 });
-        });
-    }
-    KBFmtPipe.prototype.transform = function (bytes, decimal) {
-        if (utils_1.isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
-            utils_1.isNumber(bytes) && isFinite(bytes)) {
-            var i = 0;
-            while (i < this.compared.length - 1 && bytes >= this.compared[i].val)
-                i++;
-            bytes /= i > 0 ? this.compared[i - 1].val : 1;
-            return utils_1.convertToDecimal(bytes, decimal) + ' ' + this.compared[i].str;
-        }
-        return 'NaN';
-    };
-    return KBFmtPipe;
-}());
-KBFmtPipe = __decorate([
-    core_1.Pipe({
-        name: 'kbFmt'
-    }),
-    __metadata("design:paramtypes", [])
-], KBFmtPipe);
-exports.KBFmtPipe = KBFmtPipe;
-//# sourceMappingURL=kb-fmt.pipe.js.map
-
-/***/ }),
-/* 44 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var MaxPipe = (function () {
+exports.MaxPipe = (function () {
     function MaxPipe() {
-        this.$parse = parse_1.Parse();
+        this.$parse = Parse();
     }
     MaxPipe.prototype.transform = function (input, predicate) {
-        return utils_1.isUndefined(predicate)
+        return isUndefined(predicate)
             ? Math.max.apply(Math, input)
             : input[this.index(input, this.$parse(predicate))];
     };
@@ -2332,39 +313,19 @@ var MaxPipe = (function () {
     };
     return MaxPipe;
 }());
-MaxPipe = __decorate([
-    core_1.Pipe({
+exports.MaxPipe = __decorate([
+    _angular_core.Pipe({
         name: 'max'
     }),
     __metadata("design:paramtypes", [])
-], MaxPipe);
-exports.MaxPipe = MaxPipe;
-//# sourceMappingURL=max.pipe.js.map
+], exports.MaxPipe);
 
-/***/ }),
-/* 45 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var parse_1 = __webpack_require__(2);
-var MinPipe = (function () {
+exports.MinPipe = (function () {
     function MinPipe() {
-        this.$parse = parse_1.Parse();
+        this.$parse = Parse();
     }
     MinPipe.prototype.transform = function (input, predicate) {
-        return utils_1.isUndefined(predicate)
+        return isUndefined(predicate)
             ? Math.min.apply(Math, input)
             : input[this.index(input, this.$parse(predicate))];
     };
@@ -2374,40 +335,24 @@ var MinPipe = (function () {
     };
     return MinPipe;
 }());
-MinPipe = __decorate([
-    core_1.Pipe({
+exports.MinPipe = __decorate([
+    _angular_core.Pipe({
         name: 'min'
     }),
     __metadata("design:paramtypes", [])
-], MinPipe);
-exports.MinPipe = MinPipe;
-//# sourceMappingURL=min.pipe.js.map
+], exports.MinPipe);
 
-/***/ }),
-/* 46 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var PercentPipe = (function () {
+exports.PercentPipe = (function () {
     function PercentPipe() {
     }
     PercentPipe.prototype.transform = function (input, divided, round) {
         if (divided === void 0) { divided = 100; }
         if (round === void 0) { round = false; }
         var divider = input;
-        if (utils_1.isString(input)) {
+        if (isString(input)) {
             divider = Number(input);
         }
-        if (!utils_1.isNumber(divider) || isNaN(divider)) {
+        if (!isNumber(divider) || isNaN(divider)) {
             return input;
         }
         return round
@@ -2416,36 +361,20 @@ var PercentPipe = (function () {
     };
     return PercentPipe;
 }());
-PercentPipe = __decorate([
-    core_1.Pipe({
+exports.PercentPipe = __decorate([
+    _angular_core.Pipe({
         name: 'percent'
     })
-], PercentPipe);
-exports.PercentPipe = PercentPipe;
-//# sourceMappingURL=percent.pipe.js.map
+], exports.PercentPipe);
 
-/***/ }),
-/* 47 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var RadiansPipe = (function () {
+exports.RadiansPipe = (function () {
     function RadiansPipe() {
     }
     RadiansPipe.prototype.transform = function (degrees, decimal) {
         // if decimal is not an integer greater than -1, we cannot do. quit with error "NaN"
         // if degrees is not a real number, we cannot do also. quit with error "NaN"
-        if (utils_1.isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
-            utils_1.isNumber(degrees) && isFinite(degrees)) {
+        if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
+            isNumber(degrees) && isFinite(degrees)) {
             var radians = (degrees * 3.14159265359) / 180;
             return Math.round(radians * Math.pow(10, decimal)) / (Math.pow(10, decimal));
         }
@@ -2453,113 +382,65 @@ var RadiansPipe = (function () {
     };
     return RadiansPipe;
 }());
-RadiansPipe = __decorate([
-    core_1.Pipe({
+exports.RadiansPipe = __decorate([
+    _angular_core.Pipe({
         name: 'radians'
     })
-], RadiansPipe);
-exports.RadiansPipe = RadiansPipe;
-//# sourceMappingURL=radians.pipe.js.map
+], exports.RadiansPipe);
 
-/***/ }),
-/* 48 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var RadixPipe = (function () {
+exports.RadixPipe = (function () {
     function RadixPipe() {
     }
     RadixPipe.prototype.transform = function (input, radix) {
         var RANGE = /^[2-9]$|^[1-2]\d$|^3[0-6]$/;
-        if (!utils_1.isNumber(input) || !RANGE.test(radix.toString())) {
+        if (!isNumber(input) || !RANGE.test(radix.toString())) {
             return input;
         }
         return input.toString(radix).toUpperCase();
     };
     return RadixPipe;
 }());
-RadixPipe = __decorate([
-    core_1.Pipe({
+exports.RadixPipe = __decorate([
+    _angular_core.Pipe({
         name: 'radix'
     })
-], RadixPipe);
-exports.RadixPipe = RadixPipe;
-//# sourceMappingURL=radix.pipe.js.map
+], exports.RadixPipe);
 
-/***/ }),
-/* 49 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var ShortFmtPipe = (function () {
+exports.ShortFmtPipe = (function () {
     function ShortFmtPipe() {
     }
     ShortFmtPipe.prototype.transform = function (number, decimal) {
-        if (utils_1.isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
-            utils_1.isNumber(number) && isFinite(number)) {
+        if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
+            isNumber(number) && isFinite(number)) {
             if (number < 1e3) {
                 return '' + number; // Coerce to string
             }
             else if (number < 1e6) {
-                return utils_1.convertToDecimal((number / 1e3), decimal) + ' K';
+                return convertToDecimal((number / 1e3), decimal) + ' K';
             }
             else if (number < 1e9) {
-                return utils_1.convertToDecimal((number / 1e6), decimal) + ' M';
+                return convertToDecimal((number / 1e6), decimal) + ' M';
             }
             else {
-                return utils_1.convertToDecimal((number / 1e9), decimal) + ' B';
+                return convertToDecimal((number / 1e9), decimal) + ' B';
             }
         }
         return 'NaN';
     };
     return ShortFmtPipe;
 }());
-ShortFmtPipe = __decorate([
-    core_1.Pipe({
+exports.ShortFmtPipe = __decorate([
+    _angular_core.Pipe({
         name: 'shortFmt'
     })
-], ShortFmtPipe);
-exports.ShortFmtPipe = ShortFmtPipe;
-//# sourceMappingURL=short-fmt.pipe.js.map
+], exports.ShortFmtPipe);
 
-/***/ }),
-/* 50 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var SumPipe = (function () {
+exports.SumPipe = (function () {
     function SumPipe() {
     }
     SumPipe.prototype.transform = function (array, initial) {
         if (initial === void 0) { initial = 0; }
-        if (!utils_1.isArray(array)) {
+        if (!isArray(array)) {
             return array;
         }
         return array.reduce(function (prev, curr) {
@@ -2568,28 +449,49 @@ var SumPipe = (function () {
     };
     return SumPipe;
 }());
-SumPipe = __decorate([
-    core_1.Pipe({
+exports.SumPipe = __decorate([
+    _angular_core.Pipe({
         name: 'sum'
     })
-], SumPipe);
-exports.SumPipe = SumPipe;
-//# sourceMappingURL=sum.pipe.js.map
+], exports.SumPipe);
 
-/***/ }),
-/* 51 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.MathPipesModule = (function () {
+    function MathPipesModule() {
+    }
+    return MathPipesModule;
+}());
+exports.MathPipesModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            exports.AbsPipe,
+            exports.ByteFmtPipe,
+            exports.KBFmtPipe,
+            exports.DegreesPipe,
+            exports.MaxPipe,
+            exports.MinPipe,
+            exports.PercentPipe,
+            exports.RadiansPipe,
+            exports.RadixPipe,
+            exports.ShortFmtPipe,
+            exports.SumPipe,
+        ],
+        exports: [
+            exports.AbsPipe,
+            exports.ByteFmtPipe,
+            exports.KBFmtPipe,
+            exports.DegreesPipe,
+            exports.MaxPipe,
+            exports.MinPipe,
+            exports.PercentPipe,
+            exports.RadiansPipe,
+            exports.RadixPipe,
+            exports.ShortFmtPipe,
+            exports.SumPipe,
+        ]
+    })
+], exports.MathPipesModule);
 
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var EndsWithPipe = (function () {
+exports.EndsWithPipe = (function () {
     function EndsWithPipe() {
     }
     EndsWithPipe.prototype.transform = function (input, ends, csensitive) {
@@ -2605,31 +507,35 @@ var EndsWithPipe = (function () {
     };
     return EndsWithPipe;
 }());
-EndsWithPipe = __decorate([
-    core_1.Pipe({
+exports.EndsWithPipe = __decorate([
+    _angular_core.Pipe({
         name: 'endsWith'
     })
-], EndsWithPipe);
-exports.EndsWithPipe = EndsWithPipe;
-//# sourceMappingURL=ends-with.pipe.js.map
+], exports.EndsWithPipe);
 
-/***/ }),
-/* 52 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.StartsWithPipe = (function () {
+    function StartsWithPipe() {
+    }
+    StartsWithPipe.prototype.transform = function (input, ends, csensitive) {
+        if (csensitive === void 0) { csensitive = false; }
+        if (ends == '') {
+            return true;
+        }
+        if (!csensitive) {
+            input = input.toLowerCase();
+            ends = ends.toLowerCase();
+        }
+        return input.substring(0, ends.length) == ends;
+    };
+    return StartsWithPipe;
+}());
+exports.StartsWithPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'startsWith'
+    })
+], exports.StartsWithPipe);
 
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__(0);
-var LatinizePipe = (function () {
+exports.LatinizePipe = (function () {
     function LatinizePipe() {
         var defaultDiacriticsRemovalap = [
             { 'base': 'A', 'letters': '\u0041\u24B6\uFF21\u00C0\u00C1\u00C2\u1EA6\u1EA4\u1EAA\u1EA8\u00C3\u0100\u0102\u1EB0\u1EAE\u1EB4\u1EB2\u0226\u01E0\u00C4\u01DE\u1EA2\u00C5\u01FA\u01CD\u0200\u0202\u1EA0\u1EAC\u1EB6\u1E00\u0104\u023A\u2C6F' },
@@ -2733,29 +639,14 @@ var LatinizePipe = (function () {
     };
     return LatinizePipe;
 }());
-LatinizePipe = __decorate([
-    core_1.Pipe({
+exports.LatinizePipe = __decorate([
+    _angular_core.Pipe({
         name: 'latinize'
     }),
     __metadata("design:paramtypes", [])
-], LatinizePipe);
-exports.LatinizePipe = LatinizePipe;
-//# sourceMappingURL=latinize.pipe.js.map
+], exports.LatinizePipe);
 
-/***/ }),
-/* 53 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var LeftTrimPipe = (function () {
+exports.LeftTrimPipe = (function () {
     function LeftTrimPipe() {
     }
     LeftTrimPipe.prototype.transform = function (input, chars) {
@@ -2764,28 +655,43 @@ var LeftTrimPipe = (function () {
     };
     return LeftTrimPipe;
 }());
-LeftTrimPipe = __decorate([
-    core_1.Pipe({
+exports.LeftTrimPipe = __decorate([
+    _angular_core.Pipe({
         name: 'ltrim'
     })
-], LeftTrimPipe);
-exports.LeftTrimPipe = LeftTrimPipe;
-//# sourceMappingURL=ltrim.pipe.js.map
+], exports.LeftTrimPipe);
 
-/***/ }),
-/* 54 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.RightTrimPipe = (function () {
+    function RightTrimPipe() {
+    }
+    RightTrimPipe.prototype.transform = function (input, chars) {
+        if (chars === void 0) { chars = '\\s'; }
+        return input.replace(new RegExp(chars + '+$'), '');
+    };
+    return RightTrimPipe;
+}());
+exports.RightTrimPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'rtrim'
+    })
+], exports.RightTrimPipe);
 
-"use strict";
+exports.TrimPipe = (function () {
+    function TrimPipe() {
+    }
+    TrimPipe.prototype.transform = function (input, chars) {
+        if (chars === void 0) { chars = '\\s'; }
+        return input.replace(new RegExp('^' + chars + '+|' + chars + '+$', 'g'), '');
+    };
+    return TrimPipe;
+}());
+exports.TrimPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'trim'
+    })
+], exports.TrimPipe);
 
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var MatchPipe = (function () {
+exports.MatchPipe = (function () {
     function MatchPipe() {
     }
     MatchPipe.prototype.transform = function (input, pattern, flag) {
@@ -2793,28 +699,13 @@ var MatchPipe = (function () {
     };
     return MatchPipe;
 }());
-MatchPipe = __decorate([
-    core_1.Pipe({
+exports.MatchPipe = __decorate([
+    _angular_core.Pipe({
         name: 'match'
     })
-], MatchPipe);
-exports.MatchPipe = MatchPipe;
-//# sourceMappingURL=match.pipe.js.map
+], exports.MatchPipe);
 
-/***/ }),
-/* 55 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var RepeatPipe = (function () {
+exports.RepeatPipe = (function () {
     function RepeatPipe() {
     }
     RepeatPipe.prototype.transform = function (input, times, separator) {
@@ -2828,58 +719,13 @@ var RepeatPipe = (function () {
     };
     return RepeatPipe;
 }());
-RepeatPipe = __decorate([
-    core_1.Pipe({
+exports.RepeatPipe = __decorate([
+    _angular_core.Pipe({
         name: 'repeat'
     })
-], RepeatPipe);
-exports.RepeatPipe = RepeatPipe;
-//# sourceMappingURL=repeat.pipe.js.map
+], exports.RepeatPipe);
 
-/***/ }),
-/* 56 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var RightTrimPipe = (function () {
-    function RightTrimPipe() {
-    }
-    RightTrimPipe.prototype.transform = function (input, chars) {
-        if (chars === void 0) { chars = '\\s'; }
-        return input.replace(new RegExp(chars + '+$'), '');
-    };
-    return RightTrimPipe;
-}());
-RightTrimPipe = __decorate([
-    core_1.Pipe({
-        name: 'rtrim'
-    })
-], RightTrimPipe);
-exports.RightTrimPipe = RightTrimPipe;
-//# sourceMappingURL=rtrim.pipe.js.map
-
-/***/ }),
-/* 57 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var SlugifyPipe = (function () {
+exports.SlugifyPipe = (function () {
     function SlugifyPipe() {
     }
     SlugifyPipe.prototype.transform = function (input, sub) {
@@ -2888,66 +734,13 @@ var SlugifyPipe = (function () {
     };
     return SlugifyPipe;
 }());
-SlugifyPipe = __decorate([
-    core_1.Pipe({
+exports.SlugifyPipe = __decorate([
+    _angular_core.Pipe({
         name: 'slugify'
     })
-], SlugifyPipe);
-exports.SlugifyPipe = SlugifyPipe;
-//# sourceMappingURL=slugify.pipe.js.map
+], exports.SlugifyPipe);
 
-/***/ }),
-/* 58 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var StartsWithPipe = (function () {
-    function StartsWithPipe() {
-    }
-    StartsWithPipe.prototype.transform = function (input, ends, csensitive) {
-        if (csensitive === void 0) { csensitive = false; }
-        if (ends == '') {
-            return true;
-        }
-        if (!csensitive) {
-            input = input.toLowerCase();
-            ends = ends.toLowerCase();
-        }
-        return input.substring(0, ends.length) == ends;
-    };
-    return StartsWithPipe;
-}());
-StartsWithPipe = __decorate([
-    core_1.Pipe({
-        name: 'startsWith'
-    })
-], StartsWithPipe);
-exports.StartsWithPipe = StartsWithPipe;
-//# sourceMappingURL=starts-with.pipe.js.map
-
-/***/ }),
-/* 59 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var StringularPipe = (function () {
+exports.StringularPipe = (function () {
     function StringularPipe() {
     }
     StringularPipe.prototype.transform = function (template) {
@@ -2956,33 +749,18 @@ var StringularPipe = (function () {
             args[_i - 1] = arguments[_i];
         }
         return template.replace(/{(\d+)}/g, function (match, number) {
-            return utils_1.isUndefined(args[number]) ? match : args[number];
+            return isUndefined(args[number]) ? match : args[number];
         });
     };
     return StringularPipe;
 }());
-StringularPipe = __decorate([
-    core_1.Pipe({
+exports.StringularPipe = __decorate([
+    _angular_core.Pipe({
         name: 'stringular'
     })
-], StringularPipe);
-exports.StringularPipe = StringularPipe;
-//# sourceMappingURL=stringular.pipe.js.map
+], exports.StringularPipe);
 
-/***/ }),
-/* 60 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var StripTagsPipe = (function () {
+exports.StripTagsPipe = (function () {
     function StripTagsPipe() {
     }
     StripTagsPipe.prototype.transform = function (input) {
@@ -2990,28 +768,13 @@ var StripTagsPipe = (function () {
     };
     return StripTagsPipe;
 }());
-StripTagsPipe = __decorate([
-    core_1.Pipe({
+exports.StripTagsPipe = __decorate([
+    _angular_core.Pipe({
         name: 'stripTags'
     })
-], StripTagsPipe);
-exports.StripTagsPipe = StripTagsPipe;
-//# sourceMappingURL=strip-tags.pipe.js.map
+], exports.StripTagsPipe);
 
-/***/ }),
-/* 61 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var TestPipe = (function () {
+exports.TestPipe = (function () {
     function TestPipe() {
     }
     TestPipe.prototype.transform = function (input, pattern, flag) {
@@ -3019,28 +782,48 @@ var TestPipe = (function () {
     };
     return TestPipe;
 }());
-TestPipe = __decorate([
-    core_1.Pipe({
+exports.TestPipe = __decorate([
+    _angular_core.Pipe({
         name: 'test'
     })
-], TestPipe);
-exports.TestPipe = TestPipe;
-//# sourceMappingURL=test.pipe.js.map
+], exports.TestPipe);
 
-/***/ }),
-/* 62 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.TruncatePipe = (function () {
+    function TruncatePipe() {
+    }
+    TruncatePipe.prototype.transform = function (input, length, suffix, preserve) {
+        if (suffix === void 0) { suffix = ''; }
+        if (preserve === void 0) { preserve = false; }
+        if (isUndefined(length) || length >= input.length) {
+            return input;
+        }
+        return input.substring(0, preserve
+            ? (input.indexOf(' ', length) == -1 ? input.length : input.indexOf(' ', length))
+            : length) + suffix;
+    };
+    return TruncatePipe;
+}());
+exports.TruncatePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'truncate'
+    })
+], exports.TruncatePipe);
 
-"use strict";
+exports.UcfirstPipe = (function () {
+    function UcfirstPipe() {
+    }
+    UcfirstPipe.prototype.transform = function (input) {
+        return input.substring(0, 1).toUpperCase() + input.substring(1);
+    };
+    return UcfirstPipe;
+}());
+exports.UcfirstPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'ucfirst'
+    })
+], exports.UcfirstPipe);
 
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var TitleizePipe = (function () {
+exports.TitleizePipe = (function () {
     function TitleizePipe() {
     }
     TitleizePipe.prototype.transform = function (input) {
@@ -3050,124 +833,13 @@ var TitleizePipe = (function () {
     };
     return TitleizePipe;
 }());
-TitleizePipe = __decorate([
-    core_1.Pipe({
+exports.TitleizePipe = __decorate([
+    _angular_core.Pipe({
         name: 'titleize'
     })
-], TitleizePipe);
-exports.TitleizePipe = TitleizePipe;
-//# sourceMappingURL=titleize.pipe.js.map
+], exports.TitleizePipe);
 
-/***/ }),
-/* 63 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var TrimPipe = (function () {
-    function TrimPipe() {
-    }
-    TrimPipe.prototype.transform = function (input, chars) {
-        if (chars === void 0) { chars = '\\s'; }
-        return input.replace(new RegExp('^' + chars + '+|' + chars + '+$', 'g'), '');
-    };
-    return TrimPipe;
-}());
-TrimPipe = __decorate([
-    core_1.Pipe({
-        name: 'trim'
-    })
-], TrimPipe);
-exports.TrimPipe = TrimPipe;
-//# sourceMappingURL=trim.pipe.js.map
-
-/***/ }),
-/* 64 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(1);
-var TruncatePipe = (function () {
-    function TruncatePipe() {
-    }
-    TruncatePipe.prototype.transform = function (input, length, suffix, preserve) {
-        if (suffix === void 0) { suffix = ''; }
-        if (preserve === void 0) { preserve = false; }
-        if (utils_1.isUndefined(length) || length >= input.length) {
-            return input;
-        }
-        return input.substring(0, preserve
-            ? (input.indexOf(' ', length) == -1 ? input.length : input.indexOf(' ', length))
-            : length) + suffix;
-    };
-    return TruncatePipe;
-}());
-TruncatePipe = __decorate([
-    core_1.Pipe({
-        name: 'truncate'
-    })
-], TruncatePipe);
-exports.TruncatePipe = TruncatePipe;
-//# sourceMappingURL=truncate.pipe.js.map
-
-/***/ }),
-/* 65 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var UcfirstPipe = (function () {
-    function UcfirstPipe() {
-    }
-    UcfirstPipe.prototype.transform = function (input) {
-        return input.substring(0, 1).toUpperCase() + input.substring(1);
-    };
-    return UcfirstPipe;
-}());
-UcfirstPipe = __decorate([
-    core_1.Pipe({
-        name: 'ucfirst'
-    })
-], UcfirstPipe);
-exports.UcfirstPipe = UcfirstPipe;
-//# sourceMappingURL=ucfirst.pipe.js.map
-
-/***/ }),
-/* 66 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var UriComponentEncodePipe = (function () {
+exports.UriComponentEncodePipe = (function () {
     function UriComponentEncodePipe() {
     }
     UriComponentEncodePipe.prototype.transform = function (input) {
@@ -3175,28 +847,13 @@ var UriComponentEncodePipe = (function () {
     };
     return UriComponentEncodePipe;
 }());
-UriComponentEncodePipe = __decorate([
-    core_1.Pipe({
+exports.UriComponentEncodePipe = __decorate([
+    _angular_core.Pipe({
         name: 'uriComponentEncode'
     })
-], UriComponentEncodePipe);
-exports.UriComponentEncodePipe = UriComponentEncodePipe;
-//# sourceMappingURL=uri-component-encode.pipe.js.map
+], exports.UriComponentEncodePipe);
 
-/***/ }),
-/* 67 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var UriEncodePipe = (function () {
+exports.UriEncodePipe = (function () {
     function UriEncodePipe() {
     }
     UriEncodePipe.prototype.transform = function (input) {
@@ -3204,28 +861,13 @@ var UriEncodePipe = (function () {
     };
     return UriEncodePipe;
 }());
-UriEncodePipe = __decorate([
-    core_1.Pipe({
+exports.UriEncodePipe = __decorate([
+    _angular_core.Pipe({
         name: 'uriEncode'
     })
-], UriEncodePipe);
-exports.UriEncodePipe = UriEncodePipe;
-//# sourceMappingURL=uri-encode.pipe.js.map
+], exports.UriEncodePipe);
 
-/***/ }),
-/* 68 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var core_1 = __webpack_require__(0);
-var WrapPipe = (function () {
+exports.WrapPipe = (function () {
     function WrapPipe() {
     }
     WrapPipe.prototype.transform = function (input, wrap, ends) {
@@ -3235,56 +877,1040 @@ var WrapPipe = (function () {
     };
     return WrapPipe;
 }());
-WrapPipe = __decorate([
-    core_1.Pipe({
+exports.WrapPipe = __decorate([
+    _angular_core.Pipe({
         name: 'wrap'
     })
-], WrapPipe);
-exports.WrapPipe = WrapPipe;
-//# sourceMappingURL=wrap.pipe.js.map
+], exports.WrapPipe);
 
-/***/ }),
-/* 69 */
-/***/ (function(module, exports, __webpack_require__) {
+exports.StringPipesModule = (function () {
+    function StringPipesModule() {
+    }
+    return StringPipesModule;
+}());
+exports.StringPipesModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            exports.EndsWithPipe,
+            exports.StartsWithPipe,
+            exports.LatinizePipe,
+            exports.LeftTrimPipe,
+            exports.TrimPipe,
+            exports.RightTrimPipe,
+            exports.MatchPipe,
+            exports.TestPipe,
+            exports.RepeatPipe,
+            exports.SlugifyPipe,
+            exports.StringularPipe,
+            exports.StripTagsPipe,
+            exports.TruncatePipe,
+            exports.UcfirstPipe,
+            exports.TitleizePipe,
+            exports.UriEncodePipe,
+            exports.UriComponentEncodePipe,
+            exports.WrapPipe,
+        ],
+        exports: [
+            exports.EndsWithPipe,
+            exports.LatinizePipe,
+            exports.StartsWithPipe,
+            exports.LeftTrimPipe,
+            exports.RightTrimPipe,
+            exports.TrimPipe,
+            exports.MatchPipe,
+            exports.TestPipe,
+            exports.RepeatPipe,
+            exports.SlugifyPipe,
+            exports.StringularPipe,
+            exports.StripTagsPipe,
+            exports.TruncatePipe,
+            exports.UcfirstPipe,
+            exports.TitleizePipe,
+            exports.UriEncodePipe,
+            exports.UriComponentEncodePipe,
+            exports.WrapPipe,
+        ]
+    })
+], exports.StringPipesModule);
 
-"use strict";
+exports.IsNullPipe = (function () {
+    function IsNullPipe() {
+    }
+    IsNullPipe.prototype.transform = function (input) {
+        return isNull(input);
+    };
+    return IsNullPipe;
+}());
+exports.IsNullPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'isNull'
+    })
+], exports.IsNullPipe);
 
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-var core_1 = __webpack_require__(0);
-var math_1 = __webpack_require__(5);
-var string_1 = __webpack_require__(6);
-var boolean_1 = __webpack_require__(3);
-var collection_1 = __webpack_require__(4);
-__export(__webpack_require__(5));
-__export(__webpack_require__(6));
-__export(__webpack_require__(3));
-__export(__webpack_require__(4));
-var NgPipesModule = (function () {
+exports.BooleanPipesModule = (function () {
+    function BooleanPipesModule() {
+    }
+    return BooleanPipesModule;
+}());
+exports.BooleanPipesModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            exports.IsNullPipe,
+        ],
+        exports: [
+            exports.IsNullPipe,
+        ]
+    })
+], exports.BooleanPipesModule);
+
+exports.AfterWherePipe = (function () {
+    function AfterWherePipe() {
+    }
+    AfterWherePipe.prototype.transform = function (collection, object) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        var index = collection.map(function (e) { return objectContains(object, e); }).indexOf(true);
+        return collection.slice(index == -1 ? 0 : index);
+    };
+    return AfterWherePipe;
+}());
+exports.AfterWherePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'afterWhere'
+    })
+], exports.AfterWherePipe);
+
+exports.BeforeWherePipe = (function () {
+    function BeforeWherePipe() {
+    }
+    BeforeWherePipe.prototype.transform = function (collection, object) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        var index = collection.map(function (e) { return objectContains(object, e); }).indexOf(true);
+        return collection.slice(0, index == -1 ? collection.length : index + 1);
+    };
+    return BeforeWherePipe;
+}());
+exports.BeforeWherePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'beforeWhere'
+    })
+], exports.BeforeWherePipe);
+
+exports.AfterPipe = (function () {
+    function AfterPipe() {
+    }
+    AfterPipe.prototype.transform = function (collection, count) {
+        if (count === void 0) { count = 0; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return collection.slice(count);
+    };
+    return AfterPipe;
+}());
+exports.AfterPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'after'
+    })
+], exports.AfterPipe);
+
+exports.BeforePipe = (function () {
+    function BeforePipe() {
+    }
+    BeforePipe.prototype.transform = function (collection, count) {
+        if (count === void 0) { count = 1; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return collection.slice(0, count - 1);
+    };
+    return BeforePipe;
+}());
+exports.BeforePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'before'
+    })
+], exports.BeforePipe);
+
+exports.ChunkByPipe = (function () {
+    function ChunkByPipe() {
+    }
+    ChunkByPipe.prototype.transform = function (array, n, fillVal) {
+        function fill(n, val) {
+            var ret = [];
+            while (n--)
+                ret[n] = val;
+            return ret;
+        }
+        return array.map(function (el, i, self) {
+            i = i * n;
+            el = self.slice(i, i + n);
+            return !isUndefined(fillVal) && el.length < n
+                ? el.concat(fill(n - el.length, fillVal))
+                : el;
+        })
+            .slice(0, Math.ceil(array.length / n));
+    };
+    return ChunkByPipe;
+}());
+exports.ChunkByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'chunkBy'
+    })
+], exports.ChunkByPipe);
+
+exports.ConcatPipe = (function () {
+    function ConcatPipe() {
+    }
+    ConcatPipe.prototype.transform = function (collection, joined) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(joined)) {
+            joined = toArray(joined);
+        }
+        return collection.concat(joined);
+    };
+    return ConcatPipe;
+}());
+exports.ConcatPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'concat'
+    })
+], exports.ConcatPipe);
+
+exports.ContainsPipe = (function () {
+    function ContainsPipe() {
+        this.$parse = Parse();
+    }
+    ContainsPipe.prototype.transform = function (collection, predicate) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        return collection.some(function (e) { return isFunction(predicate) || (isString(predicate) && isObject(e))
+            ? _this.$parse(predicate)(e)
+            : e === predicate; });
+    };
+    return ContainsPipe;
+}());
+exports.ContainsPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'contains'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.ContainsPipe);
+
+exports.CountByPipe = (function () {
+    function CountByPipe() {
+        this.$parse = Parse();
+    }
+    CountByPipe.prototype.transform = function (collection, predicate) {
+        var result = {}, getter = this.$parse(predicate);
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        collection.forEach(function (elm) {
+            var prop = getter(elm);
+            if (!(prop in result))
+                result[prop] = 0;
+            result[prop]++;
+        });
+        return result;
+    };
+    return CountByPipe;
+}());
+exports.CountByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'countBy'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.CountByPipe);
+
+exports.DefaultsPipe = (function () {
+    function DefaultsPipe() {
+        this.$parse = Parse();
+    }
+    DefaultsPipe.prototype.transform = function (collection, defaults) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        var getters = deepKeys(defaults).map(function (key) { return _this.$parse(key); });
+        collection.forEach(function (elm) {
+            getters.forEach(function (getter) {
+                if (isUndefined(getter(elm))) {
+                    getter.assign(elm, getter(defaults));
+                }
+            });
+        });
+        return collection;
+    };
+    return DefaultsPipe;
+}());
+exports.DefaultsPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'defaults'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.DefaultsPipe);
+
+exports.EveryPipe = (function () {
+    function EveryPipe() {
+        this.$parse = Parse();
+    }
+    EveryPipe.prototype.transform = function (collection, predicate) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        return collection.every(function (e) { return isFunction(predicate) || (isString(predicate) && isObject(e))
+            ? _this.$parse(predicate)(e)
+            : e === predicate; });
+    };
+    return EveryPipe;
+}());
+exports.EveryPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'every'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.EveryPipe);
+
+exports.FilterByPipe = (function () {
+    function FilterByPipe() {
+        this.$parse = Parse();
+    }
+    FilterByPipe.prototype.transform = function (collection, properties, search, strict) {
+        var _this = this;
+        if (strict === void 0) { strict = false; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        search = isString(search) || isNumber(search)
+            ? String(search).toLowerCase()
+            : undefined;
+        if (!isArray(collection) || isUndefined(search)) {
+            return collection;
+        }
+        if (isString(search) || isNumber(search)) {
+            search = String(search).toLowerCase();
+        }
+        return collection.filter(function (elm) {
+            return properties.some(function (prop) {
+                /**
+                * check if there are concatenate properties
+                * example:
+                * object: { first: 'foo', last:'bar' }
+               * filterBy: ['first + last'] => search by full name(i.e 'foo bar')
+               */
+                var comparator;
+                if (!~prop.indexOf('+')) {
+                    comparator = _this.$parse(prop)(elm);
+                }
+                else {
+                    var propList = prop.replace(/\s+/g, '').split('+');
+                    comparator = propList
+                        .map(function (p) { return _this.$parse(p)(elm); })
+                        .join(' ');
+                }
+                // TODO: boolean?
+                if (!isString(comparator) && !isNumber(comparator)) {
+                    return false;
+                }
+                comparator = String(comparator).toLowerCase();
+                // indentical or contains
+                return strict
+                    ? comparator === search
+                    : comparator.indexOf(search) != -1;
+            });
+        });
+    };
+    return FilterByPipe;
+}());
+exports.FilterByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'filterBy'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.FilterByPipe);
+
+exports.FirstPipe = (function () {
+    function FirstPipe() {
+        this.$parse = Parse();
+    }
+    FirstPipe.prototype.transform = function (collection) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        var n = isNumber(args[0]) ? args[0] : 1, getter = !isNumber(args[0]) ? args[0] : !isNumber(args[1]) ? args[1] : undefined;
+        return args.length
+            ? getFirstMatches(collection, n, getter ? this.$parse(getter) : getter)
+            : collection[0];
+    };
+    return FirstPipe;
+}());
+exports.FirstPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'first'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.FirstPipe);
+
+exports.FlattenPipe = (function () {
+    function FlattenPipe() {
+    }
+    FlattenPipe.prototype.transform = function (collection, shallow) {
+        if (shallow === void 0) { shallow = false; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return shallow
+            ? [].concat.apply([], collection)
+            : this.flatten(collection);
+    };
+    FlattenPipe.prototype.flatten = function (array) {
+        var _this = this;
+        return array.reduce(function (arr, elm) { return elm instanceof Array ?
+            arr.concat(_this.flatten(elm)) : arr.concat(elm); }, []);
+    };
+    return FlattenPipe;
+}());
+exports.FlattenPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'flatten'
+    })
+], exports.FlattenPipe);
+
+exports.FuzzyByPipe = (function () {
+    function FuzzyByPipe() {
+        this.$parse = Parse();
+    }
+    FuzzyByPipe.prototype.transform = function (collection, property, search, csensitive) {
+        if (csensitive === void 0) { csensitive = false; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection) || isUndefined(search)) {
+            return collection;
+        }
+        var getter = this.$parse(property);
+        return collection.filter(function (elm) {
+            var prop = getter(elm);
+            if (!isString(prop)) {
+                return false;
+            }
+            if (!csensitive) {
+                prop = prop.toLowerCase();
+                search = search.toLowerCase();
+            }
+            return hasApproxPattern(prop, search) !== false;
+        });
+    };
+    return FuzzyByPipe;
+}());
+exports.FuzzyByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'fuzzyBy'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.FuzzyByPipe);
+
+exports.FuzzyPipe = (function () {
+    function FuzzyPipe() {
+    }
+    FuzzyPipe.prototype.transform = function (collection, search, csensitive) {
+        var _this = this;
+        if (csensitive === void 0) { csensitive = false; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection) || isUndefined(search)) {
+            return collection;
+        }
+        if (!csensitive) {
+            search = search.toLowerCase();
+        }
+        return collection.filter(function (elm) {
+            if (isString(elm)) {
+                if (!csensitive) {
+                    elm = elm.toLowerCase();
+                }
+                return hasApproxPattern(elm, search);
+            }
+            return isObject(elm) ? _this.hasApproximateKey(elm, search, csensitive) : false;
+        });
+    };
+    FuzzyPipe.prototype.hasApproximateKey = function (object, search, csensitive) {
+        if (csensitive === void 0) { csensitive = false; }
+        return Object.keys(object).some(function (elm) {
+            var prop = object[elm];
+            if (!isString(prop)) {
+                return false;
+            }
+            if (!csensitive) {
+                prop = prop.toLowerCase();
+            }
+            return hasApproxPattern(prop, search);
+        });
+    };
+    return FuzzyPipe;
+}());
+exports.FuzzyPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'fuzzy'
+    })
+], exports.FuzzyPipe);
+
+exports.GroupByPipe = (function () {
+    function GroupByPipe() {
+        this.$parse = Parse();
+    }
+    GroupByPipe.prototype.transform = function (collection, prop) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        var result = {}, getter = this.$parse(prop);
+        collection.forEach(function (elm) {
+            var prop = getter(elm);
+            if (isUndefined(result[prop])) {
+                result[prop] = [];
+            }
+            result[prop].push(elm);
+        });
+        return result;
+    };
+    return GroupByPipe;
+}());
+exports.GroupByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'groupBy'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.GroupByPipe);
+
+exports.IsEmptyPipe = (function () {
+    function IsEmptyPipe() {
+    }
+    IsEmptyPipe.prototype.transform = function (collection) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        return isArray(collection) ? collection.length : 0;
+    };
+    return IsEmptyPipe;
+}());
+exports.IsEmptyPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'isEmpty'
+    })
+], exports.IsEmptyPipe);
+
+exports.JoinPipe = (function () {
+    function JoinPipe() {
+    }
+    JoinPipe.prototype.transform = function (collection, delimiter) {
+        if (delimiter === void 0) { delimiter = ' '; }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        return collection.join(String(delimiter));
+    };
+    return JoinPipe;
+}());
+exports.JoinPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'join'
+    })
+], exports.JoinPipe);
+
+exports.LastPipe = (function () {
+    function LastPipe() {
+        this.$parse = Parse();
+    }
+    LastPipe.prototype.transform = function (collection) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        collection = collection.slice().reverse();
+        var n = isNumber(args[0]) ? args[0] : 1, getter = !isNumber(args[0]) ? args[0] : !isNumber(args[1]) ? args[1] : undefined;
+        return args.length
+            ? getFirstMatches(collection, n, getter ? this.$parse(getter) : getter).reverse()
+            : collection[0];
+    };
+    return LastPipe;
+}());
+exports.LastPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'last'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.LastPipe);
+
+exports.MapPipe = (function () {
+    function MapPipe() {
+        this.$parse = Parse();
+    }
+    MapPipe.prototype.transform = function (collection, predicate) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return collection.map(function (e) { return _this.$parse(predicate)(e); });
+    };
+    return MapPipe;
+}());
+exports.MapPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'map'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.MapPipe);
+
+exports.OmitPipe = (function () {
+    function OmitPipe() {
+        this.$parse = Parse();
+    }
+    OmitPipe.prototype.transform = function (collection, predicate) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return collection.filter(function (e) { return !_this.$parse(predicate)(e); });
+    };
+    return OmitPipe;
+}());
+exports.OmitPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'omit'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.OmitPipe);
+
+exports.PickPipe = (function () {
+    function PickPipe() {
+        this.$parse = Parse();
+    }
+    PickPipe.prototype.transform = function (collection, predicate) {
+        var _this = this;
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection)) {
+            return collection;
+        }
+        return collection.filter(function (e) { return _this.$parse(predicate)(e); });
+    };
+    return PickPipe;
+}());
+exports.PickPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'pick'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.PickPipe);
+
+exports.RangePipe = (function () {
+    function RangePipe() {
+    }
+    RangePipe.prototype.transform = function (input, total, start, increment, cb) {
+        if (total === void 0) { total = 0; }
+        if (start === void 0) { start = 0; }
+        if (increment === void 0) { increment = 1; }
+        for (var i = 0; i < total; i++) {
+            var j = start + i * increment;
+            input.push(isFunction(cb) ? cb(j) : j);
+        }
+        return input;
+    };
+    return RangePipe;
+}());
+exports.RangePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'range'
+    })
+], exports.RangePipe);
+
+exports.RemoveWithPipe = (function () {
+    function RemoveWithPipe() {
+    }
+    RemoveWithPipe.prototype.transform = function (collection, object) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection) || isUndefined(object)) {
+            return collection;
+        }
+        return collection.filter(function (e) { return !objectContains(object, e); });
+    };
+    return RemoveWithPipe;
+}());
+exports.RemoveWithPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'removeWith'
+    })
+], exports.RemoveWithPipe);
+
+exports.RemovePipe = (function () {
+    function RemovePipe() {
+    }
+    RemovePipe.prototype.transform = function (collection) {
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        return collection.filter(function (e) {
+            return !args.some(function (c) { return equals(c, e); });
+        });
+    };
+    return RemovePipe;
+}());
+exports.RemovePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'remove'
+    })
+], exports.RemovePipe);
+
+exports.ReversePipe = (function () {
+    function ReversePipe() {
+    }
+    ReversePipe.prototype.transform = function (input) {
+        if (isString(input)) {
+            return input.split('').reverse().join('');
+        }
+        return isArray(input) ? input.slice().reverse() : input;
+    };
+    return ReversePipe;
+}());
+exports.ReversePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'reverse'
+    })
+], exports.ReversePipe);
+
+exports.SearchFieldPipe = (function () {
+    function SearchFieldPipe() {
+        this.$parse = Parse();
+    }
+    SearchFieldPipe.prototype.transform = function (collection) {
+        var _this = this;
+        var args = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            args[_i - 1] = arguments[_i];
+        }
+        if (!isArray(collection) || !args.length) {
+            return collection;
+        }
+        return collection.map(function (member) {
+            var field = args.map(function (field) { return _this.$parse(field)(member); }).join(' ');
+            member.searchField = field;
+            return member;
+        });
+    };
+    return SearchFieldPipe;
+}());
+exports.SearchFieldPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'searchField'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.SearchFieldPipe);
+
+exports.ToArrayPipe = (function () {
+    function ToArrayPipe() {
+    }
+    ToArrayPipe.prototype.transform = function (collection, addKey) {
+        if (addKey === void 0) { addKey = false; }
+        if (!isObject(collection)) {
+            return collection;
+        }
+        return addKey
+            ? Object.keys(collection).map(function (key) {
+                // TODO: object.assign polyfill
+                var o = collection[key];
+                o.$key = key;
+                return o;
+            })
+            : toArray(collection);
+    };
+    return ToArrayPipe;
+}());
+exports.ToArrayPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'toArray'
+    })
+], exports.ToArrayPipe);
+
+exports.UniqPipe = (function () {
+    function UniqPipe() {
+        this.$parse = Parse();
+    }
+    UniqPipe.prototype.transform = function (collection, predicate) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (isUndefined(predicate)) {
+            return collection.filter(function (e, i, self) { return self.indexOf(e) == i; });
+        }
+        var getter = this.$parse(predicate), uniqueItems = [];
+        return collection.filter(function (e) {
+            var v = getter(e);
+            if (!isUndefined(v) && uniqueItems.some(function (ue) { return ue === v; })) {
+                return false;
+            }
+            uniqueItems.push(v);
+            return true;
+        });
+    };
+    return UniqPipe;
+}());
+exports.UniqPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'uniq'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.UniqPipe);
+
+exports.WherePipe = (function () {
+    function WherePipe() {
+    }
+    WherePipe.prototype.transform = function (collection, object) {
+        if (!isArray(collection)) {
+            collection = toArray(collection);
+        }
+        if (!isArray(collection) || isUndefined(object)) {
+            return collection;
+        }
+        return collection.filter(function (e) { return objectContains(object, e); });
+    };
+    return WherePipe;
+}());
+exports.WherePipe = __decorate([
+    _angular_core.Pipe({
+        name: 'where'
+    })
+], exports.WherePipe);
+
+exports.XORPipe = (function () {
+    function XORPipe() {
+        this.$parse = Parse();
+    }
+    XORPipe.prototype.transform = function (col1, col2, predicate) {
+        var _this = this;
+        col1 = !isArray(col1) ? toArray(col1) : col1;
+        col2 = !isArray(col2) ? toArray(col2) : col2;
+        if (!isArray(col1) || !isArray(col2)) {
+            return col1;
+        }
+        return col1.concat(col2)
+            .filter(function (elm) {
+            return !(_this.some(elm, col1, predicate) && _this.some(elm, col2, predicate));
+        });
+    };
+    // TODO: add equlity check using "equals()" instead of ===
+    XORPipe.prototype.some = function (el, col, predicate) {
+        var getter = this.$parse(predicate);
+        return col.some(function (dElm) {
+            if (isUndefined(predicate)) {
+                return dElm === el;
+            }
+            return getter(dElm) === getter(el);
+        });
+    };
+    return XORPipe;
+}());
+exports.XORPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'xor'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.XORPipe);
+
+exports.OrderByPipe = (function () {
+    function OrderByPipe() {
+        this.$parse = Parse();
+    }
+    OrderByPipe.prototype.transform = function (array) {
+        var _this = this;
+        var attrs = [];
+        for (var _i = 1; _i < arguments.length; _i++) {
+            attrs[_i - 1] = arguments[_i];
+        }
+        // generate an array of predicate-objects contains
+        // property getter, and descending indicator
+        var predicates = attrs.map(function (pred) {
+            var descending = pred.charAt(0) === '-' ? -1 : 1;
+            pred = pred.replace(/^-/, '');
+            return {
+                getter: function (o) { return _this.$parse(pred)(o); },
+                descend: descending
+            };
+        });
+        // schwartzian transform idiom implementation. aka: "decorate-sort-undecorate"
+        return array.map(function (item) {
+            return {
+                src: item,
+                compareValues: predicates.map(function (predicate) { return predicate.getter(item); })
+            };
+        })
+            .sort(function (o1, o2) {
+            var i = -1, result = 0;
+            while (++i < predicates.length) {
+                if (o1.compareValues[i] < o2.compareValues[i])
+                    result = -1;
+                if (o1.compareValues[i] > o2.compareValues[i])
+                    result = 1;
+                if (result *= predicates[i].descend)
+                    break;
+            }
+            return result;
+        })
+            .map(function (item) { return item.src; });
+    };
+    return OrderByPipe;
+}());
+exports.OrderByPipe = __decorate([
+    _angular_core.Pipe({
+        name: 'orderBy'
+    }),
+    __metadata("design:paramtypes", [])
+], exports.OrderByPipe);
+
+exports.CollectionPipesModule = (function () {
+    function CollectionPipesModule() {
+    }
+    return CollectionPipesModule;
+}());
+exports.CollectionPipesModule = __decorate([
+    _angular_core.NgModule({
+        declarations: [
+            exports.AfterWherePipe,
+            exports.BeforeWherePipe,
+            exports.AfterPipe,
+            exports.BeforePipe,
+            exports.ChunkByPipe,
+            exports.ConcatPipe,
+            exports.ContainsPipe,
+            exports.CountByPipe,
+            exports.DefaultsPipe,
+            exports.EveryPipe,
+            exports.FilterByPipe,
+            exports.FirstPipe,
+            exports.FlattenPipe,
+            exports.FuzzyByPipe,
+            exports.FuzzyPipe,
+            exports.GroupByPipe,
+            exports.IsEmptyPipe,
+            exports.JoinPipe,
+            exports.LastPipe,
+            exports.MapPipe,
+            exports.OmitPipe,
+            exports.PickPipe,
+            exports.RangePipe,
+            exports.RemoveWithPipe,
+            exports.ReversePipe,
+            exports.SearchFieldPipe,
+            exports.RemovePipe,
+            exports.ToArrayPipe,
+            exports.UniqPipe,
+            exports.WherePipe,
+            exports.XORPipe,
+            exports.OrderByPipe,
+        ],
+        exports: [
+            exports.AfterWherePipe,
+            exports.BeforeWherePipe,
+            exports.AfterPipe,
+            exports.BeforePipe,
+            exports.ChunkByPipe,
+            exports.ConcatPipe,
+            exports.ContainsPipe,
+            exports.CountByPipe,
+            exports.DefaultsPipe,
+            exports.EveryPipe,
+            exports.FilterByPipe,
+            exports.FirstPipe,
+            exports.FlattenPipe,
+            exports.FuzzyByPipe,
+            exports.FuzzyPipe,
+            exports.GroupByPipe,
+            exports.IsEmptyPipe,
+            exports.JoinPipe,
+            exports.LastPipe,
+            exports.MapPipe,
+            exports.OmitPipe,
+            exports.PickPipe,
+            exports.RangePipe,
+            exports.RemoveWithPipe,
+            exports.ReversePipe,
+            exports.SearchFieldPipe,
+            exports.RemovePipe,
+            exports.ToArrayPipe,
+            exports.UniqPipe,
+            exports.WherePipe,
+            exports.XORPipe,
+            exports.OrderByPipe,
+        ]
+    })
+], exports.CollectionPipesModule);
+
+exports.NgPipesModule = (function () {
     function NgPipesModule() {
     }
     return NgPipesModule;
 }());
-NgPipesModule = __decorate([
-    core_1.NgModule({
+exports.NgPipesModule = __decorate([
+    _angular_core.NgModule({
         exports: [
-            math_1.MathPipesModule,
-            string_1.StringPipesModule,
-            boolean_1.BooleanPipesModule,
-            collection_1.CollectionPipesModule,
+            exports.MathPipesModule,
+            exports.StringPipesModule,
+            exports.BooleanPipesModule,
+            exports.CollectionPipesModule,
         ]
     })
-], NgPipesModule);
-exports.NgPipesModule = NgPipesModule;
-//# sourceMappingURL=index.js.map
+], exports.NgPipesModule);
 
-/***/ })
-/******/ ]);
-});
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
