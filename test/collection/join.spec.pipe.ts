@@ -47,8 +47,8 @@ describe('JoinPipe', () => {
               toString: function() {
                 return ' - '
               }
-            } expect(pipe.transform(arr, delim))
-                        .toEqual('hello - world');
+            };
+            expect(pipe.transform(arr, delim)).toEqual('hello - world');
           });
         });
 
