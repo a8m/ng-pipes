@@ -1,16 +1,16 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { AbsPipe } from './abs.pipe';
-import { ByteFmtPipe } from './byte-fmt.pipe';
-import { KBFmtPipe } from './kb-fmt.pipe';
-import { DegreesPipe } from './degrees.pipe';
-import { MaxPipe } from './max.pipe';
-import { MinPipe } from './min.pipe';
-import { PercentPipe } from './percent.pipe';
-import { RadiansPipe } from './radians.pipe';
-import { RadixPipe } from './radix.pipe';
-import { ShortFmtPipe } from './short-fmt.pipe';
-import { SumPipe } from './sum.pipe';
+import {AbsPipe} from './abs.pipe';
+import {ByteFmtPipe} from './byte-fmt.pipe';
+import {DegreesPipe} from './degrees.pipe';
+import {KBFmtPipe} from './kb-fmt.pipe';
+import {MaxPipe} from './max.pipe';
+import {MinPipe} from './min.pipe';
+import {PercentPipe} from './percent.pipe';
+import {RadiansPipe} from './radians.pipe';
+import {RadixPipe} from './radix.pipe';
+import {ShortFmtPipe} from './short-fmt.pipe';
+import {SumPipe} from './sum.pipe';
 
 export * from './abs.pipe';
 export * from './byte-fmt.pipe';
@@ -52,4 +52,5 @@ export * from './sum.pipe';
     SumPipe,
   ]
 })
-export class MathPipesModule { }
+export class MathPipesModule {
+}

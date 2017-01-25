@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, equals } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'remove'
-})
+import {equals, isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'remove'})
 export class RemovePipe implements PipeTransform {
   transform(collection: any, ...args: any[]): any {
     if (!isArray(collection)) {

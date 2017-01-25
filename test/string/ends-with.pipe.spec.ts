@@ -1,4 +1,4 @@
-import { EndsWithPipe } from '../../src/index';
+import {EndsWithPipe} from '../../src/index';
 
 describe('EndsWithPipe', () => {
   let pipe: EndsWithPipe;

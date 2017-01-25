@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, toArray } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'countBy'
-})
+import {Parse} from '../utils/parse';
+import {isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'countBy'})
 export class CountByPipe implements PipeTransform {
   private $parse: Function;
 
@@ -12,10 +11,8 @@ export class CountByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, predicate: any): { [key: string]: number } {
-    let result: { [key: string]: number } = {}
-      , getter = this.$parse(predicate)
-      ;
+  transform(collection: any, predicate: any): {[key: string]: number} {
+    let result: {[key: string]: number} = {}, getter = this.$parse(predicate);
     if (!isArray(collection)) {
       collection = toArray(collection);
     }

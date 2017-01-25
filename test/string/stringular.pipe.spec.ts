@@ -1,5 +1,4 @@
-import { StringularPipe } from '../../src/index';
-
+import {StringularPipe} from '../../src/index';
 
 describe('StringularPipe', () => {
   let pipe: StringularPipe;
@@ -12,13 +11,17 @@ describe('StringularPipe', () => {
   });
 
   it('should replace {n} with arguments passed after the text argument', function() {
-    expect(pipe.transform('lorem {0} dolor sit amet', 'ipsum')).toEqual('lorem ipsum dolor sit amet');
-    expect(pipe.transform('lorem {0} dolor {1} amet', 'ipsum', 'sit')).toEqual('lorem ipsum dolor sit amet');
-    expect(pipe.transform('{3} {0} dolor {1} amet', 'ipsum', 'sit', null, 'lorem')).toEqual('lorem ipsum dolor sit amet');
+    expect(pipe.transform('lorem {0} dolor sit amet', 'ipsum'))
+        .toEqual('lorem ipsum dolor sit amet');
+    expect(pipe.transform('lorem {0} dolor {1} amet', 'ipsum', 'sit'))
+        .toEqual('lorem ipsum dolor sit amet');
+    expect(pipe.transform('{3} {0} dolor {1} amet', 'ipsum', 'sit', null, 'lorem'))
+        .toEqual('lorem ipsum dolor sit amet');
   });
 
   it('should keep {n} if no matching argument was found', function() {
     expect(pipe.transform('lorem {0} dolor sit amet')).toEqual('lorem {0} dolor sit amet');
-    expect(pipe.transform('lorem {0} dolor {1} amet', 'ipsum')).toEqual('lorem ipsum dolor {1} amet');
+    expect(pipe.transform('lorem {0} dolor {1} amet', 'ipsum'))
+        .toEqual('lorem ipsum dolor {1} amet');
   });
 });

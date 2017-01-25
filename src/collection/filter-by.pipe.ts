@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, isString, isNumber, isUndefined } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'filterBy'
-})
+import {Parse} from '../utils/parse';
+import {isArray, isNumber, isString, isUndefined, toArray} from '../utils/utils';
+
+@Pipe({name: 'filterBy'})
 export class FilterByPipe implements PipeTransform {
   private $parse: Function;
 
@@ -12,14 +11,13 @@ export class FilterByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, properties: string[], search?: any, strict: boolean = false): Array<any> {
+  transform(collection: any, properties: string[], search?: any, strict: boolean = false):
+      Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
-    search = isString(search) || isNumber(search)
-      ? String(search).toLowerCase()
-      : undefined;
+    search = isString(search) || isNumber(search) ? String(search).toLowerCase() : undefined;
 
     if (!isArray(collection) || isUndefined(search)) {
       return collection;
@@ -42,9 +40,7 @@ export class FilterByPipe implements PipeTransform {
           comparator = this.$parse(prop)(elm)
         } else {
           let propList = prop.replace(/\s+/g, '').split('+');
-          comparator = propList
-            .map((p: string) => this.$parse(p)(elm))
-            .join(' ');
+          comparator = propList.map((p: string) => this.$parse(p)(elm)).join(' ');
         }
 
         // TODO: boolean?
@@ -55,11 +51,8 @@ export class FilterByPipe implements PipeTransform {
         comparator = String(comparator).toLowerCase();
 
         // indentical or contains
-        return strict
-          ? comparator === search
-          : comparator.indexOf(search) != -1;
+        return strict ? comparator === search : comparator.indexOf(search) != -1;
       });
     });
-
   }
 }

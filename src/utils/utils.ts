@@ -57,14 +57,16 @@ export function equals(a: any, b: any) {
   return true;
 }
 
-export function objectContains(partial: { [key: string]: any }, object: { [key: string]: any }): boolean {
+export function objectContains(
+    partial: {[key: string]: any}, object: {[key: string]: any}): boolean {
   return Object.keys(partial).every((key: string) => {
     return key in object && object[key] == partial[key];
   });
 }
 
-export function deepKeys(obj: { [key: string]: any },
-  stack: any[] = [], parent: any = null, intermediate: boolean = false): string[] {
+export function deepKeys(
+    obj: {[key: string]: any}, stack: any[] = [], parent: any = null,
+    intermediate: boolean = false): string[] {
   Object.keys(obj).forEach(function(el) {
     // Escape . in the element name
     var escaped = el.replace(/\./g, '\\\.');
@@ -83,7 +85,6 @@ export function deepKeys(obj: { [key: string]: any },
   });
   return stack
 }
-
 
 /**
  * @description

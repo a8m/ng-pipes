@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, objectContains, isUndefined } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'where'
-})
+import {isArray, isUndefined, objectContains, toArray} from '../utils/utils';
+
+@Pipe({name: 'where'})
 export class WherePipe implements PipeTransform {
   transform(collection: any, object?: any): any {
     if (!isArray(collection)) {

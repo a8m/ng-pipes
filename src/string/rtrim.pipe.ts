@@ -1,8 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'rtrim'
-})
+@Pipe({name: 'rtrim'})
 export class RightTrimPipe implements PipeTransform {
   transform(input: string, chars: string = '\\s'): string {
     return input.replace(new RegExp(chars + '+$'), '');

@@ -1,6 +1,6 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { IsNullPipe } from './is-null.pipe';
+import {IsNullPipe} from './is-null.pipe';
 
 export * from './is-null.pipe';
 
@@ -12,4 +12,5 @@ export * from './is-null.pipe';
     IsNullPipe,
   ]
 })
-export class BooleanPipesModule { }
+export class BooleanPipesModule {
+}

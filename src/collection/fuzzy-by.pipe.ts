@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, isString, isUndefined, hasApproxPattern } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'fuzzyBy'
-})
+import {Parse} from '../utils/parse';
+import {hasApproxPattern, isArray, isString, isUndefined, toArray} from '../utils/utils';
+
+@Pipe({name: 'fuzzyBy'})
 export class FuzzyByPipe implements PipeTransform {
   private $parse: Function;
 
@@ -12,7 +11,8 @@ export class FuzzyByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, property: string, search?: any, csensitive: boolean = false): Array<any> {
+  transform(collection: any, property: string, search?: any, csensitive: boolean = false):
+      Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }

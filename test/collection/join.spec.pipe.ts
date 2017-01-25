@@ -1,7 +1,8 @@
-import { JoinPipe } from '../../src/index';
+import {JoinPipe} from '../../src/index';
 
 describe('JoinPipe', () => {
-  let pipe: JoinPipe;;
+  let pipe: JoinPipe;
+  ;
   beforeEach(() => {
     pipe = new JoinPipe();
   });
@@ -42,8 +43,12 @@ describe('JoinPipe', () => {
             delim = 10;
             expect(pipe.transform(arr, delim)).toEqual('hello10world');
 
-            delim = { toString: function() { return ' - ' } }
-            expect(pipe.transform(arr, delim)).toEqual('hello - world');
+            delim = {
+              toString: function() {
+                return ' - '
+              }
+            } expect(pipe.transform(arr, delim))
+                        .toEqual('hello - world');
           });
         });
 

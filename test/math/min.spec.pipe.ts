@@ -1,4 +1,4 @@
-import { MinPipe } from '../../src/index';
+import {MinPipe} from '../../src/index';
 
 describe('MinPipe', () => {
   let pipe: MinPipe;
@@ -14,10 +14,8 @@ describe('MinPipe', () => {
 
   it('should get an array and expression and return an object', function() {
     var users = [
-      { user: { score: 988790 } },
-      { user: { score: 123414 } },
-      { user: { rank: 100000 } },
-      { user: { score: 987621 } }
+      {user: {score: 988790}}, {user: {score: 123414}}, {user: {rank: 100000}},
+      {user: {score: 987621}}
     ];
     expect(pipe.transform(users, 'user.rank')).toEqual(users[2]);
     expect(pipe.transform(users, 'user.score')).toEqual(users[1]);

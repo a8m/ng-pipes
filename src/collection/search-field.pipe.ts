@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isArray } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'searchField'
-})
+import {Parse} from '../utils/parse';
+import {isArray} from '../utils/utils';
+
+@Pipe({name: 'searchField'})
 export class SearchFieldPipe implements PipeTransform {
   private $parse: Function;
 
@@ -13,7 +12,6 @@ export class SearchFieldPipe implements PipeTransform {
   }
 
   transform(collection: any, ...args: any[]): any {
-
     if (!isArray(collection) || !args.length) {
       return collection;
     }

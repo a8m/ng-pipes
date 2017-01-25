@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'map'
-})
+import {Parse} from '../utils/parse';
+import {isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'map'})
 export class MapPipe implements PipeTransform {
   private $parse: Function;
 

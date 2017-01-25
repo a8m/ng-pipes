@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { MathPipesModule } from './math';
-import { StringPipesModule } from './string';
-import { BooleanPipesModule } from './boolean';
-import { CollectionPipesModule } from './collection';
+import {BooleanPipesModule} from './boolean';
+import {CollectionPipesModule} from './collection';
+import {MathPipesModule} from './math';
+import {StringPipesModule} from './string';
 
 export * from './math';
 export * from './string';
@@ -18,4 +18,5 @@ export * from './collection';
     CollectionPipesModule,
   ]
 })
-export class NgPipesModule { }
+export class NgPipesModule {
+}

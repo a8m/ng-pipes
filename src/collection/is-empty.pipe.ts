@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'isEmpty'
-})
+import {isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'isEmpty'})
 export class IsEmptyPipe implements PipeTransform {
   transform(collection: any): boolean {
     if (!isArray(collection)) {

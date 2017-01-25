@@ -1,4 +1,4 @@
-import { LatinizePipe } from '../../src/index';
+import {LatinizePipe} from '../../src/index';
 
 describe('LatinizePipe', () => {
   let pipe: LatinizePipe;

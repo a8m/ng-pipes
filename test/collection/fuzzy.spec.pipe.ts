@@ -1,25 +1,24 @@
-import { FuzzyPipe } from '../../src/index';
+import {FuzzyPipe} from '../../src/index';
 
 describe('FuzzyPipe', () => {
-  let pipe: FuzzyPipe
-    , collection = [
-      { title: 'The DaVinci Code', author: 'F. Scott Fitzgerald' },
-      { title: 'The Great Gatsby', author: 'Dan Browns' },
-      { title: 'Angels & Demons', author: 'Dan Louis' },
-      { title: 'The Lost Symbol', author: 'David Maine' },
-      { title: 'Old Man\'s War', author: 'Rob Grant' }
-    ];
+  let pipe: FuzzyPipe, collection = [
+    {title: 'The DaVinci Code', author: 'F. Scott Fitzgerald'},
+    {title: 'The Great Gatsby', author: 'Dan Browns'},
+    {title: 'Angels & Demons', author: 'Dan Louis'},
+    {title: 'The Lost Symbol', author: 'David Maine'},
+    {title: 'Old Man\'s War', author: 'Rob Grant'}
+  ];
   beforeEach(() => {
     pipe = new FuzzyPipe();
   });
 
   it('should get array as collection, search, and pipe.transform by fuzzy searching', function() {
-    //search by title
+    // search by title
     expect(pipe.transform(collection, 'tha')).toEqual([collection[0], collection[1]]);
     expect(pipe.transform(collection, 'thesy')).toEqual([collection[1], collection[3]]);
     expect(pipe.transform(collection, 'omwar')).toEqual([collection[4]]);
 
-    //search by author
+    // search by author
     expect(pipe.transform(collection, 'sfd')).toEqual([collection[0]]);
     expect(pipe.transform(collection, 'danos')).toEqual([collection[1], collection[2]]);
     expect(pipe.transform(collection, 'rgnt')).toEqual([collection[4]]);

@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, isUndefined } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'groupBy'
-})
+import {Parse} from '../utils/parse';
+import {isArray, isUndefined, toArray} from '../utils/utils';
+
+@Pipe({name: 'groupBy'})
 export class GroupByPipe implements PipeTransform {
   private $parse: Function;
 
@@ -12,14 +11,12 @@ export class GroupByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, prop: string): { [key: string]: Array<any> } {
+  transform(collection: any, prop: string): {[key: string]: Array<any>} {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
-    let result: { [key: string]: Array<any> } = {}
-      , getter = this.$parse(prop)
-      ;
+    let result: {[key: string]: Array<any>} = {}, getter = this.$parse(prop);
     collection.forEach((elm: any) => {
       let prop = getter(elm);
       if (isUndefined(result[prop])) {
