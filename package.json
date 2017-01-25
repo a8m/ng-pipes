@@ -10,7 +10,7 @@
   ],
   "main": "dist/ng-pipes.umd.js",
   "scripts": {
-    "prepublish": "node_modules/.bin/gulp clean && npm run ngc",
+    "prepublish": "node_modules/.bin/gulp clean && npm run ngc && npm run build",
     "tsc": "node_modules/.bin/tsc -p .",
     "karma": "node_modules/.bin/karma start karma.conf.js",
     "test": "npm run ngc && npm run karma",
