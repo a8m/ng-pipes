@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, toArray, isString, isFunction, isObject } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'contains'
-})
+import {Parse} from '../utils/parse';
+import {isArray, isFunction, isObject, isString, toArray} from '../utils/utils';
+
+@Pipe({name: 'contains'})
 export class ContainsPipe implements PipeTransform {
   private $parse: Function;
 
@@ -17,8 +16,9 @@ export class ContainsPipe implements PipeTransform {
       collection = toArray(collection);
     }
 
-    return collection.some((e: any) => isFunction(predicate) || (isString(predicate) && isObject(e))
-      ? this.$parse(predicate)(e)
-      : e === predicate);
+    return collection.some(
+        (e: any) => isFunction(predicate) || (isString(predicate) && isObject(e)) ?
+            this.$parse(predicate)(e) :
+            e === predicate);
   }
 }

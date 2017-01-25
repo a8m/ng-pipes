@@ -1,4 +1,4 @@
-import { RadixPipe } from '../../src/index';
+import {RadixPipe} from '../../src/index';
 
 describe('RadixPipe', () => {
   let pipe: RadixPipe;

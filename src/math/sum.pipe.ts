@@ -1,9 +1,7 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isArray } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
+import {isArray} from '../utils/utils';
 
-@Pipe({
-  name: 'sum'
-})
+@Pipe({name: 'sum'})
 export class SumPipe implements PipeTransform {
   transform(array: any, initial: number = 0): any {
     if (!isArray(array)) {

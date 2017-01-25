@@ -1,4 +1,4 @@
-import { MatchPipe } from '../../src/index';
+import {MatchPipe} from '../../src/index';
 
 describe('MatchPipe', () => {
   let pipe: MatchPipe;

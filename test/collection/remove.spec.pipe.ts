@@ -1,4 +1,4 @@
-import { RemovePipe } from '../../src/index';
+import {RemovePipe} from '../../src/index';
 
 describe('RemovePipe', () => {
   let pipe: RemovePipe;

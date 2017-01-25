@@ -1,5 +1,4 @@
-import { StartsWithPipe } from '../../src/index';
-
+import {StartsWithPipe} from '../../src/index';
 
 describe('StartsWithPipe', () => {
   let pipe: StartsWithPipe;

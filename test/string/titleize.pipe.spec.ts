@@ -1,4 +1,4 @@
-import { TitleizePipe } from '../../src/index';
+import {TitleizePipe} from '../../src/index';
 
 describe('TitleizePipe', () => {
   let pipe: TitleizePipe;
@@ -10,6 +10,6 @@ describe('TitleizePipe', () => {
     expect(pipe.transform('a')).toEqual('A');
     expect(pipe.transform('foo bar baz')).toEqual('Foo Bar Baz');
     expect(pipe.transform('lorem ipsum is simply dummy.... industry.'))
-      .toEqual('Lorem Ipsum Is Simply Dummy.... Industry.');
+        .toEqual('Lorem Ipsum Is Simply Dummy.... Industry.');
   });
 });

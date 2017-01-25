@@ -1,8 +1,6 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'endsWith'
-})
+@Pipe({name: 'endsWith'})
 export class EndsWithPipe implements PipeTransform {
   transform(input: string, ends?: string, csensitive: boolean = false): boolean {
     if (ends == '') {

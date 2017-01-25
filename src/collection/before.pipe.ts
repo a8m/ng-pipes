@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'before'
-})
+import {isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'before'})
 export class BeforePipe implements PipeTransform {
   transform(collection: any, count: number = 1): Array<any> {
     if (!isArray(collection)) {

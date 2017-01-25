@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, getFirstMatches, isNumber } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'last'
-})
+import {Parse} from '../utils/parse';
+import {getFirstMatches, isArray, isNumber, toArray} from '../utils/utils';
+
+@Pipe({name: 'last'})
 export class LastPipe implements PipeTransform {
   private $parse: Function;
 
@@ -23,12 +22,13 @@ export class LastPipe implements PipeTransform {
 
     collection = collection.slice().reverse();
 
-    let n: number = isNumber(args[0]) ? args[0] : 1
-      , getter = !isNumber(args[0]) ? args[0] : !isNumber(args[1]) ? args[1] : undefined;
+    let n: number = isNumber(args[0]) ? args[0] : 1,
+           getter = !isNumber(args[0]) ? args[0] : !isNumber(args[1]) ? args[1] : undefined;
 
     return args.length
-      // send reversed collection as arguments, and reverse it back
-      ? getFirstMatches(collection, n, getter ? this.$parse(getter) : getter).reverse()
-      : collection[0];
+        // send reversed collection as arguments, and reverse it back
+        ?
+        getFirstMatches(collection, n, getter ? this.$parse(getter) : getter).reverse() :
+        collection[0];
   }
 }

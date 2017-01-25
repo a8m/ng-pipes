@@ -17,7 +17,8 @@
     "ngc": "node_modules/.bin/ngc -p tsconfig.json",
     "build": "npm run tsc && npm run rollup",
     "rollup": "./node_modules/.bin/rollup -c -o dist/ng-pipes.umd.js",
-    "postrollup": "./node_modules/.bin/uglifyjs ./dist/ng-pipes.umd.js > ./dist/ng-pipes.umd.min.js"
+    "postrollup": "./node_modules/.bin/uglifyjs ./dist/ng-pipes.umd.js > ./dist/ng-pipes.umd.min.js",
+    "format": "./node_modules/.bin/clang-format --glob=\"@(src|test)/**/*.ts\" -i"
   },
   "author": "Ariel Mashraki",
   "repository": {
@@ -46,6 +47,7 @@
     "@angular/platform-server": "^2.3.0",
     "@types/core-js": "^0.9.34",
     "@types/jasmine": "^2.5.37",
+    "clang-format": "^1.0.46",
     "core-js": "^2.4.1",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.3.2",

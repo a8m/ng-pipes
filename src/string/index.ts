@@ -1,23 +1,23 @@
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
 
-import { EndsWithPipe } from './ends-with.pipe';
-import { StartsWithPipe } from './starts-with.pipe';
-import { LatinizePipe } from './latinize.pipe';
-import { LeftTrimPipe } from './ltrim.pipe';
-import { RightTrimPipe } from './rtrim.pipe';
-import { TrimPipe } from './trim.pipe';
-import { MatchPipe } from './match.pipe';
-import { RepeatPipe } from './repeat.pipe';
-import { SlugifyPipe } from './slugify.pipe';
-import { StringularPipe } from './stringular.pipe';
-import { StripTagsPipe } from './strip-tags.pipe';
-import { TestPipe } from './test.pipe';
-import { TruncatePipe } from './truncate.pipe';
-import { UcfirstPipe } from './ucfirst.pipe';
-import { TitleizePipe } from './titleize.pipe';
-import { UriComponentEncodePipe } from './uri-component-encode.pipe';
-import { UriEncodePipe } from './uri-encode.pipe';
-import { WrapPipe } from './wrap.pipe';
+import {EndsWithPipe} from './ends-with.pipe';
+import {LatinizePipe} from './latinize.pipe';
+import {LeftTrimPipe} from './ltrim.pipe';
+import {MatchPipe} from './match.pipe';
+import {RepeatPipe} from './repeat.pipe';
+import {RightTrimPipe} from './rtrim.pipe';
+import {SlugifyPipe} from './slugify.pipe';
+import {StartsWithPipe} from './starts-with.pipe';
+import {StringularPipe} from './stringular.pipe';
+import {StripTagsPipe} from './strip-tags.pipe';
+import {TestPipe} from './test.pipe';
+import {TitleizePipe} from './titleize.pipe';
+import {TrimPipe} from './trim.pipe';
+import {TruncatePipe} from './truncate.pipe';
+import {UcfirstPipe} from './ucfirst.pipe';
+import {UriComponentEncodePipe} from './uri-component-encode.pipe';
+import {UriEncodePipe} from './uri-encode.pipe';
+import {WrapPipe} from './wrap.pipe';
 
 export * from './ends-with.pipe';
 export * from './starts-with.pipe';
@@ -80,4 +80,5 @@ export * from './wrap.pipe';
     WrapPipe,
   ]
 })
-export class StringPipesModule { }
+export class StringPipesModule {
+}

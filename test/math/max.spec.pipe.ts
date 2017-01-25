@@ -1,4 +1,4 @@
-import { MaxPipe } from '../../src/index';
+import {MaxPipe} from '../../src/index';
 
 describe('MaxPipe', () => {
   let pipe: MaxPipe;
@@ -14,10 +14,8 @@ describe('MaxPipe', () => {
 
   it('should get an array and expression and return an object', function() {
     var users = [
-      { user: { score: 988790 } },
-      { user: { score: 123414 } },
-      { user: { rank: 988999 } },
-      { user: { score: 987621 } }
+      {user: {score: 988790}}, {user: {score: 123414}}, {user: {rank: 988999}},
+      {user: {score: 987621}}
     ];
     expect(pipe.transform(users, 'user.rank')).toEqual(users[2]);
     expect(pipe.transform(users, 'user.score')).toEqual(users[0]);

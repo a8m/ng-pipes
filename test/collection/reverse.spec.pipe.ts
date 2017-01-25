@@ -1,4 +1,4 @@
-import { ReversePipe } from '../../src/index';
+import {ReversePipe} from '../../src/index';
 
 describe('RemoveWithPipe', () => {
   let pipe: ReversePipe;

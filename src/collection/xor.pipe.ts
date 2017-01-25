@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isArray, toArray, isUndefined } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'xor'
-})
+import {Parse} from '../utils/parse';
+import {isArray, isUndefined, toArray} from '../utils/utils';
+
+@Pipe({name: 'xor'})
 export class XORPipe implements PipeTransform {
   private $parse: Function;
 
@@ -13,7 +12,6 @@ export class XORPipe implements PipeTransform {
   }
 
   transform(col1: any, col2: any, predicate?: any): any {
-
     col1 = !isArray(col1) ? toArray(col1) : col1;
     col2 = !isArray(col2) ? toArray(col2) : col2;
 
@@ -21,10 +19,9 @@ export class XORPipe implements PipeTransform {
       return col1;
     }
 
-    return col1.concat(col2)
-      .filter((elm: any) => {
-        return !(this.some(elm, col1, predicate) && this.some(elm, col2, predicate));
-      });
+    return col1.concat(col2).filter((elm: any) => {
+      return !(this.some(elm, col1, predicate) && this.some(elm, col2, predicate));
+    });
   }
 
   // TODO: add equlity check using "equals()" instead of ===

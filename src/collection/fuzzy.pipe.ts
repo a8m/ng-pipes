@@ -1,11 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, isString, isUndefined, hasApproxPattern, isObject } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'fuzzy'
-})
+import {hasApproxPattern, isArray, isObject, isString, isUndefined, toArray} from '../utils/utils';
+
+@Pipe({name: 'fuzzy'})
 export class FuzzyPipe implements PipeTransform {
-
   transform(collection: any, search: string, csensitive: boolean = false): Array<any> {
     if (!isArray(collection)) {
       collection = toArray(collection);
@@ -30,7 +28,8 @@ export class FuzzyPipe implements PipeTransform {
     });
   }
 
-  private hasApproximateKey(object: { [key: string]: any }, search: string, csensitive: boolean = false): boolean {
+  private hasApproximateKey(
+      object: {[key: string]: any}, search: string, csensitive: boolean = false): boolean {
     return Object.keys(object).some((elm: string) => {
       let prop = object[elm];
       if (!isString(prop)) {

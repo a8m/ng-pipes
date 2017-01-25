@@ -1,4 +1,4 @@
-import { FilterByPipe } from '../../src/index';
+import {FilterByPipe} from '../../src/index';
 
 describe('FilterByPipe', () => {
   let pipe: FilterByPipe;
@@ -8,10 +8,10 @@ describe('FilterByPipe', () => {
 
   it('should pipe.transform by specific properties and avoid the rest', function() {
     var users = [
-      { id: 1, user: { first_name: 'foo', last_name: 'bar', mobile: 4444 } },
-      { id: 2, user: { first_name: 'bar', last_name: 'foo', mobile: 3333 } },
-      { id: 3, user: { first_name: 'foo', last_name: 'baz', mobile: 2222 } },
-      { id: 4, user: { first_name: 'baz', last_name: 'foo', mobile: 1111 } }
+      {id: 1, user: {first_name: 'foo', last_name: 'bar', mobile: 4444}},
+      {id: 2, user: {first_name: 'bar', last_name: 'foo', mobile: 3333}},
+      {id: 3, user: {first_name: 'foo', last_name: 'baz', mobile: 2222}},
+      {id: 4, user: {first_name: 'baz', last_name: 'foo', mobile: 1111}}
     ];
 
     expect(pipe.transform(users, ['user.first_name', 'user.last_name'], 'foo')).toEqual(users);
@@ -25,10 +25,10 @@ describe('FilterByPipe', () => {
 
   it('should support to get object as collection', function() {
     var users = {
-      0: { id: 1, user: { first_name: 'foo', last_name: 'bar', mobile: 4444 } },
-      1: { id: 2, user: { first_name: 'bar', last_name: 'foo', mobile: 3333 } },
-      2: { id: 3, user: { first_name: 'foo', last_name: 'baz', mobile: 2222 } },
-      3: { id: 4, user: { first_name: 'baz', last_name: 'foo', mobile: 1111 } }
+      0: {id: 1, user: {first_name: 'foo', last_name: 'bar', mobile: 4444}},
+      1: {id: 2, user: {first_name: 'bar', last_name: 'foo', mobile: 3333}},
+      2: {id: 3, user: {first_name: 'foo', last_name: 'baz', mobile: 2222}},
+      3: {id: 4, user: {first_name: 'baz', last_name: 'foo', mobile: 1111}}
     };
 
     expect(pipe.transform(users, ['user.first_name', 'user.last_name'], 'foo')).toEqual([
@@ -40,17 +40,25 @@ describe('FilterByPipe', () => {
 
   it('should parse concatenate properties, and search them by one field', function() {
     var users = [
-      { id: 1, user: { first_name: 'foo', last_name: 'bar', mobile: 4444 } },
-      { id: 2, user: { first_name: 'bar', last_name: 'foo', mobile: 3333 } },
-      { id: 3, user: { first_name: 'foo', last_name: 'baz', mobile: 2222 } },
-      { id: 4, user: { first_name: 'baz', last_name: 'foo', mobile: 1111 } }
+      {id: 1, user: {first_name: 'foo', last_name: 'bar', mobile: 4444}},
+      {id: 2, user: {first_name: 'bar', last_name: 'foo', mobile: 3333}},
+      {id: 3, user: {first_name: 'foo', last_name: 'baz', mobile: 2222}},
+      {id: 4, user: {first_name: 'baz', last_name: 'foo', mobile: 1111}}
     ];
 
-    expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo bar')).toEqual([users[0]]);
-    expect(pipe.transform(users, ['user.first_name+user.last_name'], 'foo bar')).toEqual([users[0]]);
-    expect(pipe.transform(users, ['user.first_name + user.mobile'], 'foo 4444')).toEqual([users[0]]);
+    expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo bar')).toEqual([
+      users[0]
+    ]);
+    expect(pipe.transform(users, ['user.first_name+user.last_name'], 'foo bar')).toEqual([
+      users[0]
+    ]);
+    expect(pipe.transform(users, ['user.first_name + user.mobile'], 'foo 4444')).toEqual([
+      users[0]
+    ]);
 
-    expect(pipe.transform(users, ['user.first_name + user.undefined'], 'foo')).toEqual([users[0], users[2]]);
+    expect(pipe.transform(users, ['user.first_name + user.undefined'], 'foo')).toEqual([
+      users[0], users[2]
+    ]);
 
     expect(pipe.transform(users, ['user.first_name + user.last_name'], 'a')).toEqual(users);
     expect(pipe.transform(users, ['user.first_name + user.last_name'], 'ba')).toEqual(users);
@@ -59,10 +67,10 @@ describe('FilterByPipe', () => {
 
   it('should take care on extreme conditions', function() {
     var users = [
-      { id: 1, user: { first_name: 'foo', last_name: 'bar', mobile: 4444 } },
-      { id: 2, user: { first_name: 'bar', last_name: 'foo', mobile: 3333 } },
-      { id: 3, user: { first_name: 'foo', last_name: 'baz', mobile: 2222 } },
-      { id: 4, user: { first_name: 'baz', last_name: 'foo', mobile: 1111 } }
+      {id: 1, user: {first_name: 'foo', last_name: 'bar', mobile: 4444}},
+      {id: 2, user: {first_name: 'bar', last_name: 'foo', mobile: 3333}},
+      {id: 3, user: {first_name: 'foo', last_name: 'baz', mobile: 2222}},
+      {id: 4, user: {first_name: 'baz', last_name: 'foo', mobile: 1111}}
     ];
 
     expect(pipe.transform(users, ['id'], 1)).toEqual([users[0]]);
@@ -74,9 +82,7 @@ describe('FilterByPipe', () => {
   });
 
   describe('strict mode', function() {
-    var users = [
-      { id: 1, user: { first_name: 'foo', last_name: 'bar', mobile: 4444 } }
-    ];
+    var users = [{id: 1, user: {first_name: 'foo', last_name: 'bar', mobile: 4444}}];
 
     it('should only return exact matches', function() {
       expect(pipe.transform(users, ['user.first_name'], 'fo', true)).toEqual([]);
@@ -85,12 +91,15 @@ describe('FilterByPipe', () => {
 
     it('should handle multiple properties', function() {
       expect(pipe.transform(users, ['user.first_name', 'user.last_name'], 'ba', true)).toEqual([]);
-      expect(pipe.transform(users, ['user.first_name', 'user.last_name'], 'bar', true)).toEqual(users);
+      expect(pipe.transform(users, ['user.first_name', 'user.last_name'], 'bar', true))
+          .toEqual(users);
     });
 
     it('should handle concatenation', function() {
-      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo ba', true)).toEqual([]);
-      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo bar', true)).toEqual(users);
+      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo ba', true)).toEqual([
+      ]);
+      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo bar', true))
+          .toEqual(users);
     });
   });
 });

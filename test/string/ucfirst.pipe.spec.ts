@@ -1,4 +1,4 @@
-import { UcfirstPipe } from '../../src/index';
+import {UcfirstPipe} from '../../src/index';
 
 describe('UcfirstPipe', () => {
   let pipe: UcfirstPipe;
@@ -10,6 +10,6 @@ describe('UcfirstPipe', () => {
     expect(pipe.transform('a')).toEqual('A');
     expect(pipe.transform('foo bar baz')).toEqual('Foo bar baz');
     expect(pipe.transform('lorem ipsum is simply dummy.... industry.'))
-      .toEqual('Lorem ipsum is simply dummy.... industry.');
+        .toEqual('Lorem ipsum is simply dummy.... industry.');
   });
 });

@@ -1,4 +1,4 @@
-import { LastPipe } from '../../src/index';
+import {LastPipe} from '../../src/index';
 
 describe('LastPipe', () => {
   let pipe: LastPipe;
@@ -10,21 +10,21 @@ describe('LastPipe', () => {
     expect(pipe.transform([1, 2, 3, 4, 5])).toEqual(5);
     expect(pipe.transform(['a', 'b', 'c', 'd'])).toEqual('d');
     expect(pipe.transform([undefined, null, null])).toEqual(null);
-    expect(pipe.transform({ 0: 'foo', 1: 'bar' })).toEqual('bar');
+    expect(pipe.transform({0: 'foo', 1: 'bar'})).toEqual('bar');
   });
 
   it('should return last n elements of a collection', function() {
     expect(pipe.transform([1, 2, 3, 4, 5], 3)).toEqual([3, 4, 5]);
     expect(pipe.transform([undefined, null, null], 2)).toEqual([null, null]);
-    expect(pipe.transform({ 0: 'foo', 1: 'bar' }, 2)).toEqual(['foo', 'bar']);
+    expect(pipe.transform({0: 'foo', 1: 'bar'}, 2)).toEqual(['foo', 'bar']);
   });
 
   it('should return the last element that match the expression', function() {
     var users = [
-      { id: 1, name: { first: 'foo', last: 'bar' }, active: false },
-      { id: 2, name: { first: 'baz', last: 'bar' }, active: true },
-      { id: 3, name: { first: 'bar', last: 'bar' }, active: false },
-      { id: 4, name: { first: 'lol', last: 'bar' }, active: true }
+      {id: 1, name: {first: 'foo', last: 'bar'}, active: false},
+      {id: 2, name: {first: 'baz', last: 'bar'}, active: true},
+      {id: 3, name: {first: 'bar', last: 'bar'}, active: false},
+      {id: 4, name: {first: 'lol', last: 'bar'}, active: true}
     ];
 
     expect(pipe.transform(users, 'active')).toEqual([users[3]]);

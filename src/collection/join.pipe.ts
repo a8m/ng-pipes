@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'join'
-})
+import {isArray, toArray} from '../utils/utils';
+
+@Pipe({name: 'join'})
 export class JoinPipe implements PipeTransform {
   transform(collection: any, delimiter: any = ' '): string {
     if (!isArray(collection)) {

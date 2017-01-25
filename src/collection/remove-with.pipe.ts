@@ -1,9 +1,8 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { toArray, isArray, objectContains, isUndefined } from '../utils/utils';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'removeWith'
-})
+import {isArray, isUndefined, objectContains, toArray} from '../utils/utils';
+
+@Pipe({name: 'removeWith'})
 export class RemoveWithPipe implements PipeTransform {
   transform(collection: any, object?: any): any {
     if (!isArray(collection)) {

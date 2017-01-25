@@ -1,10 +1,9 @@
-import { Pipe, PipeTransform } from '@angular/core';
-import { isUndefined } from '../utils/utils';
-import { Parse } from '../utils/parse';
+import {Pipe, PipeTransform} from '@angular/core';
 
-@Pipe({
-  name: 'min'
-})
+import {Parse} from '../utils/parse';
+import {isUndefined} from '../utils/utils';
+
+@Pipe({name: 'min'})
 export class MinPipe implements PipeTransform {
   private $parse: Function;
 
@@ -12,9 +11,8 @@ export class MinPipe implements PipeTransform {
     this.$parse = Parse();
   }
   transform(input: Array<any>, predicate?: any): any {
-    return isUndefined(predicate)
-      ? Math.min.apply(Math, input)
-      : input[this.index(input, this.$parse(predicate))];
+    return isUndefined(predicate) ? Math.min.apply(Math, input) :
+                                    input[this.index(input, this.$parse(predicate))];
   }
 
   private index(input: Array<any>, fn: Function): number {

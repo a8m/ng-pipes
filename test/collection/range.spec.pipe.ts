@@ -1,4 +1,4 @@
-import { RangePipe } from '../../src/index';
+import {RangePipe} from '../../src/index';
 
 describe('RangePipe', () => {
   let pipe: RangePipe;
@@ -22,8 +22,9 @@ describe('RangePipe', () => {
   });
 
   it('should return 10 items starting at 10 incrementing by 10 and multiplied by 2.', function() {
-    expect(pipe.transform([], 10, 10, 10, function(n: number) { return 2 * n; }))
-      .toEqual([20, 40, 60, 80, 100, 120, 140, 160, 180, 200]);
+    expect(pipe.transform([], 10, 10, 10, function(n: number) {
+      return 2 * n;
+    })).toEqual([20, 40, 60, 80, 100, 120, 140, 160, 180, 200]);
     expect(pipe.transform([], 10).length).toEqual(10);
   });
 });

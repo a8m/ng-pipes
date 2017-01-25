@@ -1,4 +1,4 @@
-import { LeftTrimPipe } from '../../src/index';
+import {LeftTrimPipe} from '../../src/index';
 
 describe('LeftTrimPipe', () => {
   let pipe: LeftTrimPipe;

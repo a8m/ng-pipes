@@ -1,4 +1,4 @@
-import { AbsPipe } from '../../src/index';
+import {AbsPipe} from '../../src/index';
 
 describe('AbsPipe', () => {
   let pipe: AbsPipe;
