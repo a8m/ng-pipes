@@ -1,4 +1,6 @@
 # ng-pipes &nbsp; [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![License][license-image]][license-url]
+
+[![Join the chat at https://gitter.im/ng-pipes/Lobby](https://badges.gitter.im/ng-pipes/Lobby.svg)](https://gitter.im/ng-pipes/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 > [a8m/angular-filter](https://github.com/a8m/angular-filter) for Angular2
 
 This module works with Angular 2.x.
