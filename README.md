@@ -62,12 +62,6 @@ Inject it to your class(could be Component, Service, etc..), or use it inside th
   </h1>
   ```
 
-#### Project status:
-Before publishing a stable version, there are several tasks to finish.  
-I working on that, but I will appreciate any help.
-- [ ] Add all [boolean pipes](https://github.com/a8m/angular-filter/tree/master/src/_filter/boolean)
-- [ ] Finish documentation. including "Get Started" section
-
 
 
 
