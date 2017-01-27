@@ -7,6 +7,7 @@ import {MatchPipe} from './match.pipe';
 import {RepeatPipe} from './repeat.pipe';
 import {RightTrimPipe} from './rtrim.pipe';
 import {SlugifyPipe} from './slugify.pipe';
+import {SplitPipe} from './split.pipe';
 import {StartsWithPipe} from './starts-with.pipe';
 import {StringularPipe} from './stringular.pipe';
 import {StripTagsPipe} from './strip-tags.pipe';
@@ -28,6 +29,7 @@ export * from './trim.pipe';
 export * from './match.pipe';
 export * from './test.pipe';
 export * from './repeat.pipe';
+export * from './split.pipe';
 export * from './slugify.pipe';
 export * from './stringular.pipe';
 export * from './strip-tags.pipe';
@@ -50,6 +52,7 @@ export * from './wrap.pipe';
     TestPipe,
     RepeatPipe,
     SlugifyPipe,
+    SplitPipe,
     StringularPipe,
     StripTagsPipe,
     TruncatePipe,
@@ -70,6 +73,7 @@ export * from './wrap.pipe';
     TestPipe,
     RepeatPipe,
     SlugifyPipe,
+    SplitPipe,
     StringularPipe,
     StripTagsPipe,
     TruncatePipe,
