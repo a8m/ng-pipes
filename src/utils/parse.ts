@@ -44,17 +44,17 @@ function setterFn(scope: {[key: string]: any}, path: string[], value: any): any 
  * @returns {Function}
  */
 export function Parse() {
-  var cache: {[key: string]: Function} = {};
+  const cache: {[key: string]: Function} = {};
 
   return function(exp: any): Function {
     let fn: any = function() {};
 
     if (isString(exp)) {
-      var cacheKey = exp.trim();
+      const cacheKey = exp.trim();
       if (cacheKey in cache) {
         return cache[cacheKey];
       }
-      var pathKeys = exp.split('.');
+      const pathKeys = exp.split('.');
       fn = cache[cacheKey] = createGetterFn(pathKeys);
       fn.assign = function(scope: {[key: string]: any}, value: any) {
         return setterFn(scope, pathKeys, value);

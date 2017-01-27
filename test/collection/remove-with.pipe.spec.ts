@@ -2,15 +2,16 @@ import {RemoveWithPipe} from '../../src/index';
 
 describe('RemoveWithPipe', () => {
   let pipe: RemoveWithPipe;
+
   beforeEach(() => {
     pipe = new RemoveWithPipe();
   });
 
   it('should get array and properties object and return' +
          'array pipe.transformed by equivalent property values.',
-     function() {
+     () => {
 
-       var array = [
+       const array: Array<any> = [
          {id: 1, name: 'ariel'}, {id: 2, name: 'baz'}, {id: 1, name: 'ariel'},
          {id: 1, name: 'bar'}
        ];
@@ -26,9 +27,9 @@ describe('RemoveWithPipe', () => {
 
   it('should get object and properties object and return' +
          'array of all elements that have equivalent property values.',
-     function() {
+     () => {
 
-       var object = {
+       const object: any = {
          0: {id: 1, name: 'ariel'},
          1: {id: 2, name: 'baz'},
          2: {id: 1, name: 'ariel'},
@@ -42,10 +43,11 @@ describe('RemoveWithPipe', () => {
 
      });
 
-  it('should not get properties object and return the collection as is', function() {
+  it('should not get properties object and return the collection as is', () => {
 
     expect(pipe.transform([{a: 1}])).toEqual([{a: 1}]);
     expect(pipe.transform([{a: 1}, {b: 2}])).toEqual([{a: 1}, {b: 2}]);
 
   });
+
 });

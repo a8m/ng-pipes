@@ -2,10 +2,12 @@ import {UniqPipe} from '../../src/index';
 
 describe('UniqPipe', () => {
   let pipe: UniqPipe;
+
   beforeEach(() => {
     pipe = new UniqPipe();
   });
-  it('should get a collection of primitives and return pipe.transformed collection', function() {
+
+  it('should get a collection of primitives and return pipe.transformed collection', () => {
     // Boolean
     expect(pipe.transform([true, true, false, false, true])).toEqual([true, false]);
     // numbers
@@ -14,9 +16,9 @@ describe('UniqPipe', () => {
     expect(pipe.transform(['Ariel', 'Ariel', 'Ariel'])).toEqual(['Ariel']);
   });
 
-  it('should get array as collection, property(nested to) as identifier and filter', function() {
+  it('should get array as collection, property(nested to) as identifier and filter', () => {
 
-    var orders = [
+    const orders: Array<any> = [
       {id: 10, customer: {name: 'foo', id: 1}},
       {id: 11, customer: {name: 'bar', id: 2}},
       {id: 12, customer: {name: 'foo', id: 1}},
@@ -24,7 +26,7 @@ describe('UniqPipe', () => {
       {id: 14, customer: {name: 'baz', id: 3}},
     ];
 
-    var filteredOrders = [
+    const filteredOrders: Array<any> = [
       {id: 10, customer: {name: 'foo', id: 1}},
       {id: 11, customer: {name: 'bar', id: 2}},
       {id: 14, customer: {name: 'baz', id: 3}},
@@ -41,15 +43,15 @@ describe('UniqPipe', () => {
 
   });
 
-  it('should filtered by property and not touch members without this property', function() {
+  it('should filtered by property and not touch members without this property', () => {
 
-    var array = [
+    const array: Array<any> = [
       {id: 1, person: {name: 'Ariel', age: 25}}, {id: 2, person: {name: 'Joe', age: 25}},
       {id: 3, person: {name: 'Bob', age: 42}}, {id: 4, person: {name: 'Marie', age: 42}}, {}, [], 1,
       2, 'foo', true, null
     ];
 
-    var filteredArray = [
+    const filteredArray: Array<any> = [
       {id: 1, person: {name: 'Ariel', age: 25}}, {id: 3, person: {name: 'Bob', age: 42}}, {}, [], 1,
       2, 'foo', true, null
     ];
@@ -61,12 +63,13 @@ describe('UniqPipe', () => {
     expect(pipe.transform(array, 'id')).toEqual(array);
   });
 
-  it('should support advance nested properties', function() {
-    var orders = [
+  it('should support advance nested properties', () => {
+    const orders: Array<any> = [
       {order: {person: {credit: {information: {num: 99999}}}}},
       {order: {person: {credit: {information: {num: 99999}}}}},
       {order: {person: {credit: {information: {num: 99999}}}}}
     ];
     expect(pipe.transform(orders, 'order.person.credit.information.num')).toEqual([orders[0]]);
   });
+
 });

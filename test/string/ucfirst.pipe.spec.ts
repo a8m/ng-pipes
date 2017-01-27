@@ -2,6 +2,7 @@ import {UcfirstPipe} from '../../src/index';
 
 describe('UcfirstPipe', () => {
   let pipe: UcfirstPipe;
+
   beforeEach(() => {
     pipe = new UcfirstPipe();
   });
@@ -12,4 +13,5 @@ describe('UcfirstPipe', () => {
     expect(pipe.transform('lorem ipsum is simply dummy.... industry.'))
         .toEqual('Lorem ipsum is simply dummy.... industry.');
   });
+
 });

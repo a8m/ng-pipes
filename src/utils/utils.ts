@@ -1,42 +1,27 @@
-export function isUndefined(value: any): boolean {
-  return typeof value === 'undefined';
-}
+export const isArray = (value: any): boolean => Array.isArray(value);
 
-export function isNull(value: any): boolean {
-  return value === null;
-}
+export const isFunction = (value: any): boolean => typeof value === 'function';
 
-export function isNumber(value: any): boolean {
-  return typeof value === 'number';
-}
+export const isNull = (value: any): boolean => value === null;
 
-export function isString(value: any): boolean {
-  return typeof value === 'string';
-}
+export const isNumber = (value: any): boolean => typeof value === 'number';
 
-export function isObject(value: any): boolean {
-  return typeof value === 'object';
-}
+export const isObject = (value: any): boolean => typeof value === 'object';
 
-export function isArray(value: any): boolean {
-  return Array.isArray(value);
-}
+export const isString = (value: any): boolean => typeof value === 'string';
 
-export function isFunction(value: any): boolean {
-  return typeof value === 'function';
-}
+export const isUndefined = (value: any): boolean => typeof value === 'undefined';
 
 export function toArray(object: any): Array<any> {
-  return isArray(object) ? object : Object.keys(object).map((key) => {
-    return object[key];
-  });
+  return isArray(object) ? object : Object.keys(object).map((key) => object[key]);
 }
 
-export function equals(a: any, b: any) {
+export function equals(a: any, b: any): boolean {
   if (a === b) {
     return true;
   }
-  if (!(typeof a === 'object' && typeof b === 'object')) {
+
+  if (!isObject(a) || !isObject(b)) {
     return a === b;
   }
 
@@ -46,11 +31,12 @@ export function equals(a: any, b: any) {
   if (keysA.length !== keysB.length) {
     return false;
   }
+
   // Test for A's keys different from B.
-  var hasOwn = Object.prototype.hasOwnProperty;
-  for (let i = 0; i < keysA.length; i++) {
-    const key = keysA[i];
-    if (!hasOwn.call(b, keysA[i]) || !equals(a[key], b[key])) {
+  const hasOwn = Object.prototype.hasOwnProperty;
+
+  for (const key of keysA) {
+    if (!hasOwn.call(b, key) || !equals(a[key], b[key])) {
       return false;
     }
   }
@@ -59,27 +45,25 @@ export function equals(a: any, b: any) {
 
 export function objectContains(
     partial: {[key: string]: any}, object: {[key: string]: any}): boolean {
-  return Object.keys(partial).every((key: string) => {
-    return key in object && object[key] == partial[key];
-  });
+  return Object.keys(partial).every((key: string) => key in object && object[key] == partial[key]);
 }
 
 export function deepKeys(
     obj: {[key: string]: any}, stack: any[] = [], parent: any = null,
-    intermediate: boolean = false): string[] {
-  Object.keys(obj).forEach(function(el) {
+    intermediate: boolean = false): Array<string> {
+  Object.keys(obj).forEach((el: string) => {
     // Escape . in the element name
-    var escaped = el.replace(/\./g, '\\\.');
+    const escaped = el.replace(/\./g, '\\\.');
     // If it's a nested object
     if (isObject(obj[el]) && !isArray(obj[el])) {
       // Concatenate the new parent if exist
-      var p = parent ? parent + '.' + el : parent;
+      const p = parent ? parent + '.' + el : parent;
       // Push intermediate parent key if flag is true
       if (intermediate) stack.push(parent ? p : escaped);
       deepKeys(obj[el], stack, p || escaped, intermediate);
     } else {
       // Create and save the key
-      var key = parent ? parent + '.' + escaped : escaped;
+      const key = parent ? parent + '.' + escaped : escaped;
       stack.push(key)
     }
   });
@@ -96,10 +80,10 @@ export function deepKeys(
  * @return array or single object
  */
 export function getFirstMatches(array: any, n: number, getter: Function) {
-  var count = 0;
+  let count = 0;
 
   return array.filter((elm: any) => {
-    var rest = !isUndefined(getter) ? count < n && getter(elm) : count < n;
+    const rest = !isUndefined(getter) ? count < n && getter(elm) : count < n;
     count = rest ? count + 1 : count;
 
     return rest;
@@ -114,23 +98,26 @@ export function getFirstMatches(array: any, n: number, getter: Function) {
  * @returns {*}
  */
 export function hasApproxPattern(word: string, pattern: string): boolean {
-  function indexOf(word: string, p: number, c: string) {
-    var j = 0;
+  function indexOf(word: string, p: number, c: string): number {
+    let j = 0;
     while ((p + j) <= word.length) {
       if (word.charAt(p + j) == c) return j;
       j++;
     }
     return -1;
   }
-  var p = 0;
-  for (var i = 0; i <= pattern.length; i++) {
-    var index = indexOf(word, p, pattern.charAt(i));
+
+  let p = 0;
+
+  for (let i = 0; i <= pattern.length; i++) {
+    const index = indexOf(word, p, pattern.charAt(i));
+
     if (index == -1) return false;
     p += index + 1;
   }
   return true
 }
 
-export function convertToDecimal(num: number, decimal: number): number {
+export const convertToDecimal = (num: number, decimal: number): number => {
   return Math.round(num * Math.pow(10, decimal)) / (Math.pow(10, decimal));
 }

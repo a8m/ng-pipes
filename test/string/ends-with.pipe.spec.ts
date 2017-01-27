@@ -2,6 +2,7 @@ import {EndsWithPipe} from '../../src/index';
 
 describe('EndsWithPipe', () => {
   let pipe: EndsWithPipe;
+
   beforeEach(() => {
     pipe = new EndsWithPipe();
   });
@@ -23,4 +24,5 @@ describe('EndsWithPipe', () => {
     expect(pipe.transform('string', 'ING', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
+
 });

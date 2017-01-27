@@ -2,6 +2,7 @@ import {RightTrimPipe} from '../../src/index';
 
 describe('RightTrimPipe', () => {
   let pipe: RightTrimPipe;
+
   beforeEach(() => {
     pipe = new RightTrimPipe();
   });
@@ -18,4 +19,5 @@ describe('RightTrimPipe', () => {
     expect(pipe.transform('barfoobar', 'bar')).toEqual('barfoo');
     expect(pipe.transform('barfoobar', 'foo')).toEqual('barfoobar');
   });
+
 });

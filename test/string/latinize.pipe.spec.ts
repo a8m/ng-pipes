@@ -2,6 +2,7 @@ import {LatinizePipe} from '../../src/index';
 
 describe('LatinizePipe', () => {
   let pipe: LatinizePipe;
+
   beforeEach(() => {
     pipe = new LatinizePipe();
   });
@@ -11,4 +12,5 @@ describe('LatinizePipe', () => {
     expect(pipe.transform('föo bàr baz')).toEqual('foo bar baz');
     expect(pipe.transform('Lòrém Ìpsûm dölôr sít Àmet')).toEqual('Lorem Ipsum dolor sit Amet');
   });
+
 });

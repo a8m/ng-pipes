@@ -2,6 +2,7 @@ import {StartsWithPipe} from '../../src/index';
 
 describe('StartsWithPipe', () => {
   let pipe: StartsWithPipe;
+
   beforeEach(() => {
     pipe = new StartsWithPipe();
   });
@@ -23,4 +24,5 @@ describe('StartsWithPipe', () => {
     expect(pipe.transform('string', 'STR', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
+
 });

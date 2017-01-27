@@ -2,21 +2,22 @@ import {SearchFieldPipe} from '../../src/index';
 
 describe('SearchFieldPipe', () => {
   let pipe: SearchFieldPipe;
+
   beforeEach(() => {
     pipe = new SearchFieldPipe();
   });
 
   it('should get array as a collection, and several keys for searchFiled and' +
          'return new array with the new "searchField" property',
-     function() {
+     () => {
 
-       var input = [
+       const input: Array<any> = [
          {first_name: 'Sharon', last_name: 'Melendez'},
          {first_name: 'Edmundo', last_name: 'Hepler'},
          {first_name: 'Marsha', last_name: 'Letourneau'}
        ];
 
-       var output = [
+       const output = [
          {first_name: 'Sharon', last_name: 'Melendez', searchField: 'Sharon Melendez'},
          {first_name: 'Edmundo', last_name: 'Hepler', searchField: 'Edmundo Hepler'},
          {first_name: 'Marsha', last_name: 'Letourneau', searchField: 'Marsha Letourneau'}
@@ -30,25 +31,25 @@ describe('SearchFieldPipe', () => {
 
      });
 
-  it('should support nested properties to', function() {
+  it('should support nested properties to', () => {
 
-    var input = [
+    const input: Array<any> = [
       {user: {first_name: 'Sharon', last_name: 'Melendez'}},
       {user: {first_name: 'Edmundo', last_name: 'Hepler'}},
       {user: {first_name: 'Marsha', last_name: 'Letourneau'}}
     ];
 
-    var output = [
+    const output: Array<any> = [
       {user: {first_name: 'Sharon', last_name: 'Melendez'}, searchField: 'Sharon Melendez'},
       {user: {first_name: 'Edmundo', last_name: 'Hepler'}, searchField: 'Edmundo Hepler'},
       {user: {first_name: 'Marsha', last_name: 'Letourneau'}, searchField: 'Marsha Letourneau'}
     ];
 
-    var inputObject = {user: {details: {name: {first: 'Ariel', last: 'Mashraki'}}}},
-        outputObject = {
-          user: {details: {name: {first: 'Ariel', last: 'Mashraki'}}},
-          searchField: 'Ariel Mashraki'
-        };
+    const inputObject = {user: {details: {name: {first: 'Ariel', last: 'Mashraki'}}}},
+          outputObject = {
+            user: {details: {name: {first: 'Ariel', last: 'Mashraki'}}},
+            searchField: 'Ariel Mashraki'
+          };
 
     expect(pipe.transform(input, 'user.first_name', 'user.last_name')).toEqual(output);
 
@@ -57,12 +58,13 @@ describe('SearchFieldPipe', () => {
 
   });
 
-  it('should change the original/source collection', function() {
+  it('should change the original/source collection', () => {
 
-    var mutable = [{a: 'a', b: 'b'}];
+    const mutable: Array<any> = [{a: 'a', b: 'b'}];
     pipe.transform(mutable, 'a', 'b');
 
     expect(mutable).toEqual([{a: 'a', b: 'b', searchField: 'a b'}]);
 
   });
+
 });

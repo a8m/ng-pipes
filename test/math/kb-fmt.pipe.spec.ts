@@ -2,11 +2,12 @@ import {KBFmtPipe} from '../../src/index';
 
 describe('KBFmtPipe', () => {
   let pipe: KBFmtPipe;
+
   beforeEach(() => {
     pipe = new KBFmtPipe();
   });
 
-  it('should return the correct display from number of kilobytes', function() {
+  it('should return the correct display from number of kilobytes', () => {
     expect(pipe.transform(0, 2)).toEqual('0 KB');
     expect(pipe.transform(5, 2)).toEqual('5 KB');
     expect(pipe.transform(1024, 0)).toEqual('1 MB');
@@ -22,7 +23,7 @@ describe('KBFmtPipe', () => {
     expect(pipe.transform(5123980591620717411303425, 2)).toEqual('4340.18 YB');
   });
 
-  it('should return NaN if decimal point is less than zero or not a number', function() {
+  it('should return NaN if decimal point is less than zero or not a number', () => {
     expect(pipe.transform(0.45, -1)).toEqual('NaN');
     expect(pipe.transform(-0.25, -101)).toEqual('NaN');
     expect(pipe.transform(0.45, 1.3)).toEqual('NaN');
@@ -30,4 +31,5 @@ describe('KBFmtPipe', () => {
     expect(pipe.transform(0.45, [3])).toEqual('NaN');
     expect(pipe.transform(0.45, {num: 4})).toEqual('NaN');
   });
+
 });

@@ -2,6 +2,7 @@ import {AfterWherePipe} from '../../src/index';
 
 describe('AfterWherePipe', () => {
   let pipe: AfterWherePipe;
+
   beforeEach(() => {
     pipe = new AfterWherePipe();
   });
@@ -38,4 +39,5 @@ describe('AfterWherePipe', () => {
        expect(pipe.transform(object, {a: 3})).toEqual([{a: 3}, {a: 4}]);
        expect(pipe.transform(orders, {date: 'Tue Jul 18 2014'})).toEqual([orders[3], orders[4]]);
      });
+
 });

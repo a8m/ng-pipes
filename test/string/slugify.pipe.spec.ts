@@ -2,6 +2,7 @@ import {SlugifyPipe} from '../../src/index';
 
 describe('SlugifyPipe', () => {
   let pipe: SlugifyPipe;
+
   beforeEach(() => {
     pipe = new SlugifyPipe();
   });
@@ -19,4 +20,5 @@ describe('SlugifyPipe', () => {
     expect(pipe.transform('Lorem ipsum dolor sit amet', '-')).toEqual('lorem-ipsum-dolor-sit-amet');
     expect(pipe.transform('Lorem ipsum dolor sit amet', '')).toEqual('loremipsumdolorsitamet');
   });
+
 });

@@ -3,40 +3,41 @@ import {JoinPipe} from '../../src/index';
 describe('JoinPipe', () => {
   let pipe: JoinPipe;
   ;
+
   beforeEach(() => {
     pipe = new JoinPipe();
   });
 
-  describe('given a collection', function() {
+  describe('given a collection', () => {
     let arr: any;
 
-    describe('which is empty', function() {
-      beforeEach(function() {
+    describe('which is empty', () => {
+      beforeEach(() => {
         arr = [];
       });
 
-      it('should return an empty string', function() {
+      it('should return an empty string', () => {
         expect(pipe.transform(arr)).toEqual('');
       });
 
     });
 
-    describe('of strings', function() {
-      beforeEach(function() {
+    describe('of strings', () => {
+      beforeEach(() => {
         arr = ['hello', 'world'];
       });
 
-      describe('with no delimiter', function() {
-        it('should join elements with a space', function() {
+      describe('with no delimiter', () => {
+        it('should join elements with a space', () => {
           expect(pipe.transform(arr)).toEqual('hello world');
         });
       });
 
-      describe('with a custom delimiter', function() {
+      describe('with a custom delimiter', () => {
         let delim: any;
 
-        describe('which is not a string', function() {
-          it('should join elements with a toString representation of the delimiter', function() {
+        describe('which is not a string', () => {
+          it('should join elements with a toString representation of the delimiter', () => {
             delim = true;
             expect(pipe.transform(arr, delim)).toEqual('hellotrueworld');
 
@@ -44,7 +45,7 @@ describe('JoinPipe', () => {
             expect(pipe.transform(arr, delim)).toEqual('hello10world');
 
             delim = {
-              toString: function() {
+              toString: () => {
                 return ' - '
               }
             };
@@ -52,7 +53,7 @@ describe('JoinPipe', () => {
           });
         });
 
-        it('should join elements with the given delimiter', function() {
+        it('should join elements with the given delimiter', () => {
           delim = ', '
           expect(pipe.transform(arr, delim)).toEqual('hello, world');
         });
@@ -60,4 +61,5 @@ describe('JoinPipe', () => {
     });
 
   });
+
 });

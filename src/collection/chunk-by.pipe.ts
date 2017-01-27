@@ -5,7 +5,7 @@ import {isUndefined} from '../utils/utils';
 export class ChunkByPipe implements PipeTransform {
   transform(array: Array<any>, n: number, fillVal?: any): Array<any> {
     function fill(n: number, val: any): Array<any> {
-      let ret: Array<any> = [];
+      const ret: Array<any> = [];
       while (n--) ret[n] = val;
       return ret;
     }

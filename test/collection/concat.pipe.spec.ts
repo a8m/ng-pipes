@@ -2,6 +2,7 @@ import {ConcatPipe} from '../../src/index';
 
 describe('ConcatPipe', () => {
   let pipe: ConcatPipe;
+
   beforeEach(() => {
     pipe = new ConcatPipe();
   });
@@ -20,4 +21,5 @@ describe('ConcatPipe', () => {
     expect(pipe.transform(object, object)).toEqual([{a: 2}, {a: 3}, {a: 2}, {a: 3}]);
     expect(pipe.transform(array, array)).toEqual([{a: 1}, {a: 1}]);
   });
+
 });

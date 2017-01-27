@@ -2,6 +2,7 @@ import {WrapPipe} from '../../src/index';
 
 describe('WrapPipe', () => {
   let pipe: WrapPipe;
+
   beforeEach(() => {
     pipe = new WrapPipe();
   });
@@ -17,4 +18,5 @@ describe('WrapPipe', () => {
     expect(pipe.transform('a', 1, 2)).toEqual('1a2');
     expect(pipe.transform('a', '/', '.')).toEqual('/a.');
   });
+
 });

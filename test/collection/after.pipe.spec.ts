@@ -2,6 +2,7 @@ import {AfterPipe} from '../../src/index';
 
 describe('AfterPipe', () => {
   let pipe: AfterPipe;
+
   beforeEach(() => {
     pipe = new AfterPipe();
   });
@@ -23,4 +24,5 @@ describe('AfterPipe', () => {
        expect(pipe.transform(object, 2)).toEqual([{a: 3}, {a: 4}]);
        expect(pipe.transform(object, 10)).toEqual([]);
      });
+
 });

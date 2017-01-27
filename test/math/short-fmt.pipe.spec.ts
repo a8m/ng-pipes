@@ -2,11 +2,12 @@ import {ShortFmtPipe} from '../../src/index';
 
 describe('ShortFmtPipe', () => {
   let pipe: ShortFmtPipe;
+
   beforeEach(() => {
     pipe = new ShortFmtPipe();
   });
 
-  it('should return the correct display from the number', function() {
+  it('should return the correct display from the number', () => {
     expect(pipe.transform(0, 2)).toEqual('0');
     expect(pipe.transform(5, 2)).toEqual('5');
     expect(pipe.transform(1024, 0)).toEqual('1 K');
@@ -15,4 +16,5 @@ describe('ShortFmtPipe', () => {
     expect(pipe.transform(1909234901, 2)).toEqual('1.91 B');
 
   });
+
 });

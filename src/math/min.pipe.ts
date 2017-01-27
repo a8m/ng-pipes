@@ -16,7 +16,7 @@ export class MinPipe implements PipeTransform {
   }
 
   private index(input: Array<any>, fn: Function): number {
-    var mappedArray = input.map((elm: any) => fn(elm) || Infinity);
+    const mappedArray = input.map((elm: any) => fn(elm) || Infinity);
     return mappedArray.indexOf(Math.min.apply(Math, mappedArray));
   }
 }

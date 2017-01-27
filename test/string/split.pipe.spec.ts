@@ -2,6 +2,7 @@ import {SplitPipe} from '../../src/index';
 
 describe('SplitPipe', () => {
   let pipe: SplitPipe;
+
   beforeEach(() => {
     pipe = new SplitPipe();
   });

@@ -9,7 +9,7 @@ export class RadiansPipe implements PipeTransform {
     // if degrees is not a real number, we cannot do also. quit with error "NaN"
     if (isNumber(decimal) && isFinite(decimal) && decimal % 1 === 0 && decimal >= 0 &&
         isNumber(degrees) && isFinite(degrees)) {
-      var radians = (degrees * 3.14159265359) / 180;
+      const radians = (degrees * 3.14159265359) / 180;
       return Math.round(radians * Math.pow(10, decimal)) / (Math.pow(10, decimal));
     }
     return NaN;

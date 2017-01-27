@@ -36,16 +36,14 @@ export * from './is-undefined.pipe';
 
 @NgModule({
   declarations: [
-    IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe,
-    IsGreaterThanOrEqualToPipe, IsGreaterThanPipe, IsIdenticalToPipe,
-    IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe, IsNotIdenticalToPipe,
-    IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
+    IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe, IsGreaterThanOrEqualToPipe,
+    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe,
+    IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
   ],
   exports: [
-    IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe,
-    IsGreaterThanOrEqualToPipe, IsGreaterThanPipe, IsIdenticalToPipe,
-    IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe, IsNotIdenticalToPipe,
-    IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
+    IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe, IsGreaterThanOrEqualToPipe,
+    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe,
+    IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
   ]
 })
 export class BooleanPipesModule {
