@@ -22,28 +22,13 @@ export * from './is-null.pipe';
 
 @NgModule({
   declarations: [
-    IsEqualToPipe,
-    IsGreaterThanOrEqualToPipe,
-    IsGreaterThanPipe,
-    IsIdenticalToPipe,
-    IsLessThanOrEqualToPipe,
-    IsLessThanPipe,
-    IsNotEqualToPipe,
-    IsNotIdenticalToPipe,
-    IsNullPipe
+    IsEqualToPipe, IsGreaterThanOrEqualToPipe, IsGreaterThanPipe, IsIdenticalToPipe,
+    IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe, IsNotIdenticalToPipe, IsNullPipe
   ],
   exports: [
-    IsEqualToPipe,
-    IsGreaterThanOrEqualToPipe,
-    IsGreaterThanPipe,
-    IsIdenticalToPipe,
-    IsLessThanOrEqualToPipe,
-    IsLessThanPipe,
-    IsNotEqualToPipe,
-    IsNotIdenticalToPipe,
-    IsNullPipe
+    IsEqualToPipe, IsGreaterThanOrEqualToPipe, IsGreaterThanPipe, IsIdenticalToPipe,
+    IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe, IsNotIdenticalToPipe, IsNullPipe
   ]
 })
 export class BooleanPipesModule {
 }
-

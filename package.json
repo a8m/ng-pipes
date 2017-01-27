@@ -15,10 +15,10 @@
     "karma": "node_modules/.bin/karma start karma.conf.js",
     "test": "npm run ngc && npm run karma",
     "ngc": "node_modules/.bin/ngc -p tsconfig.json",
-    "build": "npm run tsc && npm run rollup",
+    "build": "npm run format && npm run tsc && npm run rollup",
     "rollup": "./node_modules/.bin/rollup -c -o dist/ng-pipes.umd.js",
     "postrollup": "./node_modules/.bin/uglifyjs ./dist/ng-pipes.umd.js > ./dist/ng-pipes.umd.min.js",
-    "format": "./node_modules/.bin/clang-format --glob=\"@(src|test)/**/*.ts\" -i"
+    "format": "./node_modules/.bin/clang-format --glob=\"{@(src|test)/**/*.ts,*.js}\" -i"
   },
   "author": "Ariel Mashraki",
   "repository": {

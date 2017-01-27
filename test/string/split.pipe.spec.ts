@@ -20,7 +20,9 @@ describe('SplitPipe', () => {
   it('should split a string with specific limit', () => {
     expect(pipe.transform('a.little.sentence', '.', 2)).toEqual(['a', 'little']);
     expect(pipe.transform('a.little.sentence', '.', 10)).toEqual(['a', 'little', 'sentence']);
-    expect(pipe.transform('a medium sentence here in test', ' ', 4)).toEqual(['a', 'medium', 'sentence', 'here']);
+    expect(pipe.transform('a medium sentence here in test', ' ', 4)).toEqual([
+      'a', 'medium', 'sentence', 'here'
+    ]);
   });
 
   it('should return the input unchanged', () => {
