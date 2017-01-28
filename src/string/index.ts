@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 
+import {CamelizePipe} from './camelize.pipe';
 import {EndsWithPipe} from './ends-with.pipe';
 import {LatinizePipe} from './latinize.pipe';
 import {LeftTrimPipe} from './ltrim.pipe';
@@ -22,6 +23,7 @@ import {UriComponentEncodePipe} from './uri-component-encode.pipe';
 import {UriEncodePipe} from './uri-encode.pipe';
 import {WrapPipe} from './wrap.pipe';
 
+export * from './camelize.pipe';
 export * from './ends-with.pipe';
 export * from './latinize.pipe';
 export * from './ltrim.pipe';
@@ -46,16 +48,16 @@ export * from './wrap.pipe';
 
 @NgModule({
   declarations: [
-    EndsWithPipe,           LatinizePipe,  LeftTrimPipe,  MatchPipe, PhonePipe,      RepeatPipe,
-    RightTrimPipe,          SlugifyPipe,   SnakeCasePipe, SplitPipe, StartsWithPipe, StringularPipe,
-    StripTagsPipe,          TestPipe,      TitleizePipe,  TrimPipe,  TruncatePipe,   UcfirstPipe,
-    UriComponentEncodePipe, UriEncodePipe, WrapPipe
+    CamelizePipe,   EndsWithPipe,           LatinizePipe,  LeftTrimPipe,  MatchPipe, PhonePipe,
+    RepeatPipe,     RightTrimPipe,          SlugifyPipe,   SnakeCasePipe, SplitPipe, StartsWithPipe,
+    StringularPipe, StripTagsPipe,          TestPipe,      TitleizePipe,  TrimPipe,  TruncatePipe,
+    UcfirstPipe,    UriComponentEncodePipe, UriEncodePipe, WrapPipe
   ],
   exports: [
-    EndsWithPipe,           LatinizePipe,  LeftTrimPipe,  MatchPipe, PhonePipe,      RepeatPipe,
-    RightTrimPipe,          SlugifyPipe,   SnakeCasePipe, SplitPipe, StartsWithPipe, StringularPipe,
-    StripTagsPipe,          TestPipe,      TitleizePipe,  TrimPipe,  TruncatePipe,   UcfirstPipe,
-    UriComponentEncodePipe, UriEncodePipe, WrapPipe
+    CamelizePipe,   EndsWithPipe,           LatinizePipe,  LeftTrimPipe,  MatchPipe, PhonePipe,
+    RepeatPipe,     RightTrimPipe,          SlugifyPipe,   SnakeCasePipe, SplitPipe, StartsWithPipe,
+    StringularPipe, StripTagsPipe,          TestPipe,      TitleizePipe,  TrimPipe,  TruncatePipe,
+    UcfirstPipe,    UriComponentEncodePipe, UriEncodePipe, WrapPipe
   ]
 })
 export class StringPipesModule {
