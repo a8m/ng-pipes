@@ -9,6 +9,7 @@ import {IsGreaterThanPipe} from './is-greater-than.pipe';
 import {IsIdenticalToPipe} from './is-identical-to.pipe';
 import {IsLessThanOrEqualToPipe} from './is-less-than-or-equal-to.pipe';
 import {IsLessThanPipe} from './is-less-than.pipe';
+import {IsNilPipe} from './is-nil.pipe';
 import {IsNotEqualToPipe} from './is-not-equal-to.pipe';
 import {IsNotIdenticalToPipe} from './is-not-identical-to.pipe';
 import {IsNullPipe} from './is-null.pipe';
@@ -26,6 +27,7 @@ export * from './is-greater-than.pipe';
 export * from './is-identical-to.pipe';
 export * from './is-less-than-or-equal-to.pipe';
 export * from './is-less-than.pipe';
+export * from './is-nil.pipe';
 export * from './is-not-equal-to.pipe';
 export * from './is-not-identical-to.pipe';
 export * from './is-null.pipe';
@@ -37,13 +39,15 @@ export * from './is-undefined.pipe';
 @NgModule({
   declarations: [
     IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe, IsGreaterThanOrEqualToPipe,
-    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe,
-    IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
+    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNilPipe,
+    IsNotEqualToPipe, IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe,
+    IsUndefinedPipe
   ],
   exports: [
     IsArrayPipe, IsDefinedPipe, IsEqualToPipe, IsFunctionPipe, IsGreaterThanOrEqualToPipe,
-    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNotEqualToPipe,
-    IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe, IsUndefinedPipe
+    IsGreaterThanPipe, IsIdenticalToPipe, IsLessThanOrEqualToPipe, IsLessThanPipe, IsNilPipe,
+    IsNotEqualToPipe, IsNotIdenticalToPipe, IsNullPipe, IsNumberPipe, IsObjectPipe, IsStringPipe,
+    IsUndefinedPipe
   ]
 })
 export class BooleanPipesModule {
