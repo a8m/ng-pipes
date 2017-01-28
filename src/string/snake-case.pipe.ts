@@ -8,7 +8,7 @@ export class SnakeCasePipe implements PipeTransform {
     if (!isString(input)) return input;
 
     return input.trim()
-        .replace(/\s+/g, '')
+        .replace(/\W/g, '')
         .replace(
             /[A-Z]/g,
             (value, index) => index === 0 ? value.toLowerCase() : `_${value.toLowerCase()}`);

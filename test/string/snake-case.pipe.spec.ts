@@ -17,6 +17,8 @@ describe('SnakeCasePipe', () => {
     {'value': 'alowercasedword', 'toEqual': 'alowercasedword', 'valid': true},
     {'value': '     ', 'toEqual': '', 'valid': true},
     {'value': '  SOME WHITE SPACES  ', 'toEqual': 's_o_m_e_w_h_i_t_e_s_p_a_c_e_s', 'valid': true},
+    {'value': '  SOME-WHITE-SPACES  ', 'toEqual': 's_o_m_e_w_h_i_t_e_s_p_a_c_e_s', 'valid': true},
+    {'value': '1  SOME-WHITE-SPACES0  2', 'toEqual': '1_s_o_m_e_w_h_i_t_e_s_p_a_c_e_s02', 'valid': true},
     {'value': null, 'toEqual': 'a_simple_word', 'valid': false},
     {'value': undefined, 'toEqual': 'a_medium_word_here', 'valid': false}, {
       'value': 'ANUPPERCASEDWORDHERe',
