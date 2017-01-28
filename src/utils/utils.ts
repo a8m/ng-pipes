@@ -2,6 +2,8 @@ export const isArray = (value: any): boolean => Array.isArray(value);
 
 export const isFunction = (value: any): boolean => typeof value === 'function';
 
+export const IsNil = (value: any): boolean => value === null || typeof value === 'undefined';
+
 export const isNull = (value: any): boolean => value === null;
 
 export const isNumber = (value: any): boolean => typeof value === 'number';
@@ -15,6 +17,23 @@ export const isUndefined = (value: any): boolean => typeof value === 'undefined'
 export function toArray(object: any): Array<any> {
   return isArray(object) ? object : Object.keys(object).map((key) => object[key]);
 }
+
+export const getPhone = (locale: string): any => {
+  const phones: any = {
+    'en-US': {
+      'countryCode': '+1',
+      'minLength': 10,
+      'pattern': /^(\+?1[-\s]?)?(\(?\d{3}\)?)[-\s]?(\d{3})[-\s]?(\d{4})$/
+    },
+    'pt-BR': {
+      'countryCode': '+55',
+      'minLength': 11,
+      'pattern': /^(\+?55[-\s]?)?(\([1-9][1-9]\)|[1-9][1-9])[-\s]?(9[1-9]\d{3})[-\s]?(\d{4})$/
+    }
+  };
+
+  return phones[locale];
+};
 
 export function equals(a: any, b: any): boolean {
   if (a === b) {
