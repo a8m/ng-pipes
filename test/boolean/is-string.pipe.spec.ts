@@ -8,16 +8,16 @@ describe('IsStringPipe', () => {
   });
 
   it('should return true for all inputs', () => {
-    expect(pipe.transform('')).toEqual(true);
-    expect(pipe.transform('a')).toEqual(true);
-    expect(pipe.transform('a word')).toEqual(true);
+    expect(pipe.transform('')).toBeTruthy();
+    expect(pipe.transform('a')).toBeTruthy();
+    expect(pipe.transform('a word')).toBeTruthy();
   });
 
   it('should return false for all inputs', () => {
-    expect(pipe.transform(undefined)).toEqual(false);
-    expect(pipe.transform(1)).toEqual(false);
-    expect(pipe.transform({})).toEqual(false);
-    expect(pipe.transform([])).toEqual(false);
+    expect(pipe.transform(undefined)).toBeFalsy();
+    expect(pipe.transform(1)).toBeFalsy();
+    expect(pipe.transform({})).toBeFalsy();
+    expect(pipe.transform([])).toBeFalsy();
   });
 
 });

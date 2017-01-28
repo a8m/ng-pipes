@@ -8,17 +8,17 @@ describe('IsArrayPipe', () => {
   });
 
   it('should return true for all inputs', () => {
-    expect(pipe.transform([])).toEqual(true);
-    expect(pipe.transform([1, 2])).toEqual(true);
-    expect(pipe.transform([null])).toEqual(true);
+    expect(pipe.transform([])).toBeTruthy();
+    expect(pipe.transform([1, 2])).toBeTruthy();
+    expect(pipe.transform([null])).toBeTruthy();
   });
 
   it('should return false for all inputs', () => {
-    expect(pipe.transform(null)).toEqual(false);
-    expect(pipe.transform(undefined)).toEqual(false);
-    expect(pipe.transform(1)).toEqual(false);
-    expect(pipe.transform('')).toEqual(false);
-    expect(pipe.transform({})).toEqual(false);
+    expect(pipe.transform(null)).toBeFalsy();
+    expect(pipe.transform(undefined)).toBeFalsy();
+    expect(pipe.transform(1)).toBeFalsy();
+    expect(pipe.transform('')).toBeFalsy();
+    expect(pipe.transform({})).toBeFalsy();
   });
 
 });

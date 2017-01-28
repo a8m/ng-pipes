@@ -8,14 +8,14 @@ describe('IsUndefinedPipe', () => {
   });
 
   it('should return true for all inputs', () => {
-    expect(pipe.transform(undefined)).toEqual(true);
+    expect(pipe.transform(undefined)).toBeTruthy();
   });
 
   it('should return false for all inputs', () => {
-    expect(pipe.transform(1)).toEqual(false);
-    expect(pipe.transform('')).toEqual(false);
-    expect(pipe.transform({})).toEqual(false);
-    expect(pipe.transform([])).toEqual(false);
+    expect(pipe.transform(1)).toBeFalsy();
+    expect(pipe.transform('')).toBeFalsy();
+    expect(pipe.transform({})).toBeFalsy();
+    expect(pipe.transform([])).toBeFalsy();
   });
 
 });

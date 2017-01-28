@@ -8,18 +8,18 @@ describe('IsNumberPipe', () => {
   });
 
   it('should return true for all inputs', () => {
-    expect(pipe.transform(1)).toEqual(true);
-    expect(pipe.transform(-1)).toEqual(true);
-    expect(pipe.transform(NaN)).toEqual(true);
+    expect(pipe.transform(1)).toBeTruthy();
+    expect(pipe.transform(-1)).toBeTruthy();
+    expect(pipe.transform(NaN)).toBeTruthy();
   });
 
   it('should return false for all inputs', () => {
-    expect(pipe.transform(undefined)).toEqual(false);
-    expect(pipe.transform(null)).toEqual(false);
-    expect(pipe.transform('')).toEqual(false);
-    expect(pipe.transform('1')).toEqual(false);
-    expect(pipe.transform({})).toEqual(false);
-    expect(pipe.transform([])).toEqual(false);
+    expect(pipe.transform(undefined)).toBeFalsy();
+    expect(pipe.transform(null)).toBeFalsy();
+    expect(pipe.transform('')).toBeFalsy();
+    expect(pipe.transform('1')).toBeFalsy();
+    expect(pipe.transform({})).toBeFalsy();
+    expect(pipe.transform([])).toBeFalsy();
   });
 
 });

@@ -10,7 +10,7 @@ describe('LastPipe', () => {
   it('should return the last member in a collection', () => {
     expect(pipe.transform([1, 2, 3, 4, 5])).toEqual(5);
     expect(pipe.transform(['a', 'b', 'c', 'd'])).toEqual('d');
-    expect(pipe.transform([undefined, null, null])).toEqual(null);
+    expect(pipe.transform([undefined, null, null])).toBeNull();
     expect(pipe.transform({0: 'foo', 1: 'bar'})).toEqual('bar');
   });
 

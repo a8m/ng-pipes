@@ -8,15 +8,15 @@ describe('IsEqualToPipe', () => {
   });
 
   it('should return true for all inputs', () => {
-    expect(pipe.transform(1, 1)).toEqual(true);
-    expect(pipe.transform(1, '1')).toEqual(true);
-    expect(pipe.transform('1', '1')).toEqual(true);
+    expect(pipe.transform(1, 1)).toBeTruthy();
+    expect(pipe.transform(1, '1')).toBeTruthy();
+    expect(pipe.transform('1', '1')).toBeTruthy();
   });
 
   it('should return false for all inputs', () => {
-    expect(pipe.transform(1, 2)).toEqual(false);
-    expect(pipe.transform(1, '2')).toEqual(false);
-    expect(pipe.transform('1', '2')).toEqual(false);
+    expect(pipe.transform(1, 2)).toBeFalsy();
+    expect(pipe.transform(1, '2')).toBeFalsy();
+    expect(pipe.transform('1', '2')).toBeFalsy();
   });
 
 });

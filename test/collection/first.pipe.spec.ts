@@ -10,7 +10,7 @@ describe('FirstPipe', () => {
   it('should return the first member in a collection', () => {
     expect(pipe.transform([1, 2, 3, 4, 5])).toEqual(1);
     expect(pipe.transform(['a', 'b', 'c', 'd'])).toEqual('a');
-    expect(pipe.transform([undefined, null, null])).toEqual(undefined);
+    expect(pipe.transform([undefined, null, null])).toBeUndefined();
     expect(pipe.transform({0: 'foo', 1: 'bar'})).toEqual('foo');
   });
 
