@@ -2,7 +2,7 @@ export const isArray = (value: any): boolean => Array.isArray(value);
 
 export const isFunction = (value: any): boolean => typeof value === 'function';
 
-export const IsNil = (value: any): boolean => value === null || typeof value === 'undefined';
+export const isNil = (value: any): boolean => value === null || typeof value === 'undefined';
 
 export const isNull = (value: any): boolean => value === null;
 

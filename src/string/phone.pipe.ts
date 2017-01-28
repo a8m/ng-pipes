@@ -1,11 +1,11 @@
 import {Pipe, PipeTransform} from '@angular/core';
 
-import {getPhone, IsNil} from '../utils/utils';
+import {getPhone, isNil} from '../utils/utils';
 
 @Pipe({name: 'phone'})
 export class PhonePipe implements PipeTransform {
   transform(input: string, locale: string = 'en-US', showCountryCode: boolean = false): string {
-    if (IsNil(input) || !/^[a-zA-Z]{2}-[a-zA-Z]{2}$/.test(locale)) return input;
+    if (isNil(input) || !/^[a-zA-Z]{2}-[a-zA-Z]{2}$/.test(locale)) return input;
 
     const strInput: string = input.replace(/[^0-9]/g, '');
     const splittedLocale = locale.split('-');
@@ -13,7 +13,7 @@ export class PhonePipe implements PipeTransform {
         `${splittedLocale[0].toLowerCase()}-${splittedLocale[1].toUpperCase()}`;
     const phoneObj: any = getPhone(formattedLocale);
 
-    if (IsNil(phoneObj) || strInput.length < phoneObj.minLength) return input;
+    if (isNil(phoneObj) || strInput.length < phoneObj.minLength) return input;
 
     const pattern: RegExp = phoneObj.pattern;
     const matches: Array<string> = strInput.match(pattern);
