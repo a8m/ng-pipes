@@ -1,10 +1,10 @@
-import {SnakeCasePipe} from '../../src/index';
+import {UnderscorePipe} from '../../src/index';
 
-describe('SnakeCasePipe', () => {
-  let pipe: SnakeCasePipe;
+describe('UnderscorePipe', () => {
+  let pipe: UnderscorePipe;
 
   beforeEach(() => {
-    pipe = new SnakeCasePipe();
+    pipe = new UnderscorePipe();
   });
 
   const data: Array<any> = [
