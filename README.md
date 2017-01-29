@@ -6,6 +6,9 @@ This module works with Angular 2.x.
 For the AngularJS 1.x version of this module, please see [angular-filter](https://github.com/a8m/angular-filter).
 
 
+- [Contributing](#contributing)
+- [Installation](#installation)
+
 Installation
 ------------
 
@@ -61,6 +64,31 @@ Inject it to your class(could be Component, Service, etc..), or use it inside th
     {{ title | reverse }}
   </h1>
   ```
+
+
+
+### Contributing
+- Any contribution is appreciated.
+- If you are planning to add a new pipe (or any other feature), please open an issue before.
+- Angular [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) is preferred.
+
+#### Submitting a Pull Request (PR)
+1. Clone the project via:
+  ```
+  $ git clone https://github.com/a8m/ng-pipes.git
+  ```
+  
+2. Make your changes in a new git branch:
+  ```
+  $ git checkout -b my-cool-branch master
+  ```
+  
+3. Add your changes, including appropriate test cases.
+
+4. Push your branch to Github.
+
+5. Create a PR to master.
+
 
 
 
