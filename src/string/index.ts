@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {CamelizePipe} from './camelize.pipe';
 import {EndsWithPipe} from './ends-with.pipe';
 import {LatinizePipe} from './latinize.pipe';
+import {LeftPadPipe} from './left-pad.pipe';
 import {LeftTrimPipe} from './ltrim.pipe';
 import {MatchPipe} from './match.pipe';
 import {PhonePipe} from './phone.pipe';
@@ -26,6 +27,7 @@ import {WrapPipe} from './wrap.pipe';
 export * from './camelize.pipe';
 export * from './ends-with.pipe';
 export * from './latinize.pipe';
+export * from './left-pad.pipe';
 export * from './ltrim.pipe';
 export * from './match.pipe';
 export * from './phone.pipe';
@@ -48,17 +50,23 @@ export * from './wrap.pipe';
 
 @NgModule({
   declarations: [
-    CamelizePipe,   EndsWithPipe,   LatinizePipe,  LeftTrimPipe,   MatchPipe,
-    PhonePipe,      RepeatPipe,     RightTrimPipe, SlugifyPipe,    SplitPipe,
-    StartsWithPipe, StringularPipe, StripTagsPipe, TestPipe,       TitleizePipe,
-    TrimPipe,       TruncatePipe,   UcfirstPipe,   UnderscorePipe, UriComponentEncodePipe,
+    CamelizePipe,   EndsWithPipe,   LatinizePipe,
+    LeftPadPipe,    LeftTrimPipe,   MatchPipe,
+    PhonePipe,      RepeatPipe,     RightTrimPipe,
+    SlugifyPipe,    SplitPipe,      StartsWithPipe,
+    StringularPipe, StripTagsPipe,  TestPipe,
+    TitleizePipe,   TrimPipe,       TruncatePipe,
+    UcfirstPipe,    UnderscorePipe, UriComponentEncodePipe,
     UriEncodePipe,  WrapPipe
   ],
   exports: [
-    CamelizePipe,   EndsWithPipe,   LatinizePipe,  LeftTrimPipe,   MatchPipe,
-    PhonePipe,      RepeatPipe,     RightTrimPipe, SlugifyPipe,    SplitPipe,
-    StartsWithPipe, StringularPipe, StripTagsPipe, TestPipe,       TitleizePipe,
-    TrimPipe,       TruncatePipe,   UcfirstPipe,   UnderscorePipe, UriComponentEncodePipe,
+    CamelizePipe,   EndsWithPipe,   LatinizePipe,
+    LeftPadPipe,    LeftTrimPipe,   MatchPipe,
+    PhonePipe,      RepeatPipe,     RightTrimPipe,
+    SlugifyPipe,    SplitPipe,      StartsWithPipe,
+    StringularPipe, StripTagsPipe,  TestPipe,
+    TitleizePipe,   TrimPipe,       TruncatePipe,
+    UcfirstPipe,    UnderscorePipe, UriComponentEncodePipe,
     UriEncodePipe,  WrapPipe
   ]
 })
