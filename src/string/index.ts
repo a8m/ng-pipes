@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 
 import {CamelizePipe} from './camelize.pipe';
+import {CenterPadPipe} from './center-pad.pipe';
 import {EndsWithPipe} from './ends-with.pipe';
 import {LatinizePipe} from './latinize.pipe';
 import {LeftPadPipe} from './left-pad.pipe';
@@ -26,6 +27,7 @@ import {UriEncodePipe} from './uri-encode.pipe';
 import {WrapPipe} from './wrap.pipe';
 
 export * from './camelize.pipe';
+export * from './center-pad.pipe';
 export * from './ends-with.pipe';
 export * from './latinize.pipe';
 export * from './left-pad.pipe';
@@ -52,32 +54,58 @@ export * from './wrap.pipe';
 
 @NgModule({
   declarations: [
-    CamelizePipe,   EndsWithPipe,
-    LatinizePipe,   LeftPadPipe,
-    LeftTrimPipe,   MatchPipe,
-    PhonePipe,      RepeatPipe,
-    RightPadPipe,   RightTrimPipe,
-    SlugifyPipe,    SplitPipe,
-    StartsWithPipe, StringularPipe,
-    StripTagsPipe,  TestPipe,
-    TitleizePipe,   TrimPipe,
-    TruncatePipe,   UcfirstPipe,
-    UnderscorePipe, UriComponentEncodePipe,
-    UriEncodePipe,  WrapPipe
+    CamelizePipe,
+    CenterPadPipe,
+    EndsWithPipe,
+    LatinizePipe,
+    LeftPadPipe,
+    LeftTrimPipe,
+    MatchPipe,
+    PhonePipe,
+    RepeatPipe,
+    RightPadPipe,
+    RightTrimPipe,
+    SlugifyPipe,
+    SplitPipe,
+    StartsWithPipe,
+    StringularPipe,
+    StripTagsPipe,
+    TestPipe,
+    TitleizePipe,
+    TrimPipe,
+    TruncatePipe,
+    UcfirstPipe,
+    UnderscorePipe,
+    UriComponentEncodePipe,
+    UriEncodePipe,
+    WrapPipe
   ],
   exports: [
-    CamelizePipe,   EndsWithPipe,
-    LatinizePipe,   LeftPadPipe,
-    LeftTrimPipe,   MatchPipe,
-    PhonePipe,      RepeatPipe,
-    RightPadPipe,   RightTrimPipe,
-    SlugifyPipe,    SplitPipe,
-    StartsWithPipe, StringularPipe,
-    StripTagsPipe,  TestPipe,
-    TitleizePipe,   TrimPipe,
-    TruncatePipe,   UcfirstPipe,
-    UnderscorePipe, UriComponentEncodePipe,
-    UriEncodePipe,  WrapPipe
+    CamelizePipe,
+    CenterPadPipe,
+    EndsWithPipe,
+    LatinizePipe,
+    LeftPadPipe,
+    LeftTrimPipe,
+    MatchPipe,
+    PhonePipe,
+    RepeatPipe,
+    RightPadPipe,
+    RightTrimPipe,
+    SlugifyPipe,
+    SplitPipe,
+    StartsWithPipe,
+    StringularPipe,
+    StripTagsPipe,
+    TestPipe,
+    TitleizePipe,
+    TrimPipe,
+    TruncatePipe,
+    UcfirstPipe,
+    UnderscorePipe,
+    UriComponentEncodePipe,
+    UriEncodePipe,
+    WrapPipe
   ]
 })
 export class StringPipesModule {

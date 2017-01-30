@@ -35,6 +35,9 @@ export const getPhone = (locale: string): any => {
   return phones[locale];
 };
 
+export const pad = (requiredLength: number, padChar: string = ' '): string =>
+    padChar.repeat(requiredLength).slice(0, requiredLength);
+
 export function equals(a: any, b: any): boolean {
   if (a === b) {
     return true;
