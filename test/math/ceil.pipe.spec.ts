@@ -28,7 +28,7 @@ describe('CeilPipe', () => {
 
   for (const element of data) {
     const testCase =
-        `Input '${element.input}' with precision (${element.precision}) should be ${element.valid ?
+        `Input ${JSON.stringify(element.input)} with precision (${element.precision}) should be ${element.valid ?
         'equal' :
         'not equal'
         } to ${element.toEqual}`;

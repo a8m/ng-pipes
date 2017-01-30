@@ -25,7 +25,7 @@ describe('MeanPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input '${element.input}' should be ${element.valid ? 'equal' :
+    const testCase = `Input ${JSON.stringify(element.input)} should be ${element.valid ? 'equal' :
                                                                            'not equal'
                                                                            } to ${element.toEqual}`;
 

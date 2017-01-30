@@ -27,8 +27,8 @@ describe('RoundPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase =
-        `Input '${element.input}' with precision (${element.precision}) should be ${element.valid ?
+    const testCase = `Input ${JSON.stringify(element.input)} with precision (${element
+                         .precision}) should be ${element.valid ?
         'equal' :
         'not equal'
         } to ${element.toEqual}`;

@@ -37,8 +37,8 @@ describe('CenterPadPipe', () => {
 
   for (const element of data) {
     const testCase =
-        `Input '${element.input}' with padChar ('${element.padChar
-        }') and requiredLength (${element.requiredLength}) should be ${element.valid ?
+        `Input ${JSON.stringify(element.input)} with padChar ('${element
+            .padChar}') and requiredLength (${element.requiredLength}) should be ${element.valid ?
         'equal' :
         'not equal'
         } to ${element.toEqual}`;
