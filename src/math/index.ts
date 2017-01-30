@@ -11,6 +11,7 @@ import {MinPipe} from './min.pipe';
 import {PercentPipe} from './percent.pipe';
 import {RadiansPipe} from './radians.pipe';
 import {RadixPipe} from './radix.pipe';
+import {RoundPipe} from './round.pipe';
 import {ShortFmtPipe} from './short-fmt.pipe';
 import {SqrtPipe} from './sqrt.pipe';
 import {SumPipe} from './sum.pipe';
@@ -26,6 +27,7 @@ export * from './min.pipe';
 export * from './percent.pipe';
 export * from './radians.pipe';
 export * from './radix.pipe';
+export * from './round.pipe';
 export * from './short-fmt.pipe';
 export * from './sum.pipe';
 export * from './sqrt.pipe';
@@ -33,11 +35,11 @@ export * from './sqrt.pipe';
 @NgModule({
   declarations: [
     AbsPipe, ByteFmtPipe, CeilPipe, KBFmtPipe, DegreesPipe, FloorPipe, MaxPipe, MinPipe,
-    PercentPipe, RadiansPipe, RadixPipe, ShortFmtPipe, SumPipe, SqrtPipe
+    PercentPipe, RadiansPipe, RadixPipe, RoundPipe, ShortFmtPipe, SumPipe, SqrtPipe
   ],
   exports: [
     AbsPipe, ByteFmtPipe, CeilPipe, KBFmtPipe, DegreesPipe, FloorPipe, MaxPipe, MinPipe,
-    PercentPipe, RadiansPipe, RadixPipe, ShortFmtPipe, SumPipe, SqrtPipe
+    PercentPipe, RadiansPipe, RadixPipe, RoundPipe, ShortFmtPipe, SumPipe, SqrtPipe
   ]
 })
 export class MathPipesModule {
