@@ -4,7 +4,7 @@ import {isArray, isNil, isObject} from '../utils/utils';
 
 @Pipe({name: 'keys'})
 export class KeysPipe implements PipeTransform {
-  transform(input: any): Array<any> {
+  transform(input: any): any {
     return isNil(input) || isArray(input) || !isObject(input) ? input : Object.keys(input);
   }
 }
