@@ -4,6 +4,7 @@ import {AbsPipe} from './abs.pipe';
 import {ByteFmtPipe} from './byte-fmt.pipe';
 import {CeilPipe} from './ceil.pipe';
 import {DegreesPipe} from './degrees.pipe';
+import {FloorPipe} from './floor.pipe';
 import {KBFmtPipe} from './kb-fmt.pipe';
 import {MaxPipe} from './max.pipe';
 import {MinPipe} from './min.pipe';
@@ -18,6 +19,7 @@ export * from './byte-fmt.pipe';
 export * from './ceil.pipe';
 export * from './kb-fmt.pipe';
 export * from './degrees.pipe';
+export * from './floor.pipe';
 export * from './max.pipe';
 export * from './min.pipe';
 export * from './percent.pipe';
@@ -33,6 +35,7 @@ export * from './sum.pipe';
     CeilPipe,
     KBFmtPipe,
     DegreesPipe,
+    FloorPipe,
     MaxPipe,
     MinPipe,
     PercentPipe,
@@ -47,6 +50,7 @@ export * from './sum.pipe';
     CeilPipe,
     KBFmtPipe,
     DegreesPipe,
+    FloorPipe,
     MaxPipe,
     MinPipe,
     PercentPipe,
