@@ -20,6 +20,7 @@ import {IsEmptyPipe} from './is-empty.pipe';
 import {JoinPipe} from './join.pipe';
 import {LastPipe} from './last.pipe';
 import {MapPipe} from './map.pipe';
+import {MeanPipe} from './mean.pipe';
 import {OmitPipe} from './omit.pipe';
 import {OrderByPipe} from './order-by.pipe';
 import {PickPipe} from './pick.pipe';
@@ -53,6 +54,7 @@ export * from './is-empty.pipe';
 export * from './join.pipe';
 export * from './last.pipe';
 export * from './map.pipe';
+export * from './mean.pipe';
 export * from './omit.pipe';
 export * from './pick.pipe';
 export * from './range.pipe';
@@ -68,20 +70,20 @@ export * from './order-by.pipe';
 
 @NgModule({
   declarations: [
-    AfterWherePipe, BeforeWherePipe, AfterPipe,    BeforePipe,  ChunkByPipe,  ConcatPipe,
-    ContainsPipe,   CountByPipe,     DefaultsPipe, EveryPipe,   FilterByPipe, FirstPipe,
-    FlattenPipe,    FuzzyByPipe,     FuzzyPipe,    GroupByPipe, IsEmptyPipe,  JoinPipe,
-    LastPipe,       MapPipe,         OmitPipe,     PickPipe,    RangePipe,    RemoveWithPipe,
-    ReversePipe,    SearchFieldPipe, RemovePipe,   ToArrayPipe, UniqPipe,     WherePipe,
-    XORPipe,        OrderByPipe,
+    AfterWherePipe, BeforeWherePipe, AfterPipe,       BeforePipe,  ChunkByPipe,  ConcatPipe,
+    ContainsPipe,   CountByPipe,     DefaultsPipe,    EveryPipe,   FilterByPipe, FirstPipe,
+    FlattenPipe,    FuzzyByPipe,     FuzzyPipe,       GroupByPipe, IsEmptyPipe,  JoinPipe,
+    LastPipe,       MapPipe,         MeanPipe,        OmitPipe,    PickPipe,     RangePipe,
+    RemoveWithPipe, ReversePipe,     SearchFieldPipe, RemovePipe,  ToArrayPipe,  UniqPipe,
+    WherePipe,      XORPipe,         OrderByPipe,
   ],
   exports: [
-    AfterWherePipe, BeforeWherePipe, AfterPipe,    BeforePipe,  ChunkByPipe,  ConcatPipe,
-    ContainsPipe,   CountByPipe,     DefaultsPipe, EveryPipe,   FilterByPipe, FirstPipe,
-    FlattenPipe,    FuzzyByPipe,     FuzzyPipe,    GroupByPipe, IsEmptyPipe,  JoinPipe,
-    LastPipe,       MapPipe,         OmitPipe,     PickPipe,    RangePipe,    RemoveWithPipe,
-    ReversePipe,    SearchFieldPipe, RemovePipe,   ToArrayPipe, UniqPipe,     WherePipe,
-    XORPipe,        OrderByPipe,
+    AfterWherePipe, BeforeWherePipe, AfterPipe,       BeforePipe,  ChunkByPipe,  ConcatPipe,
+    ContainsPipe,   CountByPipe,     DefaultsPipe,    EveryPipe,   FilterByPipe, FirstPipe,
+    FlattenPipe,    FuzzyByPipe,     FuzzyPipe,       GroupByPipe, IsEmptyPipe,  JoinPipe,
+    LastPipe,       MapPipe,         MeanPipe,        OmitPipe,    PickPipe,     RangePipe,
+    RemoveWithPipe, ReversePipe,     SearchFieldPipe, RemovePipe,  ToArrayPipe,  UniqPipe,
+    WherePipe,      XORPipe,         OrderByPipe,
   ]
 })
 export class CollectionPipesModule {
