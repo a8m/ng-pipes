@@ -33,13 +33,11 @@ describe('LastPipe', () => {
   });
 
   it('should return the last n element that match the expression', () => {
-    const mod2 =
-        (elm: number) => {
-          return !(elm % 2);
-        }
+    const mod2 = (elm: number) => {
+      return !(elm % 2);
+    };
 
-                         expect(pipe.transform([1, 2, 3, 4, 5, 6], 2, mod2))
-                             .toEqual([4, 6]);
+    expect(pipe.transform([1, 2, 3, 4, 5, 6], 2, mod2)).toEqual([4, 6]);
     expect(pipe.transform([1, 2, 3, 4, 6, 11], 2, mod2)).toEqual([4, 6]);
     expect(pipe.transform([2, 1], 2, mod2)).toEqual([2]);
   });

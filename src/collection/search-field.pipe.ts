@@ -17,7 +17,7 @@ export class SearchFieldPipe implements PipeTransform {
     }
 
     return collection.map((member: any) => {
-      let field = args.map((field: any) => this.$parse(field)(member)).join(' ');
+      let field = args.map((arg: any) => this.$parse(arg)(member)).join(' ');
       member.searchField = field;
       return member;
     });

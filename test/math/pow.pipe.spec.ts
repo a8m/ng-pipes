@@ -36,7 +36,7 @@ describe('PowPipe', () => {
       } else {
         expect(pipe.transform(element.input, element.pow)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

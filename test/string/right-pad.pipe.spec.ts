@@ -51,7 +51,7 @@ describe('RightPadPipe', () => {
         expect(pipe.transform(element.input, element.requiredLength, element.padChar))
             .not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

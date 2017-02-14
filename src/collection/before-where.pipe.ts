@@ -15,6 +15,6 @@ export class BeforeWherePipe implements PipeTransform {
     let index =
         collection.map((e: {[key: string]: any}) => objectContains(object, e)).indexOf(true);
 
-    return collection.slice(0, index == -1 ? collection.length : index + 1);
+    return collection.slice(0, index === -1 ? collection.length : index + 1);
   }
 }

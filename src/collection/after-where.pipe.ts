@@ -15,6 +15,6 @@ export class AfterWherePipe implements PipeTransform {
     let index =
         collection.map((e: {[key: string]: any}) => objectContains(object, e)).indexOf(true);
 
-    return collection.slice(index == -1 ? 0 : index);
+    return collection.slice(index === -1 ? 0 : index);
   }
 }

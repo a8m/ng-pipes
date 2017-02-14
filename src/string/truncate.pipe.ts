@@ -10,7 +10,7 @@ export class TruncatePipe implements PipeTransform {
     return input.substring(
                0,
                preserve ?
-                   (input.indexOf(' ', length) == -1 ? input.length : input.indexOf(' ', length)) :
+                   (input.indexOf(' ', length) === -1 ? input.length : input.indexOf(' ', length)) :
                    length) +
         suffix;
   }

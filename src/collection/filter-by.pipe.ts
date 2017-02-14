@@ -24,20 +24,20 @@ export class FilterByPipe implements PipeTransform {
     }
 
     if (isString(search) || isNumber(search)) {
-      search = String(search).toLowerCase()
+      search = String(search).toLowerCase();
     }
 
     return collection.filter((elm: any) => {
       return properties.some((prop: string) => {
         /**
-        * check if there are concatenate properties
-        * example:
-        * object: { first: 'foo', last:'bar' }
-       * filterBy: ['first + last'] => search by full name(i.e 'foo bar')
-       */
+         * check if there are concatenate properties
+         * example:
+         * object: { first: 'foo', last:'bar' }
+         * filterBy: ['first + last'] => search by full name(i.e 'foo bar')
+         */
         let comparator: any;
         if (!~prop.indexOf('+')) {
-          comparator = this.$parse(prop)(elm)
+          comparator = this.$parse(prop)(elm);
         } else {
           let propList = prop.replace(/\s+/g, '').split('+');
           comparator = propList.map((p: string) => this.$parse(p)(elm)).join(' ');
@@ -51,7 +51,7 @@ export class FilterByPipe implements PipeTransform {
         comparator = String(comparator).toLowerCase();
 
         // indentical or contains
-        return strict ? comparator === search : comparator.indexOf(search) != -1;
+        return strict ? comparator === search : comparator.indexOf(search) !== -1;
       });
     });
   }

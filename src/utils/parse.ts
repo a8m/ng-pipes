@@ -15,13 +15,13 @@ function createGetterFn(pathKeys: string[]): Function {
     return function(scope: {[key: string]: any}, local: {[key: string]: any}) {
       if (local && local.hasOwnProperty(key)) return local[key];
       if (scope) return scope[key];
-    }
+    };
   }
 
   function stepFn(key: string, next: Function) {
     return function(scope: {[key: string]: any}, local: {[key: string]: any}) {
       return next(scope && scope[key], local && local[key]);
-    }
+    };
   }
 }
 
@@ -62,9 +62,9 @@ export function Parse() {
     } else if (isFunction(exp)) {
       fn = function(scope: {[key: string]: any}, local: {[key: string]: any}) {
         return exp(scope, local);
-      }
+      };
     }
 
     return fn;
-  }
+  };
 }

@@ -67,7 +67,7 @@ export function equals(a: any, b: any): boolean {
 
 export function objectContains(
     partial: {[key: string]: any}, object: {[key: string]: any}): boolean {
-  return Object.keys(partial).every((key: string) => key in object && object[key] == partial[key]);
+  return Object.keys(partial).every((key: string) => key in object && object[key] === partial[key]);
 }
 
 export function deepKeys(
@@ -86,10 +86,10 @@ export function deepKeys(
     } else {
       // Create and save the key
       const key = parent ? parent + '.' + escaped : escaped;
-      stack.push(key)
+      stack.push(key);
     }
   });
-  return stack
+  return stack;
 }
 
 /**
@@ -120,26 +120,25 @@ export function getFirstMatches(array: any, n: number, getter: Function) {
  * @returns {*}
  */
 export function hasApproxPattern(word: string, pattern: string): boolean {
-  function indexOf(word: string, p: number, c: string): number {
-    let j = 0;
-    while ((p + j) <= word.length) {
-      if (word.charAt(p + j) == c) return j;
-      j++;
-    }
-    return -1;
-  }
-
   let p = 0;
-
   for (let i = 0; i <= pattern.length; i++) {
     const index = indexOf(word, p, pattern.charAt(i));
 
-    if (index == -1) return false;
+    if (index === -1) return false;
     p += index + 1;
   }
-  return true
+  return true;
+}
+
+function indexOf(word: string, p: number, c: string): number {
+  let j = 0;
+  while ((p + j) <= word.length) {
+    if (word.charAt(p + j) === c) return j;
+    j++;
+  }
+  return -1;
 }
 
 export const convertToDecimal = (num: number, decimal: number): number => {
   return Math.round(num * Math.pow(10, decimal)) / (Math.pow(10, decimal));
-}
+};

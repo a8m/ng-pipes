@@ -27,7 +27,7 @@ describe('SqrtPipe', () => {
       } else {
         expect(pipe.transform(element.input)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });
