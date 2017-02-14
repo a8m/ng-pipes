@@ -1,25 +1,31 @@
 {
+  "allowJs": true,
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "declaration": true,
-    "sourceMap": true,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "sourceMap": true,
     "removeComments": false,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": false,
-    "noUnusedParameters": true,
+    "noImplicitThis": false,
+    "noImplicitAny": false,
     "noUnusedLocals": true,
-    "types": [ "core-js", "jasmine"]
+    "noUnusedParameters": true,
+    "strictNullChecks": false
   },
+  "include": [
+    "*.ts"
+  ],
   "exclude": [
     "node_modules",
-    "dist",
-    "index.d.ts",
-    "src/*.d.ts",
-    "src/*/*.d.ts",
-    "test/*/*.d.ts"
-  ]
+    "build"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "useCache": true,
+    "forkChecker": true,
+    "cacheDirectory": "node_modules/.atl-cache"
+  },
+  "compileOnSave": false,
+  "buildOnSave": false
 }

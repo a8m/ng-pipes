@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ng-pipes</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Github pages for ng-pipes">
+    <meta name="theme-color" content="#5f9ea0">
+
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="base.css">
+
+    <base href="./">
+</head>
+
+<body>
+    <header>
+        <div class="align-center">
+            <a href="/" class="logo"></a>
+            <div>
+                <h1>ng-pipes</h1>
+                <a href="https://github.com/a8m/ng-pipes/releases" class="version <%= htmlWebpackPlugin.options.version %>">
+                    <%= htmlWebpackPlugin.options.version %>
+                </a>
+            </div>
+        </div>
+    </header>
+    <section class="content">
+        <np-app>
+            <div class="loading">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-load" width="32" height="32" viewBox="0 0 32 32">
+                    <path opacity=".25" d="M16 0 A16 16 0 0 0 16 32 A16 16 0 0 0 16 0 M16 4 A12 12 0 0 1 16 28 A12 12 0 0 1 16 4" />
+                    <path d="M16 0 A16 16 0 0 1 32 16 L28 16 A12 12 0 0 0 16 4z" />
+                </svg>
+            </div>
+        </np-app>
+    </section>
+
+    <% if (htmlWebpackPlugin.options.env === 'development') { %>
+        <!-- Webpack Dev Server reload -->
+        <script src="http://<%= htmlWebpackPlugin.options.host %>:<%= htmlWebpackPlugin.options.port %>/webpack-dev-server.js"></script>
+    <% } %>
+
+    <script src="https://unpkg.com/core-js@2.4.1/client/shim.min.js"></script>
+    <script src="https://unpkg.com/zone.js@0.7.4/dist/zone.min.js"></script>
+    <script src="https://unpkg.com/reflect-metadata@0.1.8"></script>
+    <script src="https://unpkg.com/rxjs@5.0.0-rc.4/bundles/Rx.min.js"></script>
+
+    <script src="https://unpkg.com/@angular/core@2.4.7/bundles/core.umd.js"></script>
+    <script src="https://unpkg.com/@angular/common@2.4.7/bundles/common.umd.js"></script>
+    <script src="https://unpkg.com/@angular/compiler@2.4.7/bundles/compiler.umd.min.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser@2.4.7/bundles/platform-browser.umd.min.js"></script>
+    <script src="https://unpkg.com/@angular/platform-browser-dynamic@2.4.7/bundles/platform-browser-dynamic.umd.min.js"></script>
+    <script src="https://unpkg.com/@angular/http@2.4.7/bundles/http.umd.min.js"></script>
+
+    <script src="https://unpkg.com/ng-pipes/dist/ng-pipes.umd.min.js"></script>
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+</body>
+
+</html>
