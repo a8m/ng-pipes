@@ -24,10 +24,12 @@ export class PhonePipe implements PipeTransform {
       case 'pt-BR':
         formattedPhone = `(${matches[2]}) ${matches[3]}-${matches[4]}`;
         break;
+      default:
+        break;
     }
 
     if (showCountryCode) {
-      formattedPhone = `${phoneObj.countryCode} ${formattedPhone}`
+      formattedPhone = `${phoneObj.countryCode} ${formattedPhone}`;
     }
 
     return formattedPhone;

@@ -35,7 +35,7 @@ describe('KeysPipe', () => {
       } else {
         expect(pipe.transform(element.input)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

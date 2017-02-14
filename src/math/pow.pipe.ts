@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class PowPipe implements PipeTransform {
   transform(input: any, power: any = 2): number {
     const num: number = parseFloat(input);
-    const parsed: number = parseInt(power);
+    const parsed: number = parseInt(power, 10);
 
     if (isNaN(num)) return input;
 

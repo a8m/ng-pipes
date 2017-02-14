@@ -37,7 +37,7 @@ describe('PhonePipe', () => {
           expect(pipe.transform(data.phone, data.locale, data.showCountryCode))
               .not.toEqual(data.toEqual);
         }
-      })
+      });
     }
 
   });
@@ -91,7 +91,7 @@ describe('PhonePipe', () => {
           expect(pipe.transform(data.phone, data.locale, data.showCountryCode))
               .not.toEqual(data.toEqual);
         }
-      })
+      });
     }
 
   });
@@ -130,7 +130,7 @@ describe('PhonePipe', () => {
           expect(pipe.transform(data.phone, data.locale, data.showCountryCode))
               .not.toEqual(data.toEqual);
         }
-      })
+      });
     }
 
   });

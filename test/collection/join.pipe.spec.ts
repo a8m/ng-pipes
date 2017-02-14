@@ -46,7 +46,7 @@ describe('JoinPipe', () => {
 
             delim = {
               toString: () => {
-                return ' - '
+                return ' - ';
               }
             };
             expect(pipe.transform(arr, delim)).toEqual('hello - world');
@@ -54,7 +54,7 @@ describe('JoinPipe', () => {
         });
 
         it('should join elements with the given delimiter', () => {
-          delim = ', '
+          delim = ', ';
           expect(pipe.transform(arr, delim)).toEqual('hello, world');
         });
       });

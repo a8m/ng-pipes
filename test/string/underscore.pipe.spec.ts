@@ -42,7 +42,7 @@ describe('UnderscorePipe', () => {
       } else {
         expect(pipe.transform(element.value)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

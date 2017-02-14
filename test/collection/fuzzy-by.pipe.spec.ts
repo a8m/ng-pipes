@@ -28,19 +28,19 @@ describe('FuzzyByPipe', () => {
   });
 
   it('should support nested properties', () => {
-    let collection = [
+    let collection2 = [
       {details: {title: 'The DaVinci Code'}}, {details: {title: 'The Great Gatsby'}},
       {details: {title: 'Angels & Demons'}}, {details: {title: 'The Lost Symbol'}},
       {details: {title: 'Old Man\'s War'}}
     ];
 
-    expect(pipe.transform(collection, 'details.title', 'tha')).toEqual([
-      collection[0], collection[1]
+    expect(pipe.transform(collection2, 'details.title', 'tha')).toEqual([
+      collection2[0], collection2[1]
     ]);
-    expect(pipe.transform(collection, 'details.title', 'thesy')).toEqual([
-      collection[1], collection[3]
+    expect(pipe.transform(collection2, 'details.title', 'thesy')).toEqual([
+      collection2[1], collection2[3]
     ]);
-    expect(pipe.transform(collection, 'details.title', 'omwar')).toEqual([collection[4]]);
+    expect(pipe.transform(collection2, 'details.title', 'omwar')).toEqual([collection2[4]]);
   });
 
 });

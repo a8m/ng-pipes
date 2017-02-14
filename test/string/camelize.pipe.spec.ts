@@ -36,7 +36,7 @@ describe('CamelizePipe', () => {
       } else {
         expect(pipe.transform(element.value, element.upperFirst)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

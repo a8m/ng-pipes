@@ -11,12 +11,12 @@ export class GroupByPipe implements PipeTransform {
     this.$parse = Parse();
   }
 
-  transform(collection: any, prop: string): {[key: string]: Array<any>} {
+  transform(collection: any, property: string): {[key: string]: Array<any>} {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }
 
-    let result: {[key: string]: Array<any>} = {}, getter = this.$parse(prop);
+    let result: {[key: string]: Array<any>} = {}, getter = this.$parse(property);
     collection.forEach((elm: any) => {
       let prop = getter(elm);
       if (isUndefined(result[prop])) {

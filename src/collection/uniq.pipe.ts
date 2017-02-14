@@ -17,7 +17,7 @@ export class UniqPipe implements PipeTransform {
     }
 
     if (isUndefined(predicate)) {
-      return collection.filter((e: any, i: number, self: Array<any>) => self.indexOf(e) == i);
+      return collection.filter((e: any, i: number, self: Array<any>) => self.indexOf(e) === i);
     }
 
     let getter = this.$parse(predicate), uniqueItems: Array<any> = [];

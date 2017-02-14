@@ -39,7 +39,7 @@ describe('CeilPipe', () => {
       } else {
         expect(pipe.transform(element.input, element.precision)).not.toEqual(element.toEqual);
       }
-    })
+    });
   }
 
 });

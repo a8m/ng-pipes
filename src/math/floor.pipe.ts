@@ -4,7 +4,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 export class FloorPipe implements PipeTransform {
   transform(input: any, precision: any = 0): number {
     const num: number = parseFloat(input);
-    const prec: number = parseInt(precision);
+    const prec: number = parseInt(precision, 10);
 
     if (isNaN(num)) return input;
 

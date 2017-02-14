@@ -24,11 +24,19 @@ export class OrderByPipe implements PipeTransform {
           return {src: item, compareValues: predicates.map(predicate => predicate.getter(item))};
         })
         .sort((o1: any, o2: any) => {
-          let i = -1, result = 0;
+          let i = -1;
+          let result = 0;
           while (++i < predicates.length) {
-            if (o1.compareValues[i] < o2.compareValues[i]) result = -1;
-            if (o1.compareValues[i] > o2.compareValues[i]) result = 1;
-            if (result *= predicates[i].descend) break;
+            if (o1.compareValues[i] < o2.compareValues[i]) {
+              result = -1;
+            }
+            if (o1.compareValues[i] > o2.compareValues[i]) {
+              result = 1;
+            }
+            result *= predicates[i].descend;
+            if (result) {
+              break;
+            }
           }
           return result;
         })
