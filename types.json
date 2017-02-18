@@ -1,0 +1,17 @@
+{
+  "118": {
+    "name": "any"
+  },
+  "121": {
+    "name": "boolean"
+  },
+  "132": {
+    "name": "number"
+  },
+  "134": {
+    "name": "string"
+  },
+  "162": {
+    "name": "Array"
+  }
+}
