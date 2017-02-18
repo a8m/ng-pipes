@@ -1,12 +1,11 @@
 import {NgModule} from '@angular/core';
 
 import {ParameterDefaultPipe} from './parameter-default.pipe';
-import {ParameterTestDataPipe} from './parameter-test-data.pipe';
 import {ParameterTypePipe} from './parameter-type.pipe';
 
 @NgModule({
-  declarations: [ParameterDefaultPipe, ParameterTypePipe, ParameterTestDataPipe],
-  exports: [ParameterDefaultPipe, ParameterTypePipe, ParameterTestDataPipe]
+  declarations: [ParameterDefaultPipe, ParameterTypePipe],
+  exports: [ParameterDefaultPipe, ParameterTypePipe]
 })
 export class PipesModule {
 }
