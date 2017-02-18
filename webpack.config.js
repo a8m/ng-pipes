@@ -2,6 +2,7 @@ let webpack = require('webpack');
 let {CheckerPlugin} = require('awesome-typescript-loader');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 let pipesVersion = require('./node_modules/ng-pipes/package.json').version;
+let pkg = require('./package.json');
 
 let path = require('path');
 function root(args) {
@@ -27,15 +28,16 @@ module.exports = (options) => {
       '@angular/common': 'ng.common',
       '@angular/compiler': 'ng.compiler',
       '@angular/core': 'ng.core',
+      '@angular/forms': 'ng.forms',
       '@angular/http': 'ng.http',
       '@angular/platform-browser': 'ng.platformBrowser',
       '@angular/platform-browser-dynamic': 'ng.platformBrowserDynamic',
       '@angular/router': 'ng.router',
-      'ng-pipes': 'ng.pipes',
       'rxjs/Rx': 'Rx',
       'zone.js': 'Zone',
       'core-js': '',
-      'reflect-metadata': 'Reflect'
+      'reflect-metadata': 'Reflect',
+      'ng-pipes': 'ng.pipes'
     },
 
     module: {
@@ -50,6 +52,7 @@ module.exports = (options) => {
       new CheckerPlugin(), new HtmlWebpackPlugin({
         template: 'index.ejs',
         version: pipesVersion,
+        dependencies: pkg.dependencies,
         env: options.dev ? 'development' : 'production',
         host: 'localhost',
         port: 8080,
