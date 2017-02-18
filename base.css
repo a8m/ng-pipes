@@ -41,19 +41,19 @@ a:hover {
 }
 
 
-/* header */
+/* np-header */
 
-header {
+np-header {
   margin: 10px;
 }
 
-header > .align-center {
+np-header > .align-center {
   display: flex;
   height: 4em;
   max-width: 190px;
 }
 
-header > .align-center > div {
+np-header > .align-center > div {
   display: flex;
   flex-direction: column;
 }
@@ -75,7 +75,7 @@ header > .align-center > div {
   background-color: #a11720;
 }
 
-header a:hover {
+np-header a:hover {
   text-decoration: none;
 }
 
