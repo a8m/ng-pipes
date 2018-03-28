@@ -1,4 +1,4 @@
-import {WrapPipe} from '../../src/index';
+import {WrapPipe} from '../../src/string/wrap.pipe';
 
 describe('WrapPipe', () => {
   let pipe: WrapPipe;

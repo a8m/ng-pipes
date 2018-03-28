@@ -1,4 +1,4 @@
-import {DegreesPipe} from '../../src/index';
+import {DegreesPipe} from '../../src/math/degrees.pipe';
 
 describe('DegreesPipe', () => {
   let pipe: DegreesPipe;

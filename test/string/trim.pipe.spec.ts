@@ -1,4 +1,4 @@
-import {TrimPipe} from '../../src/index';
+import {TrimPipe} from '../../src/string/trim.pipe';
 
 describe('TrimPipe', () => {
   let pipe: TrimPipe;

@@ -1,4 +1,4 @@
-import {TruncatePipe} from '../../src/index';
+import {TruncatePipe} from '../../src/string/truncate.pipe';
 
 describe('TruncatePipe', () => {
   let pipe: TruncatePipe;

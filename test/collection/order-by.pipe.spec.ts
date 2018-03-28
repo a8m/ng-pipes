@@ -1,4 +1,4 @@
-import {OrderByPipe} from '../../src/index';
+import {OrderByPipe} from '../../src/collection/order-by.pipe';
 
 describe('OrderByPipe', () => {
   let pipe: OrderByPipe;

@@ -1,4 +1,4 @@
-import {IsNumberPipe} from '../../src/index';
+import {IsNumberPipe} from '../../src/boolean/is-number.pipe';
 
 describe('IsNumberPipe', () => {
   let pipe: IsNumberPipe;

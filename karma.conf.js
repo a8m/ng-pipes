@@ -1,22 +1,30 @@
-module.exports = (config) => {
+module.exports = function (config) {
   config.set({
-    basePath: './',
-    files: [
-      {pattern: 'node_modules/core-js/client/shim.min.js', watched: false},
-      {pattern: 'node_modules/zone.js/dist/zone.js', watched: false},
-      {pattern: 'node_modules/reflect-metadata/Reflect.js', watched: false},
-      {pattern: 'test/**/*.js', watched: false}
+    basePath: '',
+    frameworks: ['jasmine', '@angular/cli'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+      require('karma-jasmine-html-reporter'),
+      require('karma-coverage-istanbul-reporter'),
+      require('@angular/cli/plugins/karma')
     ],
-    webpack: {},
-    preprocessors: {'test/**/*.js': ['webpack']},
-    webpackMiddleware: {stats: 'errors-only'},
-    frameworks: ['jasmine'],
-    browsers: ['Firefox'],
-    plugins: ['karma-webpack', 'karma-jasmine', 'karma-spec-reporter', 'karma-firefox-launcher'],
-    reporters: ['spec'],
-    singleRun: true,
-    autoWatch: false,
+    client:{
+      clearContext: false
+    },
+    coverageIstanbulReporter: {
+      reports: [ 'html', 'lcovonly' ],
+      fixWebpackSourcePaths: true
+    },
+    angularCli: {
+      environment: 'dev'
+    },
+    reporters: ['progress', 'kjhtml'],
+    port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO
+    logLevel: config.LOG_DEBUG,
+    autoWatch: true,
+    browsers: ['Chrome'],
+    singleRun: true
   });
-}
+};

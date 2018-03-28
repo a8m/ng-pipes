@@ -1,4 +1,4 @@
-import {DefaultsPipe} from '../../src/index';
+import {DefaultsPipe} from '../../src/collection/defaults.pipe';
 
 describe('DefaultsPipe', () => {
   let pipe: DefaultsPipe;

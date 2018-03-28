@@ -1,4 +1,4 @@
-import {ToArrayPipe} from '../../src/index';
+import {ToArrayPipe} from '../../src/collection/to-array.pipe';
 
 describe('ToArrayPipe', () => {
   let pipe: ToArrayPipe;

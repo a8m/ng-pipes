@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "project": {
+    "name": "ng-pipes"
+  },
+  "apps": [
+    {
+      "root": "",
+      "outDir": "dist",
+      "assets": [],
+      "index": "index.html",
+      "main": "public_api.ts",
+      "test": "test/test.ts",
+      "testTsconfig": "test/tsconfig.spec.json",
+      "styles": [],
+      "scripts": []
+    }
+  ],
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  }
+}

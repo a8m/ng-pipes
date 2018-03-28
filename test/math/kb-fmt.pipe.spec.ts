@@ -1,4 +1,4 @@
-import {KBFmtPipe} from '../../src/index';
+import {KBFmtPipe} from '../../src/math/kb-fmt.pipe';
 
 describe('KBFmtPipe', () => {
   let pipe: KBFmtPipe;

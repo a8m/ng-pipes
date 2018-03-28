@@ -1,4 +1,4 @@
-import {XORPipe} from '../../src/index';
+import {XORPipe} from '../../src/collection/xor.pipe';
 
 describe('XORPipe', () => {
   let pipe: XORPipe;

@@ -1,4 +1,4 @@
-import {RepeatPipe} from '../../src/index';
+import {RepeatPipe} from '../../src/string/repeat.pipe';
 
 describe('RepeatPipe', () => {
   let pipe: RepeatPipe;

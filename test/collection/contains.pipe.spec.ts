@@ -1,4 +1,4 @@
-import {ContainsPipe} from '../../src/index';
+import {ContainsPipe} from '../../src/collection/contains.pipe';
 
 describe('ContainsPipe', () => {
   let pipe: ContainsPipe;

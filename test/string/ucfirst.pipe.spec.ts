@@ -1,4 +1,4 @@
-import {UcfirstPipe} from '../../src/index';
+import {UcfirstPipe} from '../../src/string/ucfirst.pipe';
 
 describe('UcfirstPipe', () => {
   let pipe: UcfirstPipe;

@@ -1,4 +1,4 @@
-import {SlugifyPipe} from '../../src/index';
+import {SlugifyPipe} from '../../src/string/slugify.pipe';
 
 describe('SlugifyPipe', () => {
   let pipe: SlugifyPipe;

@@ -1,4 +1,4 @@
-import {AfterWherePipe} from '../../src/index';
+import {AfterWherePipe} from '../../src/collection/after-where.pipe';
 
 describe('AfterWherePipe', () => {
   let pipe: AfterWherePipe;

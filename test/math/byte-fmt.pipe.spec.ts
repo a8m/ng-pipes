@@ -1,4 +1,4 @@
-import {ByteFmtPipe} from '../../src/index';
+import {ByteFmtPipe} from '../../src/math/byte-fmt.pipe';
 
 describe('ByteFmtPipe', () => {
   let pipe: ByteFmtPipe;

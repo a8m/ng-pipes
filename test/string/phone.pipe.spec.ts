@@ -1,4 +1,4 @@
-import {PhonePipe} from '../../src/index';
+import {PhonePipe} from '../../src/string/phone.pipe';
 
 describe('PhonePipe', () => {
   let pipe: PhonePipe;

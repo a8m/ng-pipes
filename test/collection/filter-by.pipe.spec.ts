@@ -1,4 +1,4 @@
-import {FilterByPipe} from '../../src/index';
+import {FilterByPipe} from '../../src/collection/filter-by.pipe';
 
 describe('FilterByPipe', () => {
   let pipe: FilterByPipe;

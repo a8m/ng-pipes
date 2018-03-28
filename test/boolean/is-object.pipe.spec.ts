@@ -1,4 +1,4 @@
-import {IsObjectPipe} from '../../src/index';
+import {IsObjectPipe} from '../../src/boolean/is-object.pipe';
 
 describe('IsObjectPipe', () => {
   let pipe: IsObjectPipe;

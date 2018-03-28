@@ -1,4 +1,4 @@
-import {MeanPipe} from '../../src/index';
+import {MeanPipe} from '../../src/collection/mean.pipe';
 
 describe('MeanPipe', () => {
   let pipe: MeanPipe;

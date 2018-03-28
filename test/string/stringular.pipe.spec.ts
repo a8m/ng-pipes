@@ -1,4 +1,4 @@
-import {StringularPipe} from '../../src/index';
+import {StringularPipe} from '../../src/string/stringular.pipe';
 
 describe('StringularPipe', () => {
   let pipe: StringularPipe;

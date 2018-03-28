@@ -1,4 +1,4 @@
-import {BeforeWherePipe} from '../../src/index';
+import {BeforeWherePipe} from '../../src/collection/before-where.pipe';
 
 describe('BeforeWherePipe', () => {
   let pipe: BeforeWherePipe;

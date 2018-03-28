@@ -1,4 +1,4 @@
-import {InvertPipe} from '../../src/index';
+import {InvertPipe} from '../../src/object/invert.pipe';
 
 describe('InvertPipe', () => {
   let pipe: InvertPipe;

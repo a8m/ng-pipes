@@ -1,4 +1,4 @@
-import {StripTagsPipe} from '../../src/index';
+import {StripTagsPipe} from '../../src/string/strip-tags.pipe';
 
 describe('EndsWithPipe', () => {
   let pipe: StripTagsPipe;

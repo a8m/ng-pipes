@@ -1,8 +1,7 @@
-import {IsEmptyPipe} from '../../src/index';
+import {IsEmptyPipe} from '../../src/collection/is-empty.pipe';
 
 describe('IsEmptyPipe', () => {
   let pipe: IsEmptyPipe;
-  ;
 
   beforeEach(() => {
     pipe = new IsEmptyPipe();

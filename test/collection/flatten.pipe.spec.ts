@@ -1,4 +1,4 @@
-import {FlattenPipe} from '../../src/index';
+import {FlattenPipe} from '../../src/collection/flatten.pipe';
 
 describe('FlattenPipe', () => {
   let pipe: FlattenPipe;

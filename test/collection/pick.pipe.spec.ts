@@ -1,4 +1,4 @@
-import {PickPipe} from '../../src/index';
+import {PickPipe} from '../../src/collection/pick.pipe';
 
 describe('PickPipe', () => {
   let pipe: PickPipe;

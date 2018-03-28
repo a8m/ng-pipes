@@ -1,4 +1,4 @@
-import {RoundPipe} from '../../src/index';
+import {RoundPipe} from '../../src/math/round.pipe';
 
 describe('RoundPipe', () => {
   let pipe: RoundPipe;

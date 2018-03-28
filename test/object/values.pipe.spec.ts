@@ -1,4 +1,4 @@
-import {ValuesPipe} from '../../src/index';
+import {ValuesPipe} from '../../src/object/values.pipe';
 
 describe('ValuesPipe', () => {
   let pipe: ValuesPipe;

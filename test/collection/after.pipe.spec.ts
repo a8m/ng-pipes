@@ -1,4 +1,4 @@
-import {AfterPipe} from '../../src/index';
+import {AfterPipe} from '../../src/collection/after.pipe';
 
 describe('AfterPipe', () => {
   let pipe: AfterPipe;

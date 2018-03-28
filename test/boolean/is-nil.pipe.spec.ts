@@ -1,4 +1,4 @@
-import {IsNilPipe} from '../../src/index';
+import {IsNilPipe} from '../../src/boolean/is-nil.pipe';
 
 describe('IsNilPipe', () => {
   let pipe: IsNilPipe;

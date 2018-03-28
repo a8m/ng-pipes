@@ -1,4 +1,4 @@
-import {SearchFieldPipe} from '../../src/index';
+import {SearchFieldPipe} from '../../src/collection/search-field.pipe';
 
 describe('SearchFieldPipe', () => {
   let pipe: SearchFieldPipe;

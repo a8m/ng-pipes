@@ -1,4 +1,4 @@
-import {TestPipe} from '../../src/index';
+import {TestPipe} from '../../src/string/test.pipe';
 
 describe('TestPipe', () => {
   let pipe: TestPipe;

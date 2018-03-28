@@ -1,4 +1,4 @@
-import {RightPadPipe} from '../../src/index';
+import {RightPadPipe} from '../../src/string/right-pad.pipe';
 
 describe('RightPadPipe', () => {
   let pipe: RightPadPipe;

@@ -1,4 +1,4 @@
-import {CountByPipe} from '../../src/index';
+import {CountByPipe} from '../../src/collection/count-by.pipe';
 
 describe('CountByPipe', () => {
   let pipe: CountByPipe;

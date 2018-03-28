@@ -1,4 +1,4 @@
-import {MinPipe} from '../../src/index';
+import {MinPipe} from '../../src/math/min.pipe';
 
 describe('MinPipe', () => {
   let pipe: MinPipe;

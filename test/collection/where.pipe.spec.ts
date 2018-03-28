@@ -1,4 +1,4 @@
-import {WherePipe} from '../../src/index';
+import {WherePipe} from '../../src/collection/where.pipe';
 
 describe('WherePipe', () => {
   let pipe: WherePipe;

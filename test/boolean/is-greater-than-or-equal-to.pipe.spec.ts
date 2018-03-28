@@ -1,4 +1,4 @@
-import {IsGreaterThanOrEqualToPipe} from '../../src/index';
+import {IsGreaterThanOrEqualToPipe} from '../../src/boolean/is-greater-than-or-equal-to.pipe';
 
 describe('IsGreaterThanOrEqualToPipe', () => {
   let pipe: IsGreaterThanOrEqualToPipe;

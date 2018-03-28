@@ -1,4 +1,4 @@
-import {UniqPipe} from '../../src/index';
+import {UniqPipe} from '../../src/collection/uniq.pipe';
 
 describe('UniqPipe', () => {
   let pipe: UniqPipe;

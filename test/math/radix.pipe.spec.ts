@@ -1,4 +1,4 @@
-import {RadixPipe} from '../../src/index';
+import {RadixPipe} from '../../src/math/radix.pipe';
 
 describe('RadixPipe', () => {
   let pipe: RadixPipe;
@@ -14,9 +14,9 @@ describe('RadixPipe', () => {
     expect(pipe.transform(32, 8)).toEqual('40');
   });
 
-  it('should not be able to convert base less than 2 , and bigger than 36', () => {
-    expect(pipe.transform(998, 37)).toEqual(998);
-    expect(pipe.transform(15, 1)).toEqual(15);
+  it('should not be able to convert base less than 2, and bigger than 36', () => {
+    expect(pipe.transform(998, 37)).toEqual('998');
+    expect(pipe.transform(15, 1)).toEqual('15');
   });
 
 });

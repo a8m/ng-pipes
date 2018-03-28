@@ -1,4 +1,4 @@
-import {ConcatPipe} from '../../src/index';
+import {ConcatPipe} from '../../src/collection/concat.pipe';
 
 describe('ConcatPipe', () => {
   let pipe: ConcatPipe;

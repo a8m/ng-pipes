@@ -1,4 +1,4 @@
-import {ChunkByPipe} from '../../src/index';
+import {ChunkByPipe} from '../../src/collection/chunk-by.pipe';
 
 describe('ChunkByPipe', () => {
   let pipe: ChunkByPipe;

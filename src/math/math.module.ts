@@ -17,22 +17,22 @@ import {ShortFmtPipe} from './short-fmt.pipe';
 import {SqrtPipe} from './sqrt.pipe';
 import {SumPipe} from './sum.pipe';
 
-export * from './abs.pipe';
-export * from './byte-fmt.pipe';
-export * from './ceil.pipe';
-export * from './kb-fmt.pipe';
-export * from './degrees.pipe';
-export * from './floor.pipe';
-export * from './max.pipe';
-export * from './min.pipe';
-export * from './percent.pipe';
-export * from './pow.pipe';
-export * from './radians.pipe';
-export * from './radix.pipe';
-export * from './round.pipe';
-export * from './short-fmt.pipe';
-export * from './sum.pipe';
-export * from './sqrt.pipe';
+export {AbsPipe} from './abs.pipe';
+export {ByteFmtPipe} from './byte-fmt.pipe';
+export {CeilPipe} from './ceil.pipe';
+export {KBFmtPipe} from './kb-fmt.pipe';
+export {DegreesPipe} from './degrees.pipe';
+export {FloorPipe} from './floor.pipe';
+export {MaxPipe} from './max.pipe';
+export {MinPipe} from './min.pipe';
+export {PercentPipe} from './percent.pipe';
+export {PowPipe} from './pow.pipe';
+export {RadiansPipe} from './radians.pipe';
+export {RadixPipe} from './radix.pipe';
+export {RoundPipe} from './round.pipe';
+export {ShortFmtPipe} from './short-fmt.pipe';
+export {SumPipe} from './sum.pipe';
+export {SqrtPipe} from './sqrt.pipe';
 
 @NgModule({
   declarations: [

@@ -1,4 +1,4 @@
-import {FuzzyPipe} from '../../src/index';
+import {FuzzyPipe} from '../../src/collection/fuzzy.pipe';
 
 describe('FuzzyPipe', () => {
   let pipe: FuzzyPipe, collection = [

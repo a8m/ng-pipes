@@ -1,4 +1,4 @@
-import {PercentPipe} from '../../src/index';
+import {PercentPipe} from '../../src/math/percent.pipe';
 
 describe('PercentPipe', () => {
   let pipe: PercentPipe;

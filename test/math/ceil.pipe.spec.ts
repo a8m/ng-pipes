@@ -1,4 +1,4 @@
-import {CeilPipe} from '../../src/index';
+import {CeilPipe} from '../../src/math/ceil.pipe';
 
 describe('CeilPipe', () => {
   let pipe: CeilPipe;

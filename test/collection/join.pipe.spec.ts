@@ -1,4 +1,4 @@
-import {JoinPipe} from '../../src/index';
+import {JoinPipe} from '../../src/collection/join.pipe';
 
 describe('JoinPipe', () => {
   let pipe: JoinPipe;

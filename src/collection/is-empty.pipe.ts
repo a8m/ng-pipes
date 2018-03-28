@@ -4,7 +4,7 @@ import {isArray, toArray} from '../utils/utils';
 
 @Pipe({name: 'isEmpty'})
 export class IsEmptyPipe implements PipeTransform {
-  transform(collection: any): boolean {
+  transform(collection: any): number {
     if (!isArray(collection)) {
       collection = toArray(collection);
     }

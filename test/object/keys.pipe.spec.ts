@@ -1,4 +1,4 @@
-import {KeysPipe} from '../../src/index';
+import {KeysPipe} from '../../src/object/keys.pipe';
 
 describe('KeysPipe', () => {
   let pipe: KeysPipe;

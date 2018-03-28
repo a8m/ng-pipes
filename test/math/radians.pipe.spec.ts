@@ -1,4 +1,4 @@
-import {RadiansPipe} from '../../src/index';
+import {RadiansPipe} from '../../src/math/radians.pipe';
 
 describe('RadiansPipe', () => {
   let pipe: RadiansPipe;

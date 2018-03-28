@@ -1,4 +1,4 @@
-import {PowPipe} from '../../src/index';
+import {PowPipe} from '../../src/math/pow.pipe';
 
 describe('PowPipe', () => {
   let pipe: PowPipe;

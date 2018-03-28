@@ -1,4 +1,4 @@
-import {BeforePipe} from '../../src/index';
+import {BeforePipe} from '../../src/collection/before.pipe';
 
 describe('BeforePipe', () => {
   let pipe: BeforePipe;

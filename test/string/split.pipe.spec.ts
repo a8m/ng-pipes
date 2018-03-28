@@ -1,4 +1,4 @@
-import {SplitPipe} from '../../src/index';
+import {SplitPipe} from '../../src/string/split.pipe';
 
 describe('SplitPipe', () => {
   let pipe: SplitPipe;

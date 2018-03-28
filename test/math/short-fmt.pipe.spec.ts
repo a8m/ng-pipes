@@ -1,4 +1,4 @@
-import {ShortFmtPipe} from '../../src/index';
+import {ShortFmtPipe} from '../../src/math/short-fmt.pipe';
 
 describe('ShortFmtPipe', () => {
   let pipe: ShortFmtPipe;

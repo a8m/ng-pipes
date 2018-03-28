@@ -1,4 +1,4 @@
-import {RemoveWithPipe} from '../../src/index';
+import {RemoveWithPipe} from '../../src/collection/remove-with.pipe';
 
 describe('RemoveWithPipe', () => {
   let pipe: RemoveWithPipe;

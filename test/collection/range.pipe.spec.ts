@@ -1,4 +1,4 @@
-import {RangePipe} from '../../src/index';
+import {RangePipe} from '../../src/collection/range.pipe';
 
 describe('RangePipe', () => {
   let pipe: RangePipe;

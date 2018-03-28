@@ -1,4 +1,4 @@
-import {GroupByPipe} from '../../src/index';
+import {GroupByPipe} from '../../src/collection/group-by.pipe';
 
 describe('GroupByPipe', () => {
   let pipe: GroupByPipe;

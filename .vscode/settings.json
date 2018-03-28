@@ -1,0 +1,13 @@
+{
+  "files.exclude": {
+    "*.log": true,
+    "src/**/*.js": true,
+    "test/**/*.js": true,
+    "public_api.js": true,
+    "**/*.map": true,
+    "**/*.d.ts": true,
+    "**/*.metadata.json": true,
+    "**/*.ngsummary.json": true,
+    "**/*.ngfactory.ts": true
+  }
+}

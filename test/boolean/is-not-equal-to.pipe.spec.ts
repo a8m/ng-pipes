@@ -1,4 +1,4 @@
-import {IsNotEqualToPipe} from '../../src/index';
+import {IsNotEqualToPipe} from '../../src/boolean/is-not-equal-to.pipe';
 
 describe('IsNotEqualToPipe', () => {
   let pipe: IsNotEqualToPipe;

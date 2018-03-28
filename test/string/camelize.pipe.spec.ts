@@ -1,4 +1,4 @@
-import {CamelizePipe} from '../../src/index';
+import {CamelizePipe} from '../../src/string/camelize.pipe';
 
 describe('CamelizePipe', () => {
   let pipe: CamelizePipe;

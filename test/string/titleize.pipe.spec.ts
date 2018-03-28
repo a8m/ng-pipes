@@ -1,4 +1,4 @@
-import {TitleizePipe} from '../../src/index';
+import {TitleizePipe} from '../../src/string/titleize.pipe';
 
 describe('TitleizePipe', () => {
   let pipe: TitleizePipe;

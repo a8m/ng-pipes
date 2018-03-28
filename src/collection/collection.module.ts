@@ -34,39 +34,39 @@ import {UniqPipe} from './uniq.pipe';
 import {WherePipe} from './where.pipe';
 import {XORPipe} from './xor.pipe';
 
-export * from './after-where.pipe';
-export * from './before-where.pipe';
-export * from './after.pipe';
-export * from './before.pipe';
-export * from './chunk-by.pipe';
-export * from './concat.pipe';
-export * from './contains.pipe';
-export * from './count-by.pipe';
-export * from './defaults.pipe';
-export * from './every.pipe';
-export * from './filter-by.pipe';
-export * from './first.pipe';
-export * from './flatten.pipe';
-export * from './fuzzy-by.pipe';
-export * from './fuzzy.pipe';
-export * from './group-by.pipe';
-export * from './is-empty.pipe';
-export * from './join.pipe';
-export * from './last.pipe';
-export * from './map.pipe';
-export * from './mean.pipe';
-export * from './omit.pipe';
-export * from './pick.pipe';
-export * from './range.pipe';
-export * from './remove-with.pipe';
-export * from './remove.pipe';
-export * from './reverse.pipe';
-export * from './search-field.pipe';
-export * from './to-array.pipe';
-export * from './uniq.pipe';
-export * from './where.pipe';
-export * from './xor.pipe';
-export * from './order-by.pipe';
+export {AfterWherePipe} from './after-where.pipe';
+export {BeforeWherePipe} from './before-where.pipe';
+export {AfterPipe} from './after.pipe';
+export {BeforePipe} from './before.pipe';
+export {ChunkByPipe} from './chunk-by.pipe';
+export {ConcatPipe} from './concat.pipe';
+export {ContainsPipe} from './contains.pipe';
+export {CountByPipe} from './count-by.pipe';
+export {DefaultsPipe} from './defaults.pipe';
+export {EveryPipe} from './every.pipe';
+export {FilterByPipe} from './filter-by.pipe';
+export {FirstPipe} from './first.pipe';
+export {FlattenPipe} from './flatten.pipe';
+export {FuzzyByPipe} from './fuzzy-by.pipe';
+export {FuzzyPipe} from './fuzzy.pipe';
+export {GroupByPipe} from './group-by.pipe';
+export {IsEmptyPipe} from './is-empty.pipe';
+export {JoinPipe} from './join.pipe';
+export {LastPipe} from './last.pipe';
+export {MapPipe} from './map.pipe';
+export {MeanPipe} from './mean.pipe';
+export {OmitPipe} from './omit.pipe';
+export {PickPipe} from './pick.pipe';
+export {RangePipe} from './range.pipe';
+export {RemoveWithPipe} from './remove-with.pipe';
+export {RemovePipe} from './remove.pipe';
+export {ReversePipe} from './reverse.pipe';
+export {SearchFieldPipe} from './search-field.pipe';
+export {ToArrayPipe} from './to-array.pipe';
+export {UniqPipe} from './uniq.pipe';
+export {WherePipe} from './where.pipe';
+export {XORPipe} from './xor.pipe';
+export {OrderByPipe} from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -75,7 +75,7 @@ export * from './order-by.pipe';
     FlattenPipe,    FuzzyByPipe,     FuzzyPipe,       GroupByPipe, IsEmptyPipe,  JoinPipe,
     LastPipe,       MapPipe,         MeanPipe,        OmitPipe,    PickPipe,     RangePipe,
     RemoveWithPipe, ReversePipe,     SearchFieldPipe, RemovePipe,  ToArrayPipe,  UniqPipe,
-    WherePipe,      XORPipe,         OrderByPipe,
+    WherePipe,      XORPipe,         OrderByPipe
   ],
   exports: [
     AfterWherePipe, BeforeWherePipe, AfterPipe,       BeforePipe,  ChunkByPipe,  ConcatPipe,
@@ -83,7 +83,7 @@ export * from './order-by.pipe';
     FlattenPipe,    FuzzyByPipe,     FuzzyPipe,       GroupByPipe, IsEmptyPipe,  JoinPipe,
     LastPipe,       MapPipe,         MeanPipe,        OmitPipe,    PickPipe,     RangePipe,
     RemoveWithPipe, ReversePipe,     SearchFieldPipe, RemovePipe,  ToArrayPipe,  UniqPipe,
-    WherePipe,      XORPipe,         OrderByPipe,
+    WherePipe,      XORPipe,         OrderByPipe
   ]
 })
 export class CollectionPipesModule {

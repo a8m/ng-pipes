@@ -1,4 +1,4 @@
-import {CenterPadPipe} from '../../src/index';
+import {CenterPadPipe} from '../../src/string/center-pad.pipe';
 
 describe('CenterPadPipe', () => {
   let pipe: CenterPadPipe;

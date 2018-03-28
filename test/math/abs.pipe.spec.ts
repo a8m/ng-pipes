@@ -1,4 +1,4 @@
-import {AbsPipe} from '../../src/index';
+import {AbsPipe} from '../../src/math/abs.pipe';
 
 describe('AbsPipe', () => {
   let pipe: AbsPipe;

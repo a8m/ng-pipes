@@ -1,4 +1,4 @@
-import {EveryPipe} from '../../src/index';
+import {EveryPipe} from '../../src/collection/every.pipe';
 
 describe('EveryPipe', () => {
   let pipe: EveryPipe;

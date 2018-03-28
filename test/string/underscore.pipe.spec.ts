@@ -1,4 +1,4 @@
-import {UnderscorePipe} from '../../src/index';
+import {UnderscorePipe} from '../../src/string/underscore.pipe';
 
 describe('UnderscorePipe', () => {
   let pipe: UnderscorePipe;

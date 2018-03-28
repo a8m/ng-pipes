@@ -18,23 +18,23 @@ import {IsObjectPipe} from './is-object.pipe';
 import {IsStringPipe} from './is-string.pipe';
 import {IsUndefinedPipe} from './is-undefined.pipe';
 
-export * from './is-array.pipe';
-export * from './is-defined.pipe';
-export * from './is-equal-to.pipe';
-export * from './is-function.pipe';
-export * from './is-greater-than-or-equal-to.pipe';
-export * from './is-greater-than.pipe';
-export * from './is-identical-to.pipe';
-export * from './is-less-than-or-equal-to.pipe';
-export * from './is-less-than.pipe';
-export * from './is-nil.pipe';
-export * from './is-not-equal-to.pipe';
-export * from './is-not-identical-to.pipe';
-export * from './is-null.pipe';
-export * from './is-number.pipe';
-export * from './is-object.pipe';
-export * from './is-string.pipe';
-export * from './is-undefined.pipe';
+export {IsArrayPipe} from './is-array.pipe';
+export {IsDefinedPipe} from './is-defined.pipe';
+export {IsEqualToPipe} from './is-equal-to.pipe';
+export {IsFunctionPipe} from './is-function.pipe';
+export {IsGreaterThanOrEqualToPipe} from './is-greater-than-or-equal-to.pipe';
+export {IsGreaterThanPipe} from './is-greater-than.pipe';
+export {IsIdenticalToPipe} from './is-identical-to.pipe';
+export {IsLessThanOrEqualToPipe} from './is-less-than-or-equal-to.pipe';
+export {IsLessThanPipe} from './is-less-than.pipe';
+export {IsNilPipe} from './is-nil.pipe';
+export {IsNotEqualToPipe} from './is-not-equal-to.pipe';
+export {IsNotIdenticalToPipe} from './is-not-identical-to.pipe';
+export {IsNullPipe} from './is-null.pipe';
+export {IsNumberPipe} from './is-number.pipe';
+export {IsObjectPipe} from './is-object.pipe';
+export {IsStringPipe} from './is-string.pipe';
+export {IsUndefinedPipe} from './is-undefined.pipe';
 
 @NgModule({
   declarations: [

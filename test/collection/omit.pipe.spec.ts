@@ -1,4 +1,4 @@
-import {OmitPipe} from '../../src/index';
+import {OmitPipe} from '../../src/collection/omit.pipe';
 
 describe('OmitPipe', () => {
   let pipe: OmitPipe;
