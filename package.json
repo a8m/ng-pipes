@@ -39,8 +39,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "@angular/cli": "1.6.7",
     "@angular/animations": "^5.2.0",
+    "@angular/cli": "1.6.7",
     "@angular/common": "^5.2.0",
     "@angular/compiler": "^5.2.0",
     "@angular/compiler-cli": "^5.2.0",
@@ -57,8 +57,8 @@
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~2.0.0",
-    "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-firefox-launcher": "^1.1.0",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "ng-packagr": "2.2.0",
@@ -69,9 +69,7 @@
     "typescript": "~2.5.3",
     "zone.js": "^0.8.19"
   },
-  "dependencies": {
-    "karma-phantomjs-launcher": "^1.0.4"
-  },
+  "dependencies": {},
   "ngPackage": {
     "dest": "dist",
     "lib": {
