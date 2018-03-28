@@ -26,5 +26,4 @@ describe('BeforePipe', () => {
        expect(pipe.transform(object, 1)).toEqual([]);
        expect(pipe.transform(object, 10)).toEqual([{a: 1}, {a: 2}, {a: 3}, {a: 4}]);
      });
-
 });

@@ -26,5 +26,4 @@ describe('ChunkByPipe', () => {
   it('should get an fill-value and complete blocks that less than `n`', () => {
     expect(pipe.transform([1, 2, 3, 4], 3, 1)).toEqual([[1, 2, 3], [4, 1, 1]]);
   });
-
 });

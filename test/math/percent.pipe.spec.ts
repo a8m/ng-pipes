@@ -28,5 +28,4 @@ describe('PercentPipe', () => {
     expect(pipe.transform(32)).toEqual(32);
     expect(pipe.transform(200)).toEqual(200);
   });
-
 });

@@ -13,5 +13,4 @@ describe('AbsPipe', () => {
     expect(pipe.transform('-123.45')).toEqual(123.45);
     expect(pipe.transform('123.45')).toEqual(123.45);
   });
-
 });

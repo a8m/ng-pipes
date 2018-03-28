@@ -25,5 +25,4 @@ describe('StringularPipe', () => {
     expect(pipe.transform('lorem {0} dolor {1} amet', 'ipsum'))
         .toEqual('lorem ipsum dolor {1} amet');
   });
-
 });

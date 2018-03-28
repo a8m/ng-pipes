@@ -17,5 +17,4 @@ describe('IsDefinedPipe', () => {
   it('should return false for all inputs', () => {
     expect(pipe.transform(undefined)).toBeFalsy();
   });
-
 });

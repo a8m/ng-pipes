@@ -27,11 +27,9 @@ describe('CeilPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input ${JSON.stringify(element.input)} with precision (${element
-                         .precision}) should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase =
+        `Input ${JSON.stringify(element.input)} with precision (${element.precision}) should be ${
+            element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -41,5 +39,4 @@ describe('CeilPipe', () => {
       }
     });
   }
-
 });

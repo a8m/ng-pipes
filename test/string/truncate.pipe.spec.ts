@@ -34,5 +34,4 @@ describe('TruncatePipe', () => {
     expect(pipe.transform('lorem ipsum dolor sit amet', 50, '...', true))
         .toEqual('lorem ipsum dolor sit amet');
   });
-
 });

@@ -42,5 +42,4 @@ describe('OrderByPipe', () => {
     ];
     expect(pipe.transform(users, 'age', '-name')).toEqual(users.reverse());
   });
-
 });

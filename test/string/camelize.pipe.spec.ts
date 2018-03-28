@@ -26,9 +26,8 @@ describe('CamelizePipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `${element.value} should be ${element.valid ? 'equal' :
-                                                                   'not equal'
-                                                                   } to ${element.toEqual}`;
+    const testCase =
+        `${element.value} should be ${element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -38,5 +37,4 @@ describe('CamelizePipe', () => {
       }
     });
   }
-
 });

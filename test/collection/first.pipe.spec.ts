@@ -31,5 +31,4 @@ describe('FirstPipe', () => {
     expect(pipe.transform(users, 'active')).toEqual([users[1]]);
     expect(pipe.transform(users, 2, 'active')).toEqual([users[1], users[3]]);
   });
-
 });

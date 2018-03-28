@@ -29,5 +29,4 @@ describe('SplitPipe', () => {
   it('should return the input unchanged', () => {
     expect(pipe.transform(null)).toBeNull();
   });
-
 });

@@ -33,5 +33,4 @@ describe('CountByPipe', () => {
 
        expect(pipe.transform(dataObject, 'id')).toEqual({1: 2, 2: 2});
      });
-
 });

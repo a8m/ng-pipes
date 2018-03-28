@@ -50,5 +50,4 @@ export {IsUndefinedPipe} from './is-undefined.pipe';
     IsUndefinedPipe
   ]
 })
-export class BooleanPipesModule {
-}
+export class BooleanPipesModule {}

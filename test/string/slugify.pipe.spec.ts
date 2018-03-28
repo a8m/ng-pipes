@@ -20,5 +20,4 @@ describe('SlugifyPipe', () => {
     expect(pipe.transform('Lorem ipsum dolor sit amet', '-')).toEqual('lorem-ipsum-dolor-sit-amet');
     expect(pipe.transform('Lorem ipsum dolor sit amet', '')).toEqual('loremipsumdolorsitamet');
   });
-
 });

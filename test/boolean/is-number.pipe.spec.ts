@@ -21,5 +21,4 @@ describe('IsNumberPipe', () => {
     expect(pipe.transform({})).toBeFalsy();
     expect(pipe.transform([])).toBeFalsy();
   });
-
 });

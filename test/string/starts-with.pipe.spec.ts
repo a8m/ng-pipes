@@ -24,5 +24,4 @@ describe('StartsWithPipe', () => {
     expect(pipe.transform('string', 'STR', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
-
 });

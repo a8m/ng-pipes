@@ -11,5 +11,4 @@ import {StringPipesModule} from './string/string.module';
     BooleanPipesModule, CollectionPipesModule, MathPipesModule, ObjectPipesModule, StringPipesModule
   ]
 })
-export class NgPipesModule {
-}
+export class NgPipesModule {}

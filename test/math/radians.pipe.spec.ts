@@ -15,5 +15,4 @@ describe('RadiansPipe', () => {
     expect(pipe.transform(-30, 4)).toEqual(-0.5236);
     expect(pipe.transform(1030, 5)).toEqual(17.97689);
   });
-
 });

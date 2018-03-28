@@ -31,5 +31,4 @@ describe('KBFmtPipe', () => {
     expect(pipe.transform(0.45, [3])).toEqual('NaN');
     expect(pipe.transform(0.45, {num: 4})).toEqual('NaN');
   });
-
 });

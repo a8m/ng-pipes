@@ -16,5 +16,4 @@ describe('IsObjectPipe', () => {
     expect(pipe.transform(undefined)).toBeFalsy();
     expect(pipe.transform(1)).toBeFalsy();
   });
-
 });

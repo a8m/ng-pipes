@@ -17,5 +17,4 @@ describe('IsUndefinedPipe', () => {
     expect(pipe.transform({})).toBeFalsy();
     expect(pipe.transform([])).toBeFalsy();
   });
-
 });

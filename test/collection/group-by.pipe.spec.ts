@@ -47,5 +47,4 @@ describe('GroupByPipe', () => {
        expect(pipe.transform(dataObject, 'id'))
            .toEqual({1: [dataObject[0], dataObject[1]], 2: [dataObject[2], dataObject[3]]});
      });
-
 });

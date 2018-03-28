@@ -21,5 +21,4 @@ describe('ToArrayPipe', () => {
       {$key: '0', f: 'foo'}, {$key: '1', b: 'bar'}, {$key: '2', b: 'baz'}
     ]);
   });
-
 });

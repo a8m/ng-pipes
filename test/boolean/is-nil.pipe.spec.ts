@@ -18,5 +18,4 @@ describe('IsNilPipe', () => {
     expect(pipe.transform({})).toBeFalsy();
     expect(pipe.transform([])).toBeFalsy();
   });
-
 });

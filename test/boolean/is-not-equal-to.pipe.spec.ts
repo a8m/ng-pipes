@@ -18,5 +18,4 @@ describe('IsNotEqualToPipe', () => {
     expect(pipe.transform(1, '1')).toBeFalsy();
     expect(pipe.transform('1', '1')).toBeFalsy();
   });
-
 });

@@ -11,5 +11,4 @@ describe('IsEmptyPipe', () => {
     expect(pipe.transform([1, 2, 3])).toEqual(3);
     expect(pipe.transform({0: 'a', 1: 'b', 2: 'c'})).toEqual(3);
   });
-
 });

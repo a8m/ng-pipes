@@ -15,5 +15,4 @@ describe('IsLessThanPipe', () => {
     expect(pipe.transform(1, 0)).toBeFalsy();
     expect(pipe.transform(1, 1)).toBeFalsy();
   });
-
 });

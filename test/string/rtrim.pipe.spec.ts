@@ -19,5 +19,4 @@ describe('RightTrimPipe', () => {
     expect(pipe.transform('barfoobar', 'bar')).toEqual('barfoo');
     expect(pipe.transform('barfoobar', 'foo')).toEqual('barfoobar');
   });
-
 });

@@ -22,5 +22,4 @@ describe('IsNotIdenticalToPipe', () => {
     expect(pipe.transform({'key': 2}, {'key': 2})).toBeFalsy();
     expect(pipe.transform([{'key': 2}, {'key': 4}], [{'key': 2}, {'key': 4}])).toBeFalsy();
   });
-
 });

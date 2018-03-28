@@ -15,5 +15,4 @@ describe('IsGreaterThanOrEqualToPipe', () => {
   it('should return false for all inputs', () => {
     expect(pipe.transform(0, 1)).toBeFalsy();
   });
-
 });

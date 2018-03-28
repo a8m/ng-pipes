@@ -20,5 +20,4 @@ describe('IsArrayPipe', () => {
     expect(pipe.transform('')).toBeFalsy();
     expect(pipe.transform({})).toBeFalsy();
   });
-
 });

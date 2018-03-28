@@ -15,5 +15,4 @@ describe('IsGreaterThanPipe', () => {
     expect(pipe.transform(0, 1)).toBeFalsy();
     expect(pipe.transform(1, 1)).toBeFalsy();
   });
-
 });

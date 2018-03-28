@@ -42,5 +42,4 @@ describe('FuzzyPipe', () => {
     expect(pipe.transform(array, 'oa')).toEqual(['Rob Grant', 'F. Scott Fitzgerald']);
     expect(pipe.transform(array, 'S', true)).toEqual(['F. Scott Fitzgerald']);
   });
-
 });

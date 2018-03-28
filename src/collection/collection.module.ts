@@ -35,8 +35,8 @@ import {WherePipe} from './where.pipe';
 import {XORPipe} from './xor.pipe';
 
 export {AfterWherePipe} from './after-where.pipe';
-export {BeforeWherePipe} from './before-where.pipe';
 export {AfterPipe} from './after.pipe';
+export {BeforeWherePipe} from './before-where.pipe';
 export {BeforePipe} from './before.pipe';
 export {ChunkByPipe} from './chunk-by.pipe';
 export {ConcatPipe} from './concat.pipe';
@@ -56,6 +56,7 @@ export {LastPipe} from './last.pipe';
 export {MapPipe} from './map.pipe';
 export {MeanPipe} from './mean.pipe';
 export {OmitPipe} from './omit.pipe';
+export {OrderByPipe} from './order-by.pipe';
 export {PickPipe} from './pick.pipe';
 export {RangePipe} from './range.pipe';
 export {RemoveWithPipe} from './remove-with.pipe';
@@ -66,7 +67,6 @@ export {ToArrayPipe} from './to-array.pipe';
 export {UniqPipe} from './uniq.pipe';
 export {WherePipe} from './where.pipe';
 export {XORPipe} from './xor.pipe';
-export {OrderByPipe} from './order-by.pipe';
 
 @NgModule({
   declarations: [
@@ -86,5 +86,4 @@ export {OrderByPipe} from './order-by.pipe';
     WherePipe,      XORPipe,         OrderByPipe
   ]
 })
-export class CollectionPipesModule {
-}
+export class CollectionPipesModule {}

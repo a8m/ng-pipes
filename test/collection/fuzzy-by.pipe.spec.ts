@@ -42,5 +42,4 @@ describe('FuzzyByPipe', () => {
     ]);
     expect(pipe.transform(collection2, 'details.title', 'omwar')).toEqual([collection2[4]]);
   });
-
 });

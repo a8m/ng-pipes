@@ -24,5 +24,4 @@ describe('EndsWithPipe', () => {
     expect(pipe.transform('string', 'ING', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
-
 });

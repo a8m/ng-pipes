@@ -19,7 +19,6 @@ describe('JoinPipe', () => {
       it('should return an empty string', () => {
         expect(pipe.transform(arr)).toEqual('');
       });
-
     });
 
     describe('of strings', () => {
@@ -59,7 +58,5 @@ describe('JoinPipe', () => {
         });
       });
     });
-
   });
-
 });

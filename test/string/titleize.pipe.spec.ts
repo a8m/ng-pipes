@@ -13,5 +13,4 @@ describe('TitleizePipe', () => {
     expect(pipe.transform('lorem ipsum is simply dummy.... industry.'))
         .toEqual('Lorem Ipsum Is Simply Dummy.... Industry.');
   });
-
 });

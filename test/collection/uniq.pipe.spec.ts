@@ -17,7 +17,6 @@ describe('UniqPipe', () => {
   });
 
   it('should get array as collection, property(nested to) as identifier and filter', () => {
-
     const orders: Array<any> = [
       {id: 10, customer: {name: 'foo', id: 1}},
       {id: 11, customer: {name: 'bar', id: 2}},
@@ -40,11 +39,9 @@ describe('UniqPipe', () => {
 
     expect(pipe.transform(orders, 'id')).toEqual(orders);
     expect(pipe.transform(orders, 'id').length).toEqual(orders.length);
-
   });
 
   it('should filtered by property and not touch members without this property', () => {
-
     const array: Array<any> = [
       {id: 1, person: {name: 'Ariel', age: 25}}, {id: 2, person: {name: 'Joe', age: 25}},
       {id: 3, person: {name: 'Bob', age: 42}}, {id: 4, person: {name: 'Marie', age: 42}}, {}, [], 1,
@@ -71,5 +68,4 @@ describe('UniqPipe', () => {
     ];
     expect(pipe.transform(orders, 'order.person.credit.information.num')).toEqual([orders[0]]);
   });
-
 });

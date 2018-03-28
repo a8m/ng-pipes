@@ -16,5 +16,4 @@ describe('SumPipe', () => {
     expect(pipe.transform([2, 3, 5], 10)).toEqual(20);
     expect(pipe.transform([2, 3, 5], -10)).toEqual(0);
   });
-
 });

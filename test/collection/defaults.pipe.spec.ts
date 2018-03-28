@@ -57,5 +57,4 @@ describe('DefaultsPipe', () => {
     Object.assign(array[0], defaults);
     expect(pipe.transform(copy, defaults)).toEqual(array);
   });
-
 });

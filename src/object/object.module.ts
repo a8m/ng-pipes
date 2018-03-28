@@ -10,5 +10,4 @@ export {ValuesPipe} from './values.pipe';
 
 @NgModule(
     {declarations: [InvertPipe, KeysPipe, ValuesPipe], exports: [InvertPipe, KeysPipe, ValuesPipe]})
-export class ObjectPipesModule {
-}
+export class ObjectPipesModule {}

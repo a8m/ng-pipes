@@ -11,5 +11,4 @@ describe('MatchPipe', () => {
     expect(pipe.transform('15/12/2003', '\\d+', 'g')).toEqual(['15', '12', '2003']);
     expect(pipe.transform('foobarbaz', '[a-z]{3}', 'g')).toEqual(['foo', 'bar', 'baz']);
   });
-
 });

@@ -14,7 +14,5 @@ describe('ShortFmtPipe', () => {
     expect(pipe.transform(1993, 2)).toEqual('1.99 K');
     expect(pipe.transform(1049901, 5)).toEqual('1.0499 M');
     expect(pipe.transform(1909234901, 2)).toEqual('1.91 B');
-
   });
-
 });

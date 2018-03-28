@@ -39,5 +39,4 @@ describe('WherePipe', () => {
     expect(pipe.transform([{a: 1}])).toEqual([{a: 1}]);
     expect(pipe.transform([{a: 1}, {b: 2}])).toEqual([{a: 1}, {b: 2}]);
   });
-
 });

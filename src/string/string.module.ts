@@ -34,8 +34,8 @@ export {LeftPadPipe} from './left-pad.pipe';
 export {LeftTrimPipe} from './ltrim.pipe';
 export {MatchPipe} from './match.pipe';
 export {PhonePipe} from './phone.pipe';
-export {RightPadPipe} from './right-pad.pipe';
 export {RepeatPipe} from './repeat.pipe';
+export {RightPadPipe} from './right-pad.pipe';
 export {RightTrimPipe} from './rtrim.pipe';
 export {SlugifyPipe} from './slugify.pipe';
 export {SplitPipe} from './split.pipe';
@@ -108,5 +108,4 @@ export {WrapPipe} from './wrap.pipe';
     WrapPipe
   ]
 })
-export class StringPipesModule {
-}
+export class StringPipesModule {}

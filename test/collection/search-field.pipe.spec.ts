@@ -10,7 +10,6 @@ describe('SearchFieldPipe', () => {
   it('should get array as a collection, and several keys for searchFiled and' +
          'return new array with the new "searchField" property',
      () => {
-
        const input: Array<any> = [
          {first_name: 'Sharon', last_name: 'Melendez'},
          {first_name: 'Edmundo', last_name: 'Hepler'},
@@ -28,11 +27,9 @@ describe('SearchFieldPipe', () => {
        expect(pipe.transform([{a: 'a', b: 'b'}], 'a', 'b')).toEqual([
          {a: 'a', b: 'b', searchField: 'a b'}
        ]);
-
      });
 
   it('should support nested properties to', () => {
-
     const input: Array<any> = [
       {user: {first_name: 'Sharon', last_name: 'Melendez'}},
       {user: {first_name: 'Edmundo', last_name: 'Hepler'}},
@@ -55,16 +52,12 @@ describe('SearchFieldPipe', () => {
 
     expect(pipe.transform([inputObject], 'user.details.name.first', 'user.details.name.last'))
         .toEqual([outputObject]);
-
   });
 
   it('should change the original/source collection', () => {
-
     const mutable: Array<any> = [{a: 'a', b: 'b'}];
     pipe.transform(mutable, 'a', 'b');
 
     expect(mutable).toEqual([{a: 'a', b: 'b', searchField: 'a b'}]);
-
   });
-
 });

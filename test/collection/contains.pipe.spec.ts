@@ -41,5 +41,4 @@ describe('ContainsPipe', () => {
        expect(pipe.transform(object, 'active')).toBeTruthy();
        expect(pipe.transform(object, 'hello.world')).toBeFalsy();
      });
-
 });

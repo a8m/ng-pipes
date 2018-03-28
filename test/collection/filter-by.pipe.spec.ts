@@ -97,11 +97,10 @@ describe('FilterByPipe', () => {
     });
 
     it('should handle concatenation', () => {
-      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo ba', true)).toEqual([
-      ]);
+      expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo ba', true))
+          .toEqual([]);
       expect(pipe.transform(users, ['user.first_name + user.last_name'], 'foo bar', true))
           .toEqual(users);
     });
   });
-
 });

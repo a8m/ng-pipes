@@ -18,5 +18,4 @@ describe('RadixPipe', () => {
     expect(pipe.transform(998, 37)).toEqual('998');
     expect(pipe.transform(15, 1)).toEqual('15');
   });
-
 });

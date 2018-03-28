@@ -17,7 +17,6 @@ describe('EveryPipe', () => {
   it('should get array as collection and return if given expression is ' +
          'present all members in the collection',
      () => {
-
        const array: Array<any> = [
          {id: 1, name: 'faa'}, {id: 1, name: 'baz'}, {id: 1, name: 'ariel'}, {id: 1, name: 'bar'}
        ];
@@ -31,5 +30,4 @@ describe('EveryPipe', () => {
 
     expect(pipe.transform(array, (e: number) => !(e % 2))).toBeTruthy();
   });
-
 });

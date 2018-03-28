@@ -28,5 +28,4 @@ describe('RangePipe', () => {
     ]);
     expect(pipe.transform([], 10).length).toEqual(10);
   });
-
 });

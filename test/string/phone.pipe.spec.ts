@@ -8,7 +8,6 @@ describe('PhonePipe', () => {
   });
 
   describe('locale: en-US', () => {
-
     const phoneDataProvider: Array<any> = [
       {'phone': '123', 'toEqual': '123', 'valid': true},
       {'phone': '1234567890', 'toEqual': '(123) 456-7890', 'valid': true},
@@ -25,9 +24,8 @@ describe('PhonePipe', () => {
     ];
 
     for (const data of phoneDataProvider) {
-      const testCase = `${data.phone} should be ${data.valid ? 'equal' :
-                                                               'not equal'
-                                                               } to ${data.toEqual}`;
+      const testCase =
+          `${data.phone} should be ${data.valid ? 'equal' : 'not equal'} to ${data.toEqual}`;
 
       it(testCase, () => {
         if (data.valid) {
@@ -39,11 +37,9 @@ describe('PhonePipe', () => {
         }
       });
     }
-
   });
 
   describe('locale: pt-BR', () => {
-
     const phoneDataProvider: Array<any> = [
       {'phone': '99999999999', 'locale': 'pt-BR', 'toEqual': '(99) 99999-9999', 'valid': true},
       {'phone': '99-99999-9999', 'locale': 'pt-BR', 'toEqual': '(99) 99999-9999', 'valid': true},
@@ -79,9 +75,8 @@ describe('PhonePipe', () => {
     ];
 
     for (const data of phoneDataProvider) {
-      const testCase = `${data.phone} should be ${data.valid ? 'equal' :
-                                                               'not equal'
-                                                               } to ${data.toEqual}`;
+      const testCase =
+          `${data.phone} should be ${data.valid ? 'equal' : 'not equal'} to ${data.toEqual}`;
 
       it(testCase, () => {
         if (data.valid) {
@@ -93,11 +88,9 @@ describe('PhonePipe', () => {
         }
       });
     }
-
   });
 
   describe('locale: unknown', () => {
-
     const phoneDataProvider: Array<any> = [
       {'phone': '123', 'locale': 'xx-x', 'toEqual': '123', 'valid': true}, {
         'phone': '1234',
@@ -118,9 +111,8 @@ describe('PhonePipe', () => {
     ];
 
     for (const data of phoneDataProvider) {
-      const testCase = `${data.phone} should be ${data.valid ? 'equal' :
-                                                               'not equal'
-                                                               } to ${data.toEqual}`;
+      const testCase =
+          `${data.phone} should be ${data.valid ? 'equal' : 'not equal'} to ${data.toEqual}`;
 
       it(testCase, () => {
         if (data.valid) {
@@ -132,7 +124,5 @@ describe('PhonePipe', () => {
         }
       });
     }
-
   });
-
 });

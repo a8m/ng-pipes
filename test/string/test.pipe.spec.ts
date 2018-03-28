@@ -17,5 +17,4 @@ describe('TestPipe', () => {
     expect(pipe.transform('foobarbaz', '\\w')).toBeTruthy();
     expect(pipe.transform('1a/bb/2003', '^[0-9]{2}[/]{1}[0-9]{2}[/]{1}[0-9]{4}$', 'i')).toBeFalsy();
   });
-
 });
