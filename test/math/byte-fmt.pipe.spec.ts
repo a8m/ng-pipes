@@ -1,4 +1,4 @@
-import {ByteFmtPipe} from '../../src/index';
+import {ByteFmtPipe} from '../../src/math/byte-fmt.pipe';
 
 describe('ByteFmtPipe', () => {
   let pipe: ByteFmtPipe;
@@ -31,5 +31,4 @@ describe('ByteFmtPipe', () => {
     expect(pipe.transform(0.45, [3])).toEqual('NaN');
     expect(pipe.transform(0.45, {num: 4})).toEqual('NaN');
   });
-
 });

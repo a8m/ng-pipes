@@ -1,4 +1,4 @@
-import {StartsWithPipe} from '../../src/index';
+import {StartsWithPipe} from '../../src/string/starts-with.pipe';
 
 describe('StartsWithPipe', () => {
   let pipe: StartsWithPipe;
@@ -24,5 +24,4 @@ describe('StartsWithPipe', () => {
     expect(pipe.transform('string', 'STR', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
-
 });

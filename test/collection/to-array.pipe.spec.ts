@@ -1,4 +1,4 @@
-import {ToArrayPipe} from '../../src/index';
+import {ToArrayPipe} from '../../src/collection/to-array.pipe';
 
 describe('ToArrayPipe', () => {
   let pipe: ToArrayPipe;
@@ -21,5 +21,4 @@ describe('ToArrayPipe', () => {
       {$key: '0', f: 'foo'}, {$key: '1', b: 'bar'}, {$key: '2', b: 'baz'}
     ]);
   });
-
 });

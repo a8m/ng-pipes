@@ -1,4 +1,4 @@
-import {XORPipe} from '../../src/index';
+import {XORPipe} from '../../src/collection/xor.pipe';
 
 describe('XORPipe', () => {
   let pipe: XORPipe;
@@ -33,12 +33,11 @@ describe('XORPipe', () => {
       {id: 2, details: {first_name: 'foo', last_name: 'bag'}}
     ];
 
-    expect(pipe.transform(users, [{details: {first_name: 'foo'}}], 'details.first_name')).toEqual([
-    ]);
+    expect(pipe.transform(users, [{details: {first_name: 'foo'}}], 'details.first_name'))
+        .toEqual([]);
     expect(pipe.transform(users, [{id: 0}, {id: 1}], 'id')).toEqual([users[2]]);
 
     expect(pipe.transform(users, [{id: 3, details: {first_name: 'foo', last_name: 'bag'}}], 'id'))
         .toEqual(users.concat([{id: 3, details: {first_name: 'foo', last_name: 'bag'}}]));
   });
-
 });

@@ -1,4 +1,4 @@
-import {IsLessThanOrEqualToPipe} from '../../src/index';
+import {IsLessThanOrEqualToPipe} from '../../src/boolean/is-less-than-or-equal-to.pipe';
 
 describe('IsLessThanOrEqualToPipe', () => {
   let pipe: IsLessThanOrEqualToPipe;
@@ -15,5 +15,4 @@ describe('IsLessThanOrEqualToPipe', () => {
   it('should return false for all inputs', () => {
     expect(pipe.transform(1, 0)).toBeFalsy();
   });
-
 });

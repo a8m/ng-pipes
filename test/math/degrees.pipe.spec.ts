@@ -1,4 +1,4 @@
-import {DegreesPipe} from '../../src/index';
+import {DegreesPipe} from '../../src/math/degrees.pipe';
 
 describe('DegreesPipe', () => {
   let pipe: DegreesPipe;
@@ -15,5 +15,4 @@ describe('DegreesPipe', () => {
     expect(pipe.transform(-0.8222235, 5)).toEqual(-47.10994);
     expect(pipe.transform(45, 2)).toEqual(2578.31);
   });
-
 });

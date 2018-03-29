@@ -1,4 +1,4 @@
-import {FloorPipe} from '../../src/index';
+import {FloorPipe} from '../../src/math/floor.pipe';
 
 describe('FloorPipe', () => {
   let pipe: FloorPipe;
@@ -27,11 +27,9 @@ describe('FloorPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input ${JSON.stringify(element.input)} with precision (${element
-                         .precision}) should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase =
+        `Input ${JSON.stringify(element.input)} with precision (${element.precision}) should be ${
+            element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -41,5 +39,4 @@ describe('FloorPipe', () => {
       }
     });
   }
-
 });

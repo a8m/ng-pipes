@@ -1,4 +1,4 @@
-import {IsUndefinedPipe} from '../../src/index';
+import {IsUndefinedPipe} from '../../src/boolean/is-undefined.pipe';
 
 describe('IsUndefinedPipe', () => {
   let pipe: IsUndefinedPipe;
@@ -17,5 +17,4 @@ describe('IsUndefinedPipe', () => {
     expect(pipe.transform({})).toBeFalsy();
     expect(pipe.transform([])).toBeFalsy();
   });
-
 });

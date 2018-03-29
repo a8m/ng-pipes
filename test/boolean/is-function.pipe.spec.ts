@@ -1,4 +1,4 @@
-import {IsFunctionPipe} from '../../src/index';
+import {IsFunctionPipe} from '../../src/boolean/is-function.pipe';
 
 describe('IsFunctionPipe', () => {
   let pipe: IsFunctionPipe;
@@ -19,5 +19,4 @@ describe('IsFunctionPipe', () => {
     expect(pipe.transform('')).toBeFalsy();
     expect(pipe.transform({})).toBeFalsy();
   });
-
 });

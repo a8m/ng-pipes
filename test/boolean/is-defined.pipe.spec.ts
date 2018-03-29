@@ -1,4 +1,4 @@
-import {IsDefinedPipe} from '../../src/index';
+import {IsDefinedPipe} from '../../src/boolean/is-defined.pipe';
 
 describe('IsDefinedPipe', () => {
   let pipe: IsDefinedPipe;
@@ -17,5 +17,4 @@ describe('IsDefinedPipe', () => {
   it('should return false for all inputs', () => {
     expect(pipe.transform(undefined)).toBeFalsy();
   });
-
 });

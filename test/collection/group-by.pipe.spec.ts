@@ -1,4 +1,4 @@
-import {GroupByPipe} from '../../src/index';
+import {GroupByPipe} from '../../src/collection/group-by.pipe';
 
 describe('GroupByPipe', () => {
   let pipe: GroupByPipe;
@@ -47,5 +47,4 @@ describe('GroupByPipe', () => {
        expect(pipe.transform(dataObject, 'id'))
            .toEqual({1: [dataObject[0], dataObject[1]], 2: [dataObject[2], dataObject[3]]});
      });
-
 });

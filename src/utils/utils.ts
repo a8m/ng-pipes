@@ -117,7 +117,6 @@ export function getFirstMatches(array: any, n: number, getter: Function) {
  * search for approximate pattern in string
  * @param word
  * @param pattern
- * @returns {*}
  */
 export function hasApproxPattern(word: string, pattern: string): boolean {
   let p = 0;

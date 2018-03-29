@@ -1,4 +1,4 @@
-import {JoinPipe} from '../../src/index';
+import {JoinPipe} from '../../src/collection/join.pipe';
 
 describe('JoinPipe', () => {
   let pipe: JoinPipe;
@@ -19,7 +19,6 @@ describe('JoinPipe', () => {
       it('should return an empty string', () => {
         expect(pipe.transform(arr)).toEqual('');
       });
-
     });
 
     describe('of strings', () => {
@@ -59,7 +58,5 @@ describe('JoinPipe', () => {
         });
       });
     });
-
   });
-
 });

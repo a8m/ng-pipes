@@ -1,4 +1,4 @@
-import {RepeatPipe} from '../../src/index';
+import {RepeatPipe} from '../../src/string/repeat.pipe';
 
 describe('RepeatPipe', () => {
   let pipe: RepeatPipe;
@@ -20,5 +20,4 @@ describe('RepeatPipe', () => {
     expect(pipe.transform('^', 2, '_')).toEqual('^_^');
     expect(pipe.transform('foo', 2, 'bar')).toEqual('foobarfoo');
   });
-
 });

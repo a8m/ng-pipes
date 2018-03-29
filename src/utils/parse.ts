@@ -41,7 +41,6 @@ function setterFn(scope: {[key: string]: any}, path: string[], value: any): any 
 /**
  * @description
  * return parse function
- * @returns {Function}
  */
 export function Parse() {
   const cache: {[key: string]: Function} = {};

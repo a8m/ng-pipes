@@ -1,4 +1,4 @@
-import {FlattenPipe} from '../../src/index';
+import {FlattenPipe} from '../../src/collection/flatten.pipe';
 
 describe('FlattenPipe', () => {
   let pipe: FlattenPipe;
@@ -36,5 +36,4 @@ describe('FlattenPipe', () => {
       1, 1, [0, [0, [0]]], 1, [0], 1, 1, [0]
     ]);
   });
-
 });

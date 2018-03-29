@@ -1,4 +1,4 @@
-import {SqrtPipe} from '../../src/index';
+import {SqrtPipe} from '../../src/math/sqrt.pipe';
 
 describe('SqrtPipe', () => {
   let pipe: SqrtPipe;
@@ -16,10 +16,8 @@ describe('SqrtPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input ${JSON.stringify(element.input)} should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase = `Input ${JSON.stringify(element.input)} should be ${
+        element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -29,5 +27,4 @@ describe('SqrtPipe', () => {
       }
     });
   }
-
 });

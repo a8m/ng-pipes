@@ -1,4 +1,4 @@
-import {PercentPipe} from '../../src/index';
+import {PercentPipe} from '../../src/math/percent.pipe';
 
 describe('PercentPipe', () => {
   let pipe: PercentPipe;
@@ -28,5 +28,4 @@ describe('PercentPipe', () => {
     expect(pipe.transform(32)).toEqual(32);
     expect(pipe.transform(200)).toEqual(200);
   });
-
 });

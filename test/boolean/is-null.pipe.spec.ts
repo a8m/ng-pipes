@@ -1,4 +1,4 @@
-import {IsNullPipe} from '../../src/index';
+import {IsNullPipe} from '../../src/boolean/is-null.pipe';
 
 describe('IsNullPipe', () => {
   let pipe: IsNullPipe;
@@ -18,5 +18,4 @@ describe('IsNullPipe', () => {
     expect(pipe.transform({})).toBeFalsy();
     expect(pipe.transform([])).toBeFalsy();
   });
-
 });

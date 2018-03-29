@@ -1,4 +1,4 @@
-import {SplitPipe} from '../../src/index';
+import {SplitPipe} from '../../src/string/split.pipe';
 
 describe('SplitPipe', () => {
   let pipe: SplitPipe;
@@ -29,5 +29,4 @@ describe('SplitPipe', () => {
   it('should return the input unchanged', () => {
     expect(pipe.transform(null)).toBeNull();
   });
-
 });

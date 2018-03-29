@@ -1,4 +1,4 @@
-import {OrderByPipe} from '../../src/index';
+import {OrderByPipe} from '../../src/collection/order-by.pipe';
 
 describe('OrderByPipe', () => {
   let pipe: OrderByPipe;
@@ -42,5 +42,4 @@ describe('OrderByPipe', () => {
     ];
     expect(pipe.transform(users, 'age', '-name')).toEqual(users.reverse());
   });
-
 });

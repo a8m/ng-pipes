@@ -1,4 +1,4 @@
-import {FuzzyPipe} from '../../src/index';
+import {FuzzyPipe} from '../../src/collection/fuzzy.pipe';
 
 describe('FuzzyPipe', () => {
   let pipe: FuzzyPipe, collection = [
@@ -42,5 +42,4 @@ describe('FuzzyPipe', () => {
     expect(pipe.transform(array, 'oa')).toEqual(['Rob Grant', 'F. Scott Fitzgerald']);
     expect(pipe.transform(array, 'S', true)).toEqual(['F. Scott Fitzgerald']);
   });
-
 });

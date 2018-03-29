@@ -1,4 +1,4 @@
-import {IsGreaterThanPipe} from '../../src/index';
+import {IsGreaterThanPipe} from '../../src/boolean/is-greater-than.pipe';
 
 describe('IsGreaterThanPipe', () => {
   let pipe: IsGreaterThanPipe;
@@ -15,5 +15,4 @@ describe('IsGreaterThanPipe', () => {
     expect(pipe.transform(0, 1)).toBeFalsy();
     expect(pipe.transform(1, 1)).toBeFalsy();
   });
-
 });

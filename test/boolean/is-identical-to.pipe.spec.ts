@@ -1,4 +1,4 @@
-import {IsIdenticalToPipe} from '../../src/index';
+import {IsIdenticalToPipe} from '../../src/boolean/is-identical-to.pipe';
 
 describe('IsIdenticalToPipe', () => {
   let pipe: IsIdenticalToPipe;
@@ -22,5 +22,4 @@ describe('IsIdenticalToPipe', () => {
     expect(pipe.transform({'key': 2}, {'key': 4})).toBeFalsy();
     expect(pipe.transform([{'key': 4}, {'key': 2}], [{'key': 2}, {'key': 4}])).toBeFalsy();
   });
-
 });

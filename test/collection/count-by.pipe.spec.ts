@@ -1,4 +1,4 @@
-import {CountByPipe} from '../../src/index';
+import {CountByPipe} from '../../src/collection/count-by.pipe';
 
 describe('CountByPipe', () => {
   let pipe: CountByPipe;
@@ -33,5 +33,4 @@ describe('CountByPipe', () => {
 
        expect(pipe.transform(dataObject, 'id')).toEqual({1: 2, 2: 2});
      });
-
 });

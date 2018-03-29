@@ -1,4 +1,4 @@
-import {KeysPipe} from '../../src/index';
+import {KeysPipe} from '../../src/object/keys.pipe';
 
 describe('KeysPipe', () => {
   let pipe: KeysPipe;
@@ -24,10 +24,8 @@ describe('KeysPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input ${JSON.stringify(element.input)} should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase = `Input ${JSON.stringify(element.input)} should be ${
+        element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -37,5 +35,4 @@ describe('KeysPipe', () => {
       }
     });
   }
-
 });

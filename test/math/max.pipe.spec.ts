@@ -1,4 +1,4 @@
-import {MaxPipe} from '../../src/index';
+import {MaxPipe} from '../../src/math/max.pipe';
 
 describe('MaxPipe', () => {
   let pipe: MaxPipe;
@@ -21,5 +21,4 @@ describe('MaxPipe', () => {
     expect(pipe.transform(users, 'user.rank')).toEqual(users[2]);
     expect(pipe.transform(users, 'user.score')).toEqual(users[0]);
   });
-
 });

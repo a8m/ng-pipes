@@ -1,4 +1,4 @@
-import {DefaultsPipe} from '../../src/index';
+import {DefaultsPipe} from '../../src/collection/defaults.pipe';
 
 describe('DefaultsPipe', () => {
   let pipe: DefaultsPipe;
@@ -57,5 +57,4 @@ describe('DefaultsPipe', () => {
     Object.assign(array[0], defaults);
     expect(pipe.transform(copy, defaults)).toEqual(array);
   });
-
 });

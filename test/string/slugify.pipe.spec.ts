@@ -1,4 +1,4 @@
-import {SlugifyPipe} from '../../src/index';
+import {SlugifyPipe} from '../../src/string/slugify.pipe';
 
 describe('SlugifyPipe', () => {
   let pipe: SlugifyPipe;
@@ -20,5 +20,4 @@ describe('SlugifyPipe', () => {
     expect(pipe.transform('Lorem ipsum dolor sit amet', '-')).toEqual('lorem-ipsum-dolor-sit-amet');
     expect(pipe.transform('Lorem ipsum dolor sit amet', '')).toEqual('loremipsumdolorsitamet');
   });
-
 });

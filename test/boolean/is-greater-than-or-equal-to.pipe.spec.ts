@@ -1,4 +1,4 @@
-import {IsGreaterThanOrEqualToPipe} from '../../src/index';
+import {IsGreaterThanOrEqualToPipe} from '../../src/boolean/is-greater-than-or-equal-to.pipe';
 
 describe('IsGreaterThanOrEqualToPipe', () => {
   let pipe: IsGreaterThanOrEqualToPipe;
@@ -15,5 +15,4 @@ describe('IsGreaterThanOrEqualToPipe', () => {
   it('should return false for all inputs', () => {
     expect(pipe.transform(0, 1)).toBeFalsy();
   });
-
 });

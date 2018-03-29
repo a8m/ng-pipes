@@ -1,4 +1,4 @@
-import {IsEqualToPipe} from '../../src/index';
+import {IsEqualToPipe} from '../../src/boolean/is-equal-to.pipe';
 
 describe('IsEqualToPipe', () => {
   let pipe: IsEqualToPipe;
@@ -18,5 +18,4 @@ describe('IsEqualToPipe', () => {
     expect(pipe.transform(1, '2')).toBeFalsy();
     expect(pipe.transform('1', '2')).toBeFalsy();
   });
-
 });

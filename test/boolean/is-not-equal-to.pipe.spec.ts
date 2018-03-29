@@ -1,4 +1,4 @@
-import {IsNotEqualToPipe} from '../../src/index';
+import {IsNotEqualToPipe} from '../../src/boolean/is-not-equal-to.pipe';
 
 describe('IsNotEqualToPipe', () => {
   let pipe: IsNotEqualToPipe;
@@ -18,5 +18,4 @@ describe('IsNotEqualToPipe', () => {
     expect(pipe.transform(1, '1')).toBeFalsy();
     expect(pipe.transform('1', '1')).toBeFalsy();
   });
-
 });

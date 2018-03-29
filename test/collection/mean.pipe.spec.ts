@@ -1,4 +1,4 @@
-import {MeanPipe} from '../../src/index';
+import {MeanPipe} from '../../src/collection/mean.pipe';
 
 describe('MeanPipe', () => {
   let pipe: MeanPipe;
@@ -25,10 +25,8 @@ describe('MeanPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `Input ${JSON.stringify(element.input)} should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase = `Input ${JSON.stringify(element.input)} should be ${
+        element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -38,5 +36,4 @@ describe('MeanPipe', () => {
       }
     });
   }
-
 });

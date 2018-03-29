@@ -1,25 +1,19 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "declaration": true,
+    "outDir": "./dist/out-tsc",
     "sourceMap": true,
+    "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": true,
-    "suppressImplicitAnyIndexErrors": false,
-    "noUnusedParameters": true,
-    "noUnusedLocals": true,
-    "types": [ "core-js", "jasmine"]
-  },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "index.d.ts",
-    "src/*.d.ts",
-    "src/*/*.d.ts",
-    "test/*/*.d.ts"
-  ]
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
 }

@@ -1,4 +1,4 @@
-import {IsObjectPipe} from '../../src/index';
+import {IsObjectPipe} from '../../src/boolean/is-object.pipe';
 
 describe('IsObjectPipe', () => {
   let pipe: IsObjectPipe;
@@ -16,5 +16,4 @@ describe('IsObjectPipe', () => {
     expect(pipe.transform(undefined)).toBeFalsy();
     expect(pipe.transform(1)).toBeFalsy();
   });
-
 });

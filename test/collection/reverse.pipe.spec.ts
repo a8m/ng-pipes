@@ -1,4 +1,4 @@
-import {ReversePipe} from '../../src/index';
+import {ReversePipe} from '../../src/collection/reverse.pipe';
 
 describe('RemoveWithPipe', () => {
   let pipe: ReversePipe;
@@ -12,5 +12,4 @@ describe('RemoveWithPipe', () => {
     expect(pipe.transform('foo 𝌆 bar mañana mañana')).toEqual('anañam anañam rab 𝌆 oof');
     expect(pipe.transform([1, 2])).toEqual([2, 1]);
   });
-
 });

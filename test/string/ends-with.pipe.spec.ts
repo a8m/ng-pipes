@@ -1,4 +1,4 @@
-import {EndsWithPipe} from '../../src/index';
+import {EndsWithPipe} from '../../src/string/ends-with.pipe';
 
 describe('EndsWithPipe', () => {
   let pipe: EndsWithPipe;
@@ -24,5 +24,4 @@ describe('EndsWithPipe', () => {
     expect(pipe.transform('string', 'ING', false)).toBeTruthy();
     expect(pipe.transform('foo bar', 'Foo B', true)).toBeFalsy();
   });
-
 });

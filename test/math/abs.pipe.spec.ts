@@ -1,4 +1,4 @@
-import {AbsPipe} from '../../src/index';
+import {AbsPipe} from '../../src/math/abs.pipe';
 
 describe('AbsPipe', () => {
   let pipe: AbsPipe;
@@ -13,5 +13,4 @@ describe('AbsPipe', () => {
     expect(pipe.transform('-123.45')).toEqual(123.45);
     expect(pipe.transform('123.45')).toEqual(123.45);
   });
-
 });

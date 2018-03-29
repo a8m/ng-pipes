@@ -7,7 +7,7 @@ export class RadixPipe implements PipeTransform {
     let RANGE = /^[2-9]$|^[1-2]\d$|^3[0-6]$/;
 
     if (!isNumber(input) || !RANGE.test(radix.toString())) {
-      return input;
+      return input.toString();
     }
 
     return input.toString(radix).toUpperCase();

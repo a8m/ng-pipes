@@ -1,4 +1,4 @@
-import {LastPipe} from '../../src/index';
+import {LastPipe} from '../../src/collection/last.pipe';
 
 describe('LastPipe', () => {
   let pipe: LastPipe;
@@ -41,5 +41,4 @@ describe('LastPipe', () => {
     expect(pipe.transform([1, 2, 3, 4, 6, 11], 2, mod2)).toEqual([4, 6]);
     expect(pipe.transform([2, 1], 2, mod2)).toEqual([2]);
   });
-
 });

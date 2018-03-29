@@ -1,4 +1,4 @@
-import {IsLessThanPipe} from '../../src/index';
+import {IsLessThanPipe} from '../../src/boolean/is-less-than.pipe';
 
 describe('IsLessThanPipe', () => {
   let pipe: IsLessThanPipe;
@@ -15,5 +15,4 @@ describe('IsLessThanPipe', () => {
     expect(pipe.transform(1, 0)).toBeFalsy();
     expect(pipe.transform(1, 1)).toBeFalsy();
   });
-
 });

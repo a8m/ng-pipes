@@ -1,4 +1,4 @@
-import {TrimPipe} from '../../src/index';
+import {TrimPipe} from '../../src/string/trim.pipe';
 
 describe('TrimPipe', () => {
   let pipe: TrimPipe;
@@ -19,5 +19,4 @@ describe('TrimPipe', () => {
     expect(pipe.transform('barfoobar', 'bar')).toEqual('foo');
     expect(pipe.transform('barfoobar', 'foo')).toEqual('barfoobar');
   });
-
 });

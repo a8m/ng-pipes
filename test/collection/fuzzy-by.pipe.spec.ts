@@ -1,4 +1,4 @@
-import {FuzzyByPipe} from '../../src/index';
+import {FuzzyByPipe} from '../../src/collection/fuzzy-by.pipe';
 
 describe('FuzzyByPipe', () => {
   let pipe: FuzzyByPipe, collection = [
@@ -42,5 +42,4 @@ describe('FuzzyByPipe', () => {
     ]);
     expect(pipe.transform(collection2, 'details.title', 'omwar')).toEqual([collection2[4]]);
   });
-
 });

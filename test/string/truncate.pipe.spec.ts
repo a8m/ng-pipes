@@ -1,4 +1,4 @@
-import {TruncatePipe} from '../../src/index';
+import {TruncatePipe} from '../../src/string/truncate.pipe';
 
 describe('TruncatePipe', () => {
   let pipe: TruncatePipe;
@@ -34,5 +34,4 @@ describe('TruncatePipe', () => {
     expect(pipe.transform('lorem ipsum dolor sit amet', 50, '...', true))
         .toEqual('lorem ipsum dolor sit amet');
   });
-
 });

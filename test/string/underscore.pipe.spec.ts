@@ -1,4 +1,4 @@
-import {UnderscorePipe} from '../../src/index';
+import {UnderscorePipe} from '../../src/string/underscore.pipe';
 
 describe('UnderscorePipe', () => {
   let pipe: UnderscorePipe;
@@ -32,9 +32,8 @@ describe('UnderscorePipe', () => {
   ];
 
   for (const element of data) {
-    const testCase = `${element.value} should be ${element.valid ? 'equal' :
-                                                                   'not equal'
-                                                                   } to ${element.toEqual}`;
+    const testCase =
+        `${element.value} should be ${element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -44,5 +43,4 @@ describe('UnderscorePipe', () => {
       }
     });
   }
-
 });

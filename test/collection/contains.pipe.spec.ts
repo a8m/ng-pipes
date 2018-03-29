@@ -1,4 +1,4 @@
-import {ContainsPipe} from '../../src/index';
+import {ContainsPipe} from '../../src/collection/contains.pipe';
 
 describe('ContainsPipe', () => {
   let pipe: ContainsPipe;
@@ -41,5 +41,4 @@ describe('ContainsPipe', () => {
        expect(pipe.transform(object, 'active')).toBeTruthy();
        expect(pipe.transform(object, 'hello.world')).toBeFalsy();
      });
-
 });

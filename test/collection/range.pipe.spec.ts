@@ -1,4 +1,4 @@
-import {RangePipe} from '../../src/index';
+import {RangePipe} from '../../src/collection/range.pipe';
 
 describe('RangePipe', () => {
   let pipe: RangePipe;
@@ -28,5 +28,4 @@ describe('RangePipe', () => {
     ]);
     expect(pipe.transform([], 10).length).toEqual(10);
   });
-
 });

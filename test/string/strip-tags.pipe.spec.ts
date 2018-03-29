@@ -1,4 +1,4 @@
-import {StripTagsPipe} from '../../src/index';
+import {StripTagsPipe} from '../../src/string/strip-tags.pipe';
 
 describe('EndsWithPipe', () => {
   let pipe: StripTagsPipe;
@@ -12,5 +12,4 @@ describe('EndsWithPipe', () => {
     expect(pipe.transform('<div class="block">foo bar</div>')).toEqual('foo bar');
     expect(pipe.transform('<title>awesome title</title>')).toEqual('awesome title');
   });
-
 });

@@ -1,4 +1,4 @@
-import {WrapPipe} from '../../src/index';
+import {WrapPipe} from '../../src/string/wrap.pipe';
 
 describe('WrapPipe', () => {
   let pipe: WrapPipe;
@@ -18,5 +18,4 @@ describe('WrapPipe', () => {
     expect(pipe.transform('a', 1, 2)).toEqual('1a2');
     expect(pipe.transform('a', '/', '.')).toEqual('/a.');
   });
-
 });

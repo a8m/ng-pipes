@@ -1,4 +1,4 @@
-import {CenterPadPipe} from '../../src/index';
+import {CenterPadPipe} from '../../src/string/center-pad.pipe';
 
 describe('CenterPadPipe', () => {
   let pipe: CenterPadPipe;
@@ -36,12 +36,9 @@ describe('CenterPadPipe', () => {
   ];
 
   for (const element of data) {
-    const testCase =
-        `Input ${JSON.stringify(element.input)} with padChar ('${element
-            .padChar}') and requiredLength (${element.requiredLength}) should be ${element.valid ?
-        'equal' :
-        'not equal'
-        } to ${element.toEqual}`;
+    const testCase = `Input ${JSON.stringify(element.input)} with padChar ('${
+        element.padChar}') and requiredLength (${element.requiredLength}) should be ${
+        element.valid ? 'equal' : 'not equal'} to ${element.toEqual}`;
 
     it(testCase, () => {
       if (element.valid) {
@@ -53,5 +50,4 @@ describe('CenterPadPipe', () => {
       }
     });
   }
-
 });
