@@ -26,32 +26,6 @@ import {UriComponentEncodePipe} from './uri-component-encode.pipe';
 import {UriEncodePipe} from './uri-encode.pipe';
 import {WrapPipe} from './wrap.pipe';
 
-export {CamelizePipe} from './camelize.pipe';
-export {CenterPadPipe} from './center-pad.pipe';
-export {EndsWithPipe} from './ends-with.pipe';
-export {LatinizePipe} from './latinize.pipe';
-export {LeftPadPipe} from './left-pad.pipe';
-export {LeftTrimPipe} from './ltrim.pipe';
-export {MatchPipe} from './match.pipe';
-export {PhonePipe} from './phone.pipe';
-export {RepeatPipe} from './repeat.pipe';
-export {RightPadPipe} from './right-pad.pipe';
-export {RightTrimPipe} from './rtrim.pipe';
-export {SlugifyPipe} from './slugify.pipe';
-export {SplitPipe} from './split.pipe';
-export {StartsWithPipe} from './starts-with.pipe';
-export {StringularPipe} from './stringular.pipe';
-export {StripTagsPipe} from './strip-tags.pipe';
-export {TestPipe} from './test.pipe';
-export {TitleizePipe} from './titleize.pipe';
-export {TrimPipe} from './trim.pipe';
-export {TruncatePipe} from './truncate.pipe';
-export {UcfirstPipe} from './ucfirst.pipe';
-export {UnderscorePipe} from './underscore.pipe';
-export {UriComponentEncodePipe} from './uri-component-encode.pipe';
-export {UriEncodePipe} from './uri-encode.pipe';
-export {WrapPipe} from './wrap.pipe';
-
 @NgModule({
   declarations: [
     CamelizePipe,
