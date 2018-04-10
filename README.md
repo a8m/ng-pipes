@@ -6,9 +6,6 @@ This module works with Angular 2.x.
 For the AngularJS 1.x version of this module, please see [angular-filter](https://github.com/a8m/angular-filter).
 
 
-- [Contributing](#contributing)
-- [Installation](#installation)
-
 Installation
 ------------
 
@@ -16,56 +13,87 @@ Installation
 npm install --save ng-pipes
 ```
 
+or
+
+```sh
+yarn add ng-pipes
+```
+
 Get Started
 ------------
-Import __ng-pipes__ to your `app.module.ts`
+There are 3 ways of adding __ng-pipes__ to your project:
+  1. [Import all pipes](#all)
+  2. [Import pipes by module](#mod)
+  3. [Declare specific pipes](#spe)
+
+### <a name="all"></a> Import all pipes
+
 ```ts
 import { NgPipesModule } from 'ng-pipes';
-// ...
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    // ...
-    NgPipesModule,
+    NgPipesModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 ```
 
-Inject it to your class(could be Component, Service, etc..), or use it inside the view(template).  
-- `app.component.ts`:  
-  ```ts
-  import { Component } from '@angular/core';
-  import { RepeatPipe } from 'ng-pipes';
+```html
+<h1>
+  {{ title | reverse }}
+</h1>
+```
 
-  @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
-    providers: [RepeatPipe],
-  })
-  export class AppComponent {
-    constructor(private repeater: RepeatPipe) {
-      this.repeater = repeater;
-    }
-    title = "hello world"
-    manyTitles = this.repeater.transform(this.title, 10, " ");
-  }
-  ```
+### <a name="mod"></a> Import pipes by module
+```ts
+import {BooleanPipesModule, CollectionPipesModule, MathPipesModule, ObjectPipesModule, StringPipesModule} from 'ng-pipes';
 
-- `app.component.html`:  
-  ```html
-  <h1>
-    {{ title | reverse }}
-  </h1>
-  ```
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BooleanPipesModule,     // imports all pipes of the boolean module
+    CollectionPipesModule,  // imports all pipes of the collection module
+    MathPipesModule,        // imports all pipes of the math module
+    ObjectPipesModule,      // imports all pipes of the object module
+    StringPipesModule       // imports all pipes of the string module
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
+```html
+<h1>
+  {{ title | reverse }}
+</h1>
+```
 
+### <a name="spe"></a> Declare specific pipes 
+```ts
+import { ReversePipe, CeilPipe, ... } from 'ng-pipes';
+// ...
+
+@NgModule({
+  declarations: [
+    AppComponent, ReversePipe, CeilPipe, ...
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
+
+```html
+<h1>
+  {{ title | reverse }}
+</h1>
+```
 
 ### Contributing
 - Any contribution is appreciated.
