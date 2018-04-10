@@ -24,7 +24,7 @@ There are 3 ways of adding __ng-pipes__ to your project:
   2. [Import pipes by module](#mod)
   3. [Declare specific pipes](#spe)
 
-### <a name="all"></a> Import all pipes
+#### <a name="all"></a> Import all pipes
 
 ```ts
 import { NgPipesModule } from 'ng-pipes';
@@ -47,7 +47,7 @@ export class AppModule { }
 </h1>
 ```
 
-### <a name="mod"></a> Import pipes by module
+#### <a name="mod"></a> Import pipes by module
 ```ts
 import {BooleanPipesModule, CollectionPipesModule, MathPipesModule, ObjectPipesModule, StringPipesModule} from 'ng-pipes';
 
@@ -73,7 +73,7 @@ export class AppModule { }
 </h1>
 ```
 
-### <a name="spe"></a> Declare specific pipes 
+#### <a name="spe"></a> Declare specific pipes 
 ```ts
 import { ReversePipe, CeilPipe, ... } from 'ng-pipes';
 // ...
@@ -93,7 +93,8 @@ export class AppModule { }
 </h1>
 ```
 
-### Contributing
+Contributing
+------------
 - Any contribution is appreciated.
 - If you are planning to add a new pipe (or any other feature), please open an issue before.
 - Angular [Commit Message Format](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit) is preferred.
